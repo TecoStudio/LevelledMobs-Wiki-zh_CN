@@ -26,7 +26,7 @@
 *   [🎌 官方配置翻译](https://github.com/TecoStudio/LevelledMobs-Wiki-zh_CN/wiki/Official-Translations)
 *   [🎌 非官方配置翻译](https://github.com/TecoStudio/LevelledMobs-Wiki-zh_CN/wiki/Unofficial-Translations)
 
-# 👀 [如何录制](https://github.com/TecoStudio/LevelledMobs-Wiki-zh_CN/wiki/How-to-Videos)
+# 👀 [教程视频](https://github.com/TecoStudio/LevelledMobs-Wiki-zh_CN/wiki/How-to-Videos)
 
 # 🧩 集成
 
