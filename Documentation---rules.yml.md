@@ -1,45 +1,45 @@
 ```
-This page was last updated for LevelledMobs 3.10.3 b763
+本页最后更新于 LevelledMobs 3.10.3 b763
 ```
 
 ***
 
-# Rules Configuration
+# 规则配置
 
-LevelledMobs' `rules.yml` file allows you to craft truly modular **Custom Rules** which either modify or extend the **Default Rule** that are applied to any and all EntityTypes.
-The rules file is broken into three major sections: **Presets**, **Default Rule**, and **Custom Rules**.
-This documentation provides a general understanding of how the rules file works.
+LevelledMob 的 `rules.yml` 文件允许您制作真正模块化的 **自定义规则**，它可以修改或扩展应用于任何和所有 EntityType 的 **默认规则**。
+规则文件分为三个主要部分：**预设**、**默认规则**和**自定义规则**。
+本文档提供了对规则文件如何工作的一般理解。
 
-For more details, learn how to use the different [conditions](https://github.com/lokka30/LevelledMobs/wiki/Documentation---Conditions), [strategies](https://github.com/lokka30/LevelledMobs/wiki/Documentation---Strategies), and [apply-settings](https://github.com/lokka30/LevelledMobs/wiki/Documentation---Apply-Settings).
+有关更多详细信息，请了解如何使用不同的[条件](https://github.com/lokka30/LevelledMobs/wiki/Documentation---Conditions)、[策略](https://github.com/lokka30/LevelledMobs/wiki/Documentation---Strategies)和[应用设置](https://github.com/lokka30/LevelledMobs/wiki/Documentation---Apply-Settings)。
 
 ***
 
-# Universal Mob Groups:
-LevelledMobs includes several groups of entities which are bundled together in a convenient to recognize format. Each of these groups function as their own EntityType when using `allowed-groups:` or `excluded-groups:`, which allows you to select multiple entities at once. You can incorporate `included-list:` or `excluded-list:` to make an exception to a specific entity within the group.
+# 通用生物群组:
+LevelledMobs 包含多组实体，这些实体以易于识别的格式捆绑在一起。当使用`allowed-groups:`或`excluded-groups:`时，每个组都充当自己的EntityType，这允许您一次选择多个实体。 您可以合并`included-list:` 或 `excluded-list:`来对组内的特定实体进行例外处理。
 
-You can also craft your own entity OR biome custom groupings within the rules file. These groups cannot be used inside Custom Drops at the moment, but will be accessible in the future; check back later!
+您还可以在规则文件中创建自己的实体或生物群系自定义分组。这些组目前无法在自定义掉落中使用，但将来可以访问；请稍后再回来查看！
 
-|EntityType Universal Groups|Description
+|实体类型通用群组|描述
 |:-:|:---
-|`all_mobs`|All entities whether they are levelled or not.
-|`all_levellable_mobs`|All entities which have been levelled.
-|`all_hostile_mobs`|All hostile entities, whether they are levelled or not.
-|`all_passive_mobs`|All passive entities, whether they are levelled or not.
-|`all_overworld_mobs`|All Overworld entities, whether they are levelled or not.
-|`all_nether_mobs`|All Nether entities, whether they are levelled or not.
-|`all_flying_mobs`|All flying entities, whether they are levelled or not.
-|`all_ground_mobs`|All ground-limited entities, whether they are levelled or not.
-|`all_aquatic_mobs`|All aquatic entities, whether they are levelled or not.
+|`all_mobs`|所有实体，无论它们是否被等级化。
+|`all_levellable_mobs`|所有已经被等级化的实体。
+|`all_hostile_mobs`|所有敌对实体，无论它们是否被等级化。
+|`all_passive_mobs`|所有被动实体，无论它们是否被等级化。
+|`all_overworld_mobs`|所有主世界中的实体，无论它们是否被等级化。
+|`all_nether_mobs`|所有地狱中的实体，无论它们是否被等级化。
+|`all_flying_mobs`|所有飞行实体，无论它们是否被等级化。
+|`all_ground_mobs`|所有陆上的实体，无论它们是否被等级化。
+|`all_aquatic_mobs`|所有水生的实体，无论它们是否被等级化。
 
 ***
 
-# Presets:
-LM allows you to craft certain sets of config options into sets known as **Presets**, which can be applied within either the **Default Rule** or any **Custom Rules** utilizing the `use-preset:` config line. For example:
+# 预设:
+LM允许您将某些配置选项集成到称为**预设**的集合中，这些预设可以在**默认规则**或使用 `use-preset:` 配置行的任何**自定义规则**中应用。例如：
 
 ```yml
 custom-rules:
   - enabled: true
-    name: 'Custom Rule'
+    name: '自定义规则'
     use-preset: presetName, otherPresetName
     use-preset:
       - presetName
@@ -49,20 +49,20 @@ custom-rules:
 ```yml
 presets:
   presetName:
-    name: 'Preset Name'
+    name: '预设名称'
     system:
 ```
 
-The **Presets** section covers the first third of the file, and by default it is used to mostly populate the **Default Rule** with multiple different out-of-the-box solutions to common questions! You can edit or add your own presets to the list, or choose to not use the preset system at all. This is meant to be an aid in preventing duplicate text across the rules file.
+**预设**部分覆盖文件的前三分之一，默认情况下，它主要用于填充**默认规则**，并为常见问题提供多种不同的开箱即用的解决方案！ 您可以编辑自己的预设或将其添加到列表中，也可以压根不使用预设系统。 这有助于防止规则文件中出现重复文本。
 
-When crafting a preset, the above structure should be followed. Beginning with the `presets:` tag, you indent two spaces and then give your preset a name to reference later, replacing `presetName:` with this value. Make sure to only use alphanumeric values, without spaces, for this value.
-On the next time, two further spaces indented, you should give your preset an easy-to-read `name:`. While this is not required, you will thank yourself later!
-Finally, `system:` represents either `conditions:`, `strategies:`, and `apply-settings:` depending on the type of preset you intend to build!
+制作预设时，应遵循上述结构。 从`presets:`标签开始，缩进两个空格，然后为预设指定一个名称以供稍后引用，并将`presetName:`替换为该值。 确保该值仅使用字母数字值，不包含空格。
+紧接着，再缩进两个空格，您应该为您的预设指定一个易于阅读的`name:`。 尽管这不是必需的，但您稍后会感谢自己！
+最后，`system:`代表`conditions:`、`strategies:`和`apply-settings:`，具体取决于您想要构建的预设类型！
 
 
 
-# Default Rule:
-LM requires this section to be populated with the following minimal information in order to work with a minimum of functionality. By default, LM uses the **Presets** system explained above to populate the Default Rule with the necessary values, plus several more, in order to make things quick and easy to switch between preconfigured settings.
+# 默认规则：
+LM 要求此部分填充以下最少的信息，以便使用最少的功能。 默认情况下，LM 使用上面解释的 **预设** 系统来使用必要的值以及其他几个值填充默认规则，以便快速轻松地在预配置设置之间切换。
 
 ```yml
 default-rule:
@@ -88,41 +88,41 @@ default-rule:
 
 
 
-# Custom Rules:
-LM comes out-of-the-box with several different **Custom Rules** which are both enabled and disabled.
-These are used to both achieve specific results, such as disabling the levelling of passive entities with the first custom rule, as well as provide multiple examples of how to use custom rules in unique ways.
+# 自定义规则：
+LM 开箱即用，具有多种不同的**自定义规则**，这些规则均可以被启用和禁用。
+这些用于实现特定结果，例如使用第一个自定义规则禁用被动实体的等级化，并提供如何以独特方式使用自定义规则的多个示例。
 
-## Priority:
-By default, LM processes the rules in a linear order: from top to bottom; from the Default Rule to the first through last Custom Rule. You can establish a priority config line within a custom rule which will override it's position in the queue, allowing it to process earlier or later than the rest of the stack. Remember that the Default Rule will **ALWAYS** process first before any Custom Rules to populate any necessary default values.
-Below represents an example of how priority alters the 'stack queue' of Custom Rules:
+## 优先级：
+默认情况下，LM 按线性顺序处理规则：从上到下； 从默认规则到第一条至最后一条自定义规则。 您可以在自定义规则中建立优先级配置行，该规则将覆盖其在队列中的位置，从而允许其比堆栈的其余部分更早或更晚处理。 请记住，默认规则将**始终**在任何自定义规则之前被首先处理，以填充任何必要的默认值。
+下面展示了优先级如何改变自定义规则的“堆栈队列”的示例：
 
 ```yml
 custom-rules:
   - enabled: true
-    name: 'Run before the stack, as the highest priority, as the first rule processed after the Default Rule'
+    name: '在堆栈之前运行，作为最高优先级，作为默认规则之后处理的第一条规则'
     priority: 2
 
   - enabled: true
-    name: 'Run before the stack, after any higher priority'
+    name: '在堆栈之前运行，在任何更高优先级之后运行'
     priority: 1
 
   - enabled: true
-    name: 'Run the queued stack (same as not listing priority)'
+    name: '运行排队堆栈（与不列出优先级相同）'
     priority: 0
 
   - enabled: true
-    name: 'Run the queued stack (same as priority: 0)'
+    name: '运行排队堆栈（与优先级相同：0）'
 
   - enabled: true
-    name: 'Run after the stack, before any lower priority'
+    name: '在堆栈之后、任何较低优先级之前运行'
     priority: -1
 
   - enabled: true
-    name: 'Run after the stack, as the lowest priority, at the very end'
+    name: '在堆栈后面运行，优先级最低，在最后运行'
     priority: -2
 ```
 
-Below represents the basic framework of a Custom Rule:
+以下表示自定义规则的基本框架:
 
 ```yml
 custom-rules:
@@ -135,13 +135,13 @@ custom-rules:
     apply-settings:
 ```
 
-* `- enabled:` - This represents whether the custom rule is enabled or disabled.
-* `priority:` - This value overrides the custom rule's processing order.
-* `name:` - This represents an easy-to-read representation of the Custom Rule for debug purposes.
-* `use-preset:` - This allows you to use a Preset within a Custom Rule.
-* `conditions:`, `strategies:`, and `apply-settings:` - [These are elaborated on further here](#).
+* `- enabled:` - 这表示自定义规则会被启用还是禁用.
+* `priority:` - 该值会覆盖自定义规则的处理顺序.
+* `name:` - 这代表了用于调试目的的自定义规则的易于阅读的表示.
+* `use-preset:` - 这允许您在自定义规则中使用预设.
+* `conditions:`, `strategies:`, 及 `apply-settings:` - [这里有更为详细的说明](#).
 
-Any detail not specifically listed within the custom rule will gather that information from the Default Rule when constructing the final custom rule to apply to an entity. For example:
+在构建应用于实体的最终自定义规则时，自定义规则中未明确列出的任何详细信息都将从默认规则中收集该信息。 例如：
 
 ```yml
 default-rule:
@@ -153,7 +153,7 @@ default-rule:
 
 custom-rules:
   - enabled: true
-    name: 'Disable Passive Entities'
+    name: '禁用被动实体'
     conditions:
       entities:
         allowed-list: ['all_passive_mobs']
@@ -161,12 +161,12 @@ custom-rules:
       maxLevel: 0
 ```
 
-The way the above structure is read, starting from the default rule: All worlds are levellable, and all entities are levellable based on the Default Rule. When the custom rule was crafted, I did not need to specify what world the rule would apply to, since it grabs the value 'all worlds' from the Default Rule. I do however, have to specify the entities, because if I didn't the custom rule would apply to 'all entities' as stated in the Default Rule. Finally, I have applied the level `0` which disables levelling to the passive entities in all worlds.
+上面结构的解读方式，从默认规则开始：所有世界都是等级化的，所有实体都是基于默认规则的等级化的。 制定自定义规则时，我不需要指定规则将应用于哪个世界，因为它从默认规则中获取值“所有世界”。 但是，我必须指定实体，因为如果我不指定，自定义规则将适用于默认规则中所述的“所有实体”。 最后，我应用了级别`0`，它禁用了所有世界中被动实体的等级化。
 
 *** 
 
-> Note: Some config options utilize a custom `MODALLIST` to configure it.  
-> Below demonstrates how to use the MODALLIST feature:
+> 注意：某些配置选项使用自定义`MODALLIST`来配置。  
+> 下面演示如何使用 MODALLIST 功能:
 
 ```yml
   allowed-list: ['']
@@ -176,13 +176,13 @@ The way the above structure is read, starting from the default rule: All worlds 
   merge: true
 ```
 
-The `MODALLIST` config option is fairly simple to read, as they're used exclusively within the Conditions section.
-If a config option requires a `MODALLIST` to be used, such as `entities:` and `worlds:`, then what config option you use will depend on your needs.
+`MODALLIST` 配置选项的阅读相当简单，因为它们仅在条件部分中使用。
+如果配置选项需要使用 `MODALLIST` , 例如 `entities:` 和 `worlds:`, 那么您使用哪个配置选项取决于您的需求。
 
-**Example:** If you want the Condition to check whether an entity is a zombie, you would use the `allowed-list:`, meaning the list will only allow those which you have approved to meet the Condition.
+**示例:** 如果要检查条件是否满足一个实体是僵尸，您将使用 allowed-list:，意味着列表只允许您批准的满足条件的实体。
 
-**Example:** If you want the Condition to apply to all entities, except for the zombie, then you would use `excluded-list:`, meaning the list will use all entities except for those you excluded from meeting the Condition.
+**示例:** 如果您希望条件适用于除僵尸之外的所有实体，那么您可以使用`excluded-list:`, 这意味着该列表将使用除您排除满足条件的实体之外的所有实体。
 
-**Example:** If you want the Condition to apply to the `all_passive_mobs` group, but want to skip the chicken, you would use a combination of `allowed-groups:` and `excluded-list:`, where you would allow all passive entities in the group to meet the Condition, while your `excluded-list:` would be removed before final processing.
+**示例:** 如果要应用于 all_passive_mobs 组，但要跳过鸡，则可以使用 `allowed-groups:` 和 `excluded-list:`,您将允许组中的所有被动实体满足条件，而您的`excluded-list:`将在最终处理之前被删除。
 
-Some `MODALLIST` config options cannot utilize the '-groups' line, as those are limited to Entity and Biome custom or universal groups. If you wish to combine the lists of two different `MODALLIST` from the Default-Rule and a Custom Rule, then simply add a `merge: true` line to the end of the config list to combine the two together.
+某些`MODALLIST`配置选项无法使用'-groups'行，因为这些选项仅限于实体和生物群系自定义或通用组。 如果您希望组合默认规则和自定义规则中两个不同`MODALLIST`的列表，则只需在配置列表的末尾添加`merge: true`行即可将两者组合在一起。

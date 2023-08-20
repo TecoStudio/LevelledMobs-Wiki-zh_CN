@@ -1,10 +1,10 @@
 ```
-This page was last updated for LevelledMobs 3
+此页面最后更新于“生物等级”3
 ```
 
 ***
 
-These links point to the **latest release**'s default config files. The same link will always go to the latest version of the file 😃 
+以下是最新默认配置文件的链接。所有的链接都是该文件的最新版。😃 
 
 * [settings.yml](https://github.com/lokka30/LevelledMobs/blob/master/src/main/resources/settings.yml)
 * [messages.yml](https://github.com/lokka30/LevelledMobs/blob/master/src/main/resources/messages.yml)

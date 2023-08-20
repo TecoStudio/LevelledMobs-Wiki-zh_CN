@@ -1,79 +1,79 @@
 ```
-This page was last updated for LevelledMobs 3.8.2 b720
+本页信息最后更新为“生物等级”插件的3.8.2 b720版本。
 ```
 
 ***
 
-# ⚠️ Read before you install LevelledMobs ⚠️ 
+# ⚠️ 安装“生物等级”插件前请阅读 ⚠️ 
 
-**Make sure your server is [compatible](https://github.com/lokka30/LevelledMobs/wiki/Compatibilities).** We have explained compatibility for Minecraft versions, Java versions, server software, plugins, and so on - read the [Compatibilities](https://github.com/lokka30/LevelledMobs/wiki/Compatibilities) Wiki page, *before* you install LevelledMobs.
+**请确保你的服务器与本插件是[兼容](https://github.com/lokka30/LevelledMobs/wiki/Compatibilities)的。** 在上一个目录里我们已经对我的世界版本、Java版本、服务端类型、插件等内容的[兼容性](https://github.com/lokka30/LevelledMobs/wiki/Compatibilities)作出了解释，在安装之前请务必仔细阅读上一个目录**兼容性Wiki**。
 
 <details>
-<summary>Summary for lazy server owners. 😛</summary>
+<summary>给予懒人服主的结论。😛</summary>
 
-> Make sure you have...
+> 确保你拥有...
 >
-> - `Minecraft 1.16` or newer
-> - `Java 17` or newer
-> - Servers older than MC 1.19 require [`ProtocolLib`](https://www.spigotmc.org/resources/protocollib.1997/) to be installed as well, except for Paper 1.18.
+> - `我的世界1.16版本`或者更高版本。
+> - `Java 17`或者更高版本。
+> - 除了Paper端的1.18版本以外，所有比我的世界1.19版本更低的服务器都需要安装[`ProtocolLib`](https://www.spigotmc.org/resources/protocollib.1997/)。
 
 </details>
 
 ***
 
-# 📖 Installation Instructions
+# 📖 安装说明
 
-Here's how to install LevelledMobs! 😁
+以下是安装“生物等级”插件的方式！ 😁
 
-These instructions are akin to most other plugins - remember to download any dependencies.
+以下说明与其他大多数插件类似，都需要下载`前置依赖`。
 
-- Download [`LevelledMobs`](https://www.spigotmc.org/resources/levelledmobs.74304/).
-- If your server is older than MC 1.19, then download [`ProtocolLib`](https://www.spigotmc.org/resources/protocollib.1997/) in addition to LevelledMobs. Paper servers that are 1.18 or newer do not need ProtocolLib.
-- Copy the downloaded file(s) into your server's `plugins/` directory.
-- If your server is running, shut it down using the `/stop` command.
-- Start your server. This allows LevelledMobs to generate its default configuration files.
-  - Feel free to edit these configuration files in the `plugins/LevelledMobs/` directory to your liking.
-  - If you make any edits, save the file(s) and run `/lm reload` (or restart your server) to apply the changes.
-- All done! We hope you enjoy LevelledMobs! :)
-
-***
-
-# 🧩 Optional Dependencies
-
-The following plugins can be installed at your choice to improve LevelledMobs' functionality. Ensure you get the correct plugin version for your Minecraft version, as the latest versions of some of these plugins don't work with older versions.
-
-- [ProtocolLib](https://www.spigotmc.org/resources/protocollib.1997/) is used to allow 1.16, 1.17, and specifically non-Paper-based 1.18 servers to access packet management code to display labels on mob heads.
-- [WorldGuard](https://dev.bukkit.org/projects/worldguard/) allows you to restrict if levelled mobs can spawn in defined regions of your worlds, and optionally what min/max level they are allowed to have there. Perfect for creating dungeons or special zones in your worlds!
-- [PlaceholderAPI](https://www.spigotmc.org/resources/placeholderapi.6245/) will allow you to use LM placeholders in other PAPI-enabled plugins and will also allow you to use PAPI-enabled plugins in LevelledMobs 3.1+'s player-levelling system.
-- [NBT API](https://www.spigotmc.org/resources/nbt-api.7939/) will allow you to specify NBT data in the custom drops system.
+- 下载[`生物等级`](https://www.spigotmc.org/resources/levelledmobs.74304/)插件。
+- 如果你的服务器版本比1.19更低，那么除了需要下载“生物等级”插件之外，还需要下载[`ProtocolLib`](https://www.spigotmc.org/resources/protocollib.1997/)。如果你的是Paper端的服务器且版本大于或等于1.18，那么不需要下载ProtocolLib。
+- 将已下载的插件复制到服务端下面的`plugins`文件夹内。
+- 如果你的服务器此时正在运行，请在控制台输入`/stop`指令将服务器关闭。
+- 启动服务器，然后本插件将会生成一个默认的配置文件。
+  - 你可以随便编辑在`plugins/LevelledMobs/`路径下的配置文件来满足你的需求。
+  - 如果你更改了配置文件里的内容，请使用`/lm reload`指令重载插件或者重启服务器来应用修改后的配置文件内容。
+- 安装方式已浏览完毕！我们非常希望你能够喜欢“生物等级”插件！ :)
 
 ***
 
-# ⬆️ Updating LevelledMobs
+# 🧩 可选的依赖项
 
-## 🔎 How do I check for updates?
+以下插件你可以随便选择，这些插件会增强或者改善本插件的一些功能，在安装时请确保其他插件的版本和我的世界版本兼容，因为有的插件的最新版本无法在旧版的我的世界里使用。
 
-LevelledMobs usually updates around a week or two after the previous update. However, as LevelledMobs 3 has become a mature plugin, updates may take a month simply as there is no need to release any sooner.
+- [ProtocolLib](https://www.spigotmc.org/resources/protocollib.1997/)：可在1.16和1.17版本中使用，但不能是基于Paper端的1.18服务器，该插件允许使用数据包的管理代码显示生物顶部的标签。
+- [WorldGuard](https://dev.bukkit.org/projects/worldguard/)：允许你设置等级较高的生物是否可以在当前维度的指定区域中生成，以及设置生物拥有的最高/最低等级，这对于你在世界中创建地牢的特殊区域时十分有帮助！
+- [PlaceholderAPI](https://www.spigotmc.org/resources/placeholderapi.6245/)：允许你在其他支持PlaceholderAPI的插件中使用“生物等级”的占位符，允许你在“生物等级”插件的3.1或者更高版本中使用支持PlaceholderAPI的插件。
+- [NBT API](https://www.spigotmc.org/resources/nbt-api.7939/)：允许你在自定义的掉落里使用指定的NBT数据。
 
-We recommend checking the Spigot page at least once a week for any updates and announcements, unless you have a Spigot account which is 'watching' the resource (it's a link below the download button; it is enabled automatically when you download any plugin).
+***
 
-If you do not update LevelledMobs, then as with all software, you will miss out on new features, improvements and bug fixes. In addition, no support is provided to users who choose to use an outdated version. If you have any concerns about updating, please contact our support staff and we will listen to your concerns and advise you accordingly.
+# ⬆️ 更新生物等级插件
 
-## 📖 How do I update LevelledMobs?
+## 🔎 我应该如何检查更新？
 
-> ### Notice: *Before* you update!
-> **Read most of the changelog.** Non-patch updates will almost certainly have important information that you need to understand prior to downloading and installing the updated version. 
+生物等级插件理论来讲一至两周会更新一次，然而由于本插件已经是一种相对完美的插件，每次更新可能会间隔一至两月，因此没有任何必要去提前更新。
 
-> ### Notice: Automatic config migration
-> Unless clearly clarified in the changelog of a particular version, LevelledMobs will automatically make any edits to your configuration to ensure it works with the updated version. Regardless, we rarely make changes to the configuration.
+我们建议你每周都至少在Spigot网站上检查一下，来了解更新内容，除非你在Spigot上已经登录了，如果已经登陆了，那么每次插件更新时都会以信息的方式在信息栏中通知你。
 
-Updating LevelledMobs is identical to updating any other plugin on the platform. Remove the old version, pop in the new, restart. 😉
+如果你不更新生物等级插件的版本，那么你和其他插件一样会错过许多新的功能、错误修复补丁。除此之外，对于使用旧版插件的玩家，我们不会提供任何的帮助。如果你因为其他问题而不得不停止更新插件，请联系我，我们会为你提供疑难解答。
 
-- Download the latest version of [`LevelledMobs`](https://www.spigotmc.org/resources/levelledmobs.74304/).
-- If your server is running, shut it down using the `/stop` command.
-- Delete the existing `.jar` file for LevelledMobs in your server's `plugins/` directory.
-  - This file is named in a similar format to `LevelledMobs-3.4.1_b625.jar`, **ending with `.jar`**.
-  - Do not delete the `plugins/LevelledMobs/` directory, unless you want to reset your configuration entirely.
-- Copy the downloaded file(s) into your server's `plugins/` directory.
-- Start your server.
-- You have now updated LevelledMobs! :)
+## 📖 我应该如何更新插件？
+
+> ### 注意：在你更新*之前*！
+> **查看本插件的更新日志。** 非补丁的更新会有很多的重要信息，你最好在下载和安装之前仔细查看插件的更新日志里的更新内容！
+
+> ### 注意：转移配置！
+> 除非在某些特定版本的更新日志里有说明，否则你在旧版插件的配置文件修改的任何内容都有可能无法在新版插件中使用，虽然我们很少修改配置文件但也请在使用时务必检查配置文件的完整性！
+
+更新生物等级插件和其他插件一样，将旧版本插件删除然后更换为更高版本的插件然后重启服务器即可。 😉
+
+- 下载最新版本的[`生物等级`](https://www.spigotmc.org/resources/levelledmobs.74304/)插件。
+- 如果你的服务器此时正在运行，请在控制台输入`/stop`指令将服务器关闭。
+- 在`plugins/`文件夹内删除“生物等级”插件的`.jar`文件。
+  - 例如：`“LevelledMobs-3.4.1_b625.jar”`，**它们都是以`.jar`** 格式为后缀。
+  - 非必要情况也请不要删除`plugins/LevelledMobs/`目录，否则你想完全重置你的配置文件！
+- 将新下载的插件文件复制到`plugins/`文件夹下。
+- 启动服务器。
+- 此时你已经更新了“生物等级”插件，祝你喜欢这款插件！ :)

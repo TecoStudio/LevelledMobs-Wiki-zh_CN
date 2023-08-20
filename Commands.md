@@ -1,99 +1,106 @@
 ```
-This page was last updated for LevelledMobs 3.2.0 b520
+本页信息最后更新为“生物等级”插件的3.2.0 b520版本。
 ```
 
 ***
 
-The following commands are available for LevelledMobs purposed for administrators to manage the plugin and existing levelled mobs in your worlds.
+以下指令适用于服务器管理员，可让管理员更轻松地管理插件和世界中现有的生物等级属性。
 
 ***
 
-To view the permissions in more depth, please see the Permissions page of this wiki.
+如果想要更加深入的了解权限的说明，请查看本 wiki 的权限页面。
 
 * `/levelledmobs`
-  * Base command of the plugin. Running it without supplying any arguments will return a list of commands you can use.
-  * Requires permission `levelledmobs.command`
+  * 本插件最基础的指令，在不选择任何参数时会在聊天栏显示一个当前可使用的权限列表。
+  * 需要权限：`levelledmobs.command`
 
 # /levelledmobs rules
-  * `force_all`                - forces all mobs to be reevaluated by LevelledMobs
-  * `help_discord`             - shows the link to join Arcane Plugins Discord
-  * `help_wiki`                - shows the link for this wiki
-  * `reset <easy/normal/hard>` - resets the rules.yml with a predefined difficulty
-  * `show_all`                 - shows all rules as configured in rules.yml
-  * `show_effective`           - shows current rules applicable to the mob closest to you
-  * `show_rule <name>`         - shows the specified rule
+  * `force_all`                - 强制让所有生物重新评级
+  * `help_discord`             - 显示加入 Arcane 插件的 Discord 连接
+  * `help_wiki`                - 显示 wiki 的链接
+  * `reset <easy/normal/hard>` - 使用预设的难度重置 rules.yml 文件
+  * `show_all`                 - 显示 rules.yml 文件中的所有规则
+  * `show_effective`           - 显示适合最近生物的现有规则
+  * `show_rule <name>`         - 显示指定规则
 
 # /levelledmobs spawner
 * `/levelledmobs spawner create`
-  * Creates a spawner in your inventory that will only spawn mobs within the specified min and max range.  You'll need to place an egg of the mob you want the spawner to use if you don't specify spawntype in the arguments below.
-  * Arguments.  Use any combination of the following arguments.  Most are optional:
-    * `/minlevel <number>`           - mobs will be spawned with this level as the minimum
-    * `/maxlevel <number>`           - mobs will be spawned with this level as the maximum
-    * `/name <name>`                 - gives the spawner the specified custom name
-    * `/lore <lore>`                 - sets the specified lore. use `\n` for multiple lines
-    * `/nolore`                      - removes the default lore
-    * `/customdropid <id>`           - will use the specified droptableid in customdrops.yml for any mobs spawned from this spawner
-    * `/spawntype <type>`            - sets the spawner's creature type.
-    * `/delay <number>`               - sets the spawner's delay
-    * `/maxnearbyentities <number>`   - sets the maximum number of similar entities that are allowed to be within spawning range of this spawner
-    * `/minspawndelay <number>`       - sets the minimum spawn delay amount (in ticks)
-    * `/maxspawndelay <number>`       - sets the maximum spawn delay amount (in ticks)
-    * `/requiredplayerrange <number>` - sets the maximum distance (squared) a player can be in order for this spawner to be active
-    * `/spawncount <number>`          - sets how many mobs attempt to spawn
-    * `/spawnrange <number>`          - set the new spawn range
-    * `/giveplayer <player>`          - gives the spawner to the specified player
+  * 给予物品栏一个刷怪笼，只会在特定最小和最大区域内生成的生物。如果没有在以下参数中指定刷怪笼的刷怪生物类型，那么你需要对着刷怪笼使用刷怪蛋才能让刷怪笼正常运行。
+  * 参数，使用下列列表中的组合，大多数参数都是可选的：
+    * `/minlevel <数量>`           - 设置生物在刷怪笼中生成时的最低等级
+    * `/maxlevel <数量>`           - 设置生物在刷怪笼中生成时的最高等级
+    * `/name <名称>`                 - 设置刷怪笼的特定自定义名称
+    * `/lore <描述>`                 - 设置描述，可以使用`\n`符号转行
+    * `/nolore`                      - 删除默认的描述
+    * `/customdropid <id>`           - 使用 customdrops.yml 文件内的 droptableid 参数修改该刷怪笼中生成生物的掉落物
+    * `/spawntype <类型>`            - 设置刷怪笼生成的生物类型
+    * `/delay <数量>`               - 设置刷怪笼生成生物的冷却时间
+    * `/maxnearbyentities <数量>`   - 设置刷怪笼在生成该生物时的最大生物数量上限
+    * `/minspawndelay <数量>`       - 设置下一次生成冷却时间的最小随机冷却时间值，单位：Tick
+    * `/maxspawndelay <数量>`       - 设置下一次生成冷却时间的最大随机冷却时间值，单位：Tick
+    * `/requiredplayerrange <数量>` - 设置刷怪笼在刷新生物时需要和玩家的距离
+    * `/spawncount <数量>`          - 设置刷怪笼每次生成生物的数量
+    * `/spawnrange <数量>`          - 设置刷怪笼的生成范围
+    * `/giveplayer <玩家名称>`          - 给予刷怪笼到指定玩家的物品栏中
 
-* `/levelledmobs spawner info` - shows you information about LM spawners by right-clicking on them
-    * run without arguments to show if it is enabled or not.
-    * `on`  - enables spawner info mode
-    * `off` - disables spawner info mode
+* `/levelledmobs spawner info` - 可对“生物等级”插件的刷怪笼右键获取更多信息
+    * 使用时不添加参数可显示是否启用
+    * `on`  - 启用刷怪笼的信息模式
+    * `off` - 关闭刷怪笼的信息模式
 
-* `/levelledmobs spawner copy` - allows you to duplicate a LM spawner by right-clicking on it
-    * run without arguments to show if it is enabled or not.
-    * `on`  - enables spawner copy mode
-    * `off` - disables spawner copy mode
+* `/levelledmobs spawner copy` - 可对“生物等级”插件的刷怪笼右键获来复制该刷怪笼
+    * 使用时不添加参数可显示是否启用
+    * `on`  - 启用刷怪笼的复制模式
+    * `off` - 关闭刷怪笼的复制模式
 
 # /levelledmobs eggs
-  * Arguments.  minlevel, maxlevel and spawntype are required.  The rest are optional.
-    * `/minlevel <number>`           - mobs will be spawned with this level as the minimum
-    * `/maxlevel <number>`           - mobs will be spawned with this level as the maximum
-    * `/name <name>`                 - gives the spawner the specified custom name
-    * `/lore <lore>`                 - sets the specified lore. use `\n` for multiple lines
-    * `/nolore`                      - removes the default lore
-    * `/customdropid <id>`           - will use the specified droptableid in customdrops.yml for any mobs spawned from this spawner
-    * `/spawntype <type>`            - sets the spawner's creature type.
-    * `/giveplayer <player>`          - gives the spawner to the specified player
+  * 参数，其中 minlevel、maxlevel 和 spawntype 是必填项，其他是可选的。
+    * `/minlevel <数量>`           - 设置生物在刷怪蛋中生成时的最低等级
+    
+      `/maxlevel <数量>`           - 设置生物在刷怪蛋中生成时的最高等级
+    
+    * `/name <名称>`                 - 设置刷怪蛋的特定自定义名称
+    
+    * `/lore <描述>`                 - 设置描述，可以使用`\n`符号转行
+    
+    * `/nolore`                      - 删除默认的描述
+    
+    * `/customdropid <id>`           - 使用 customdrops.yml 文件内的 droptableid 参数修改该刷怪笼中生成生物的掉落物
+    
+    * `/spawntype <类型>`            - 设置刷怪蛋生成的生物类型
+    
+    * `/giveplayer <玩家名称>`          - 给予刷怪蛋到指定玩家的物品栏中
 
 # /levelledmobs summon
-  * Similar to Minecraft's `/summon` command, this spawns in a levelled mob of your specification. For example, you can spawn a **Level 1 Zombie** at **Notch**'s location, or 5 blocks above your head.
-  * Requires permissions `levelledmobs.command` and `levelledmobs.command.summon`
-  * Usages (self-explanatory)
-    * `/levelledmobs summon <amount> <entity> <level> here`
-    * `/levelledmobs summon <amount> <entity> <level> atPlayer <player>`
-    * `/levelledmobs summon <amount> <entity> <level> atLocation <x> <y> <z> [world]`
+  * 类似原版的`/summon`指令，使用该指令可以生成指定等级的生物，例如：你可以在玩家**Notch**的位置上生成一只**1级**的僵尸，或者在头顶5格的位置上生成生物。
+  * 需要权限：`levelledmobs.command`和`levelledmobs.command.summon`
+  * 用途：
+    * `/levelledmobs summon <数量> <实体> <等级> here`
+    * `/levelledmobs summon <数量> <实体> <等级> atPlayer <玩家名称>`
+    * `/levelledmobs summon <数量> <实体> <等级> atLocation <x> <y> <z> [world]`
 
 # /levelledmobs kill
-  * Similar to Essentials' `/killall` command, this kills only levelled mobs nearby or all in the world of your specification.
-  * Requires permissions `levelledmobs.command` and `levelledmobs.command.kill`, plus an extra permission for each subcommand found below in the Usages section.
-  * Usages:
+  * 与Essentials插件的`/killall`指令类似，只不过该指令只是杀死附近或者指定维度中具有等级的生物。
+  * 需要权限：`levelledmobs.command`和`levelledmobs.command.kill`，如果和以下子指令搭配可以实现额外的功能。
+  * 使用：
     * `/levelledmobs kill all [world/*]`
-      * This kills all levelled mobs in the sender's world or the specified world. If the `*` character is specified in the world argument, then it will kill all levelled mobs in all worlds loaded on the server.
-      * Requires additional permission `levelledmobs.command.kill.all`
+      * 杀死发送指令时所处维度中具有等级的生物，如果参数修改成了`*`的话则会杀死服务器上所有维度里拥有等级的生物。
+      * 需要额外权限：`levelledmobs.command.kill.all`
     * `/levelledmobs kill near <radius>`
-      * This kills all levelled mobs within the radius of the sender.
-      * Requires additional permission `levelledmobs.command.kill.near`
+      * 杀死发送指令时附近一定范围内具有等级的生物
+      * 需要额外权限：`levelledmobs.command.kill.near`
 
 # /levelledmobs reload
-  * Similar to a lot of plugins' `reload` subcommands, this simply reloads the configuration files from the disk to apply its changes without having to restart your server.
-  * Requires permissions `levelledmobs.command` and `levelledmobs.command.reload`
+  * 和其他插件里的 `reload` 指令类似，只是从服务端重新读取和引用配置文件而不需要重启服务器。
+  * 需要权限：`levelledmobs.command` 和 `levelledmobs.command.reload`
 
 # /levelledmobs debug
-  * This initiates the Debug branch of LevelledMobs. In the future, you will be able to enable and disable Debug options via command instead of through the `settings.yml` file alone.
-  * Check back for updates!
+  * 启用“生物等级”插件的调试模式，在以后你可以通过使用指令来开启或者关闭调试模式，而不仅仅通过修改 `settings.yml` 文件。
+  * 请务必多查看“生物等级”插件的更新内容！
 
 # /levelledmobs info
-  * This subcommand prints information about the version of the plugin installed, including its name, version, author, description, list of supported Minecraft versions and the great code contributors that also made this plugin possible.
+  * 打印目前所有已安装的插件版本信息，例如插件名称、插件版本、插件作者、插件描述、支持的原版版本以及对该插件具有非常大贡献的玩家的信息。
 
 # /levelledmobs compatibility
-  * This subcommand runs the compatibility checker. Simply check the console logs to see if your server may be missing significant features or running an unsupported configuration.
-  * Requires permissions `levelledmobs.command` and `levelledmobs.command.compatibility`
+  * 检查兼容性，检查服务器是否缺少重要功能或者运行了不支持的配置文件。
+  * 需要权限：`levelledmobs.command`和`levelledmobs.command.compatibility`

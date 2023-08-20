@@ -1,15 +1,15 @@
 ```
-This page was last updated for LevelledMobs 3.8.1 b718
+本页最后更新于 LevelledMobs 3.8.1 b718
 ```
 
 ***
 
-# Conditions:
+# 条件:
 
-These represent the many various checks available against an entity before any **Strategies** or **Apply-Settings** are applied.
-**NOTICE**: Your default `rules.yml` file may not include every potential `condition`, `strategy`, or `apply-settings`, so check the wiki regularly for any new updates!
+这些条件表示在应用任何**策略**或**应用设置**之前，针对实体可用的许多不同检查。
+**注意**: 您的默认 `rules.yml` 文件可能不包含每个潜在的 `condition`、`strategy` 或 `apply-settings`，因此请定期查看 wiki 获取任何新的更新信息！
 
-You can refer to the 'last updated' message above to know when this page was last altered. 
+您可以参考上面的'最后更新'消息，了解本页的最后修改时间。
 
 ```yml
 conditions:
@@ -59,30 +59,32 @@ conditions:
     SIMPLE_PETS: false
 ```
 
-|Config Line Option|Description
-|:-:|:---
-|`minLevel:`<br />`maxLevel:`|These particular config options are specifically checking for a level AFTER LM has calculated the level of the entity.<br />**Example:** a transforming entity, such as a zombie villager to a regular zombie; or for applying `use-droptable-id:` to entities based on their level or other conditions within the Rules system rather than the CustomDrops system.
-|`chance:`|This represents the percent chance of a Custom Rule occurring. It will otherwise be skipped.<br />**Example:** setting `chance: 0.5` would result in a 50% chance.
-|`stop-processing:`|This represents a forced stop on the processing of the queued stack of Custom Rules. Once a rule has trigged which contains this config line option, it will prevent any future Custom Rules from being processed.
-|`mob-customname-status:`<br />`mob-tamed-status:`|These config options represent a check against whether an entity has a set CustomName or has been tamed:<br />`NOT_SPECIFIED` - The Default status, essentially not checked or utilized<br />`EITHER` - The entity's CustomName or tamed status does not matter<br />`NAMETAGGED` / `TAMED` - The entity needs to have a CustomName or be tamed<br />`NOT_NAMETAGGED` / `NOT_TAMED` - The entity needs to NOT have a CustomName or NOT be tamed
-|`worlds:`|A `MODALLIST` config option; this represents a check against the world where the entity spawned.
-|`apply-above-y:`<br />`apply-below-y:`|This checks whether the entity is above or below a specific Y coordinate.
-|`world-time-tick:`|A `MODALLIST` config option; this represents a check against the current time of day in the world, represented by ticks. A 24 hour day in Minecraft is represented by a world-tick value between `0-24000`. You can get a [better sense of the time of by by referencing this link](https://minecraft.fandom.com/wiki/Daylight_cycle#24-hour_Minecraft_day).
-|`min-distance-from-spawn:`<br />`max-distance-from-spawn:`|This checks whether the entity is within a specific minimum or maximum distance from the spawn coordinates.
-|`allowed-worldguard-regions:`|A `MODALLIST` config option; this represents a check against the WorldGuard region where the entity spawned.
-|`allowed-worldguard-region-owners:`|A `MODALLIST` config option; this represents a check against the owner list of a WorldGuard region where the entity spawned.
-|`allowed-spawn-reasons:`|A `MODALLIST` config option; this represents a check against possible spawn reason flags.<br />You can reference [the SpigotMC javadocs](https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/event/entity/CreatureSpawnEvent.SpawnReason.html) regarding `CreatureSpawnEvent.SpawnReason` for the different options.
-|`custom-names:`|A `MODALLIST` config option; this represents a check against an entity's CustomName when a level is freshly applied, presuming it has one.
-|`entities:`|A `MODALLIST` config option; this represents the entities which the Custom Rule would apply to.
-|`biomes:`|A `MODALLIST` config option; this represents a check against the biome where the entity spawned.
-|`mythicmobs-internal-names:`|A `MODALLIST` config option; this represents a check against the internal names for MythicMob's custom mobs.<br />**NOTE:** We have experienced several reported issues with establishing compatibility with **MM5** specifically. We are awaiting a solution from the **MM** team. In the meantime, we would recommend sticking with versions of **MM** prior to **5.0.0** until this is resolved.
-|`apply-plugins:`|A `MODALLIST` config option; this represents a check against whether the spawned entity came from an internally supported plugin.
-|`level-plugins:`|Functions in a similar fashion to `apply-plugins:` above, utilizing a different format used in Default Rules for convenience (though they are interchangeable).
-|`scoreboard-tags:`| A `MODALLIST` config option; if a mob contains scoreboard tags, you can use this to include or exclude them.
-|`spawner-names:`| A `MODALLIST` config option; this represents a check against the name of the `LM Spawner` which created the entity.
-|`permission:`|A `MODALLIST` config option; this represents a check against the nearest player to the entity, OR the player who killed an entity, depending on it's implementation. All permissions as registered as `levelledmobs.permission.<node>`, where `<node>` represents the value of this config. For example, if your permission was `levelledmobs.permission.vip`, you would configure it as such: `permission: ['vip']`.
-|`cooldown-duration:`| When configured and the rule is utilized, it will effectively disable the rule until the cooldown time expires.
-|`cooldown-limit:`| When a `cooldown-duration:` is configured, this is the number of times the rule must be executed before it becomes disabled for a time.
-|`within-coordinates:`<br />`start-` `end-`|This system allows you set the `start-` and `end-` coordinates to define a region within your world to apply a rule within. You can just specify a single axis to mark a single point or line; specify two axis to make a square along those two axis; or specify three to make a cuboid region. You can also place `'-'` or `'+'` as the `end-` of any coordinate and it will go from the `start-` value to infinity in the direction specified. Finally, if you specify a `start-` but do not specify an `end-`, then the `end-` will be the same value as the `start-`; and vice versa. 
+|配置行选项|描述|
+|:-:|:-:|
+|`minLevel:`<br />`maxLevel:`|这些特定的配置选项是在 LM 计算实体等级后检查等级的。<br />**示例:** 一个转化实体，比如从僵尸村民变成普通僵尸；或者根据规则系统内的条件，为实体应用 `use-droptable-id:` 而不是 CustomDrops 系统。
+|`chance:`|这代表一个自定义规则发生的几率。否则将被跳过。<br />**示例:** 设置 `chance: 0.5` 将会得到 50% 的几率。
+|`stop-processing:`|这代表一个强制性的停止对排队的自定义规则堆栈进行处理。一旦触发了包含此配置选项的规则，将阻止未来任何自定义规则的处理。
+|`mob-customname-status:`<br />`mob-tamed-status:`|这些配置选项表示实体是否设置了 CustomName 或已被驯服：<br />`NOT_SPECIFIED` - 默认状态，基本上没有被检查或使用<br />`EITHER` - 实体的 CustomName 或驯服状态不重要<br />`NAMETAGGED` / `TAMED` - 实体需要有 CustomName 或已被驯服<br />`NOT_NAMETAGGED` / `NOT_TAMED` - 实体不应该有 CustomName 或未被驯服
+|`worlds:`|一个 `MODALLIST` 配置选项；这代表对实体生成的世界进行检查。
+|`apply-above-y:`<br />`apply-below-y:`|这检查实体是否位于特定的 Y 坐标之上或之下。
+|`world-time-tick:`|一个 `MODALLIST` 配置选项；这代表世界中当前的时间，以刻度表示。Minecraft 中的 24 小时为 `0-24000` 的世界刻度值。您可以通过引用 [此链接](https://minecraft.fandom.com/wiki/Daylight_cycle#24-hour_Minecraft_day) 来更好地了解 Minecraft 的时间。
+|`min-distance-from-spawn:`<br />`max-distance-from-spawn:`|这检查实体是否距离生成坐标的最小或最大距离之内。
+|`allowed-worldguard-regions:`|一个 `MODALLIST` 配置选项；这代表对实体生成的 WorldGuard 区域进行检查。
+|`allowed-worldguard-region-owners:`|一个 `MODALLIST` 配置选项；这代表对实体生成的 WorldGuard 区域的所有者列表进行检查。
+|`allowed-spawn-reasons:`|一个 `MODALLIST` 配置选项；这代表对可能的生成原因标志进行检查。<br />您可以参考 [SpigotMC javadocs](https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/event/entity/CreatureSpawnEvent.SpawnReason.html) 中关于 `CreatureSpawnEvent.SpawnReason` 的不同选项。
+|`custom-names:`|一个 `MODALLIST` 配置选项；这代表当应用等级时，检查实体的 CustomName，假设它有一个。
+|`entities:`|一个 `MODALLIST` 配置选项；这代表应用自定义规则的实体。
+|`biomes:`|一个 `MODALLIST` 配置选项；这代表对实体生成的生物群系进行检查。
+|`mythicmobs-internal-names:`|一个 `MODALLIST` 配置选项；这代表对 MythicMob 自定义怪物的内部名称进行检查。<br />**注意:** 我们在特别与 **MM5** 的兼容性方面遇到了几个问题。我们正在等待 **MM** 团队的解决方案。在解决此问题之前，我们建议继续使用 **5.0.0** 之前的 **MM** 版本。
+|`apply-plugins:`|一个 `MODALLIST` 配置选项；这代表检查生成的实体是否来自于一个内部支持的插件。
+|`level-plugins:`|与上面的 `apply-plugins:` 以类似的方式工作，使用了规则系统中的不同格式，以便于方便使用（尽管它们是可互换的）。
+|`scoreboard-tags:`| 一个 `MODALLIST` 配置选项；如果一个实体包含计分板标
+
+签，您可以使用它来包含或排除它们。
+|`spawner-names:`| 一个 `MODALLIST` 配置选项；这代表对创建实体的 `LM Spawner` 的名称进行检查。
+|`permission:`| 一个 `MODALLIST` 配置选项；这代表对实体最近的玩家，或者杀死实体的玩家的检查，具体取决于它的实现。所有权限都被注册为 `levelledmobs.permission.<node>`，其中 `<node>` 表示此配置的值。例如，如果您的权限是 `levelledmobs.permission.vip`，您将配置为 `permission: ['vip']`。
+|`cooldown-duration:`| 当配置了规则并使用它时，它将在冷却时间过期之前有效地禁用规则。
+|`cooldown-limit:`| 当配置了 `cooldown-duration:` 时，规则必须执行的次数，然后规则在一段时间内被禁用。
+|`within-coordinates:`<br />`start-` `end-`|这个系统允许您设置 `start-` 和 `end-` 坐标，以定义一个要应用规则的世界内区域。您可以只指定一个轴来标记一个点或线；指定两个轴来制作一个沿着这两个轴的正方形；或指定三个轴来制作一个长方体区域。您还可以将 `'-'` 或 `'+'` 作为任何坐标的 `end-`，并且它将从 `start-` 值开始到指定的方向的无限大。最后，如果指定了 `start-` 但未指定 `end-`，则 `end-` 将与 `start-` 值相同；反之亦然。
 
 ***

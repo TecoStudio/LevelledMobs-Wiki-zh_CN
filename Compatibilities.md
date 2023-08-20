@@ -1,30 +1,30 @@
 ```
-This page was last updated for LevelledMobs 3.10.1
+本页信息最后更新为“生物等级”插件的3.10.1版本。
 ```
 
 ***
 
-In this Wiki page, you'll find out if your server is compatible with LevelledMobs.
+在本界面中你可以找到本插件是否与你的服务器兼容的相关信息。
 
-> **Note:** *"Supported"* refers to whether or not the LevelledMobs support staff are willing to help you out with issues with the plugin.
+> **注意：**“支持”的意思是本插件的作者是否愿意去解决你遇到的问题。
 
-> **Note:** *"Compatibility"* refers to what degree the LevelledMobs plugin can run without issues or missing features.
+> **注意：**“兼容性”的意思是与本插件同时加载时不会使其他插件缺少内容或者丢失内容。
 
-# Minecraft Versions
+# 我的世界版本 
 
-**Minecraft versions which are *not* listed in the table below are *not* compatible or supported.**
+**在下列表格中未出现的版本说明与其是不支持或者不兼容的。**
 
-> **Note:** *Not running the latest Minecraft version?* You're missing out on a large pool of potential players, exploit patches, bug fixes, new features, performance improvements, plugin availability, plugin support, and community support. Get updated. ;)
+> 注意：不想升级我的世界版本？那么你会流失大量的玩家，缺少漏洞补丁修复、新功能、性能优化、插件的兼容、社区的支持等内容。 ;)
 
-> **Warning:** `LM v4.0.0`, a future revamp version of LevelledMobs, will require the latest version of MC.
+> **警告：** 本插件的`v4.0.0`版本属于未来的版本，需要升到更高的我的世界版本才能运行。
 
 <table width="100%">
     <tr>
-        <th>MC Version</th>
-        <th>Compatibility</th>
-        <th>Support</th>
-        <th>Minimum Java Ver</th>
-        <th>Comment</th>
+        <th>MC版本</th>
+        <th>兼容性</th>
+        <th>支持</th>
+        <th>最低Java版本</th>
+        <th>备注</th>
     </tr>
     <tr>
         <td>1.18.x, 1.19.x, 1.20.x</td>
@@ -39,7 +39,7 @@ In this Wiki page, you'll find out if your server is compatible with LevelledMob
         <td>🟢</td>
         <td>17</td>
         <td>
-            If you're not running Paper (or a fork/derivative of it), you'll need to install the <a href="https://www.spigotmc.org/resources/protocollib.1997/">ProtocolLib</a> plugin as well.
+            如果你为安装Paper端，或者其分支衍生等，那么你也需要安装<a href="https://www.spigotmc.org/resources/protocollib.1997/">ProtocolLib</a>插件。
         </td>
     </tr>
     <tr>
@@ -48,144 +48,143 @@ In this Wiki page, you'll find out if your server is compatible with LevelledMob
         <td>🟢</td>
         <td>17</td>
         <td>
-            You'll need to install the <a href="https://www.spigotmc.org/resources/protocollib.1997/">ProtocolLib</a> plugin too.
+            在此版本里，你也需要安装<a href="https://www.spigotmc.org/resources/protocollib.1997/">ProtocolLib</a>插件。
             <br/>
-            If your PaperMC server isn't starting due to the Java version, try adding the <code>-DPaper.IgnoreJavaVersion=true</code> flag.
+            如果你的Paper端由于Java版本问题而无法启动，请尝试添加<code>-DPaper.IgnoreJavaVersion=true</code>。
             <br />
-            <i>Our support staff can't assist you with Java version issues.</i>
+            <i>我们的工作人员无法为你解决此类Java问题。</i>
         </td>
     </tr>
 </table>
 
-# Server Software
+# 服务端类型
 
-**Server software which is *not* listed in the table below is *not* supported (nor guaranteed to be compatible).**
+**在下方列表中未出现的服务端类型是不支持的，但也未必兼容。**
 
 <table width="100%">
     <tr>
-        <th>Server Software</th>
-        <th>Compatibility</th>
-        <th>Support</th>
-        <th>Comment</th>
+        <th>服务器类型</th>
+        <th>兼容性</th>
+        <th>支持</th>
+        <th>备注</th>
     </tr>
     <tr>
-        <td>PaperMC</td>
+        <td>Paper</td>
         <td>🟢</td>
         <td>🟢</td>
-        <td>Reference software; recommended</td>
+        <td>非常实用，强烈推荐。</td>
     </tr>
     <tr>
-        <td>PurpurMC</td>
+        <td>Purpur</td>
         <td>🟢</td>
         <td>🟢</td>
         <td></td>
     </tr>
     <tr>
-        <td>SpigotMC</td>
+        <td>Spigot</td>
         <td>🟡</td>
         <td>🟢</td>
         <td>
-            Slightly limited compatibility; some features in LM require <a href="https://papermc.io/">PaperMC</a> (or a derivative/fork).
+            有一定的兼容性限制，但是在本插件中的一些功能需要<a href="https://papermc.io/">Paper</a>端类型或者其分支衍生作品。
         </td>
     </tr>
 </table>
 
-### Do not use 'Hybrid' server software!
+### 不要使用混合类型的服务器类型！
 
-> **Note:** 'Hybrid' server software means that the server software can run Bukkit plugins in addition to Forge/Fabric mods.
+> **注意：** 混合类型指的是服务器既可以运行Bukkit端的插件，也可以加载Forge和Fabric加载器的模组。
 
-Mohist, Arclight, Cauldron, Magma, and so on, are <b>not supported whatsoever</b> by LevelledMobs support staff.
+Mohist、Arclight、Cauldron、Magma等等服务器类型<b>都没有</b>获得来自本插件的工作人员支持。
 
 <details>
-<summary>Why?..</summary>
+<summary>为什么？..</summary>
 
-**The Bukkit API was never written to accommodate mods**, with [all of the hacky methods](https://essentialsx.net/do-not-use-mohist.html) used to try get around this, lots of things get broken in ways which are very difficult for plugin developers to track down. We've come across a handful of server owners with very weird bugs, which were found to be caused by the 'hybrid' server software.
+**因为Bukkit的API都不是为了适配模组而诞生的**，[所有黑客使用的方法](https://essentialsx.net/do-not-use-mohist.html)都是为了绕过该问题，很多内容已经遭到了破坏，这对于插件的开发者来说都是很难追查的。在我们遇到的一些服务器的错误里，大多数的错误都是来自此类混合服务器中。
 
-LevelledMobs is not alone in refusing to support hybrid server software. [Even EssentialsX denounces them.](https://essentialsx.net/do-not-use-mohist.html).
+本插件不是唯一拒绝为混合类服务器提供插件的人，甚至连[EssentialsX](https://essentialsx.net/do-not-use-mohist.html)也谴责过...
 
 </details>
 
-# Java Versions
+# Java版本
 
-If you're running `MC v1.17` or `MC v1.16`, you'll need to install Java 17 (or newer) to run LevelledMobs.
+如果你使用的是`1.16`或者`1.17`版本，那么你需要安装`Java 17`来运行本插件。
 
 
-> **Note:** LevelledMobs support can't help you with managing your Java installations. There are loads of free online tutorials.
+> **注意：** 本插件无法帮助你解决与Java有关的安装问题，因为在互联网上拥有大量且免费的此类教程。
 
-# LevelledMobs Versions
+# 插件版本
 
-We will **only** support users running the **latest** release or dev build of LevelledMobs.
+我们只为使用本插件`最新版本`或者`开发版本`的玩家提供帮助。
 
-By running an outdated version you are not only missing out on features, but also various enhancements such as bug fixes and performance upgrades.
+如果你使用的是旧版本，那么你不仅会错过许多功能或者增加游戏体验的内容，例如：漏洞补丁修复、性能升级等，同时也不会获得本插件的开发人员支持。
 
 <details>
-<summary>But I don't want to update LevelledMobs!</summary>
+<summary>但是我不想更新插件！</summary>
 
-If there is anything that is stopping you from updating, please let us know so we can help you out. Usually, we find these users have invalid or easily resolvable concerns. Reach out to our support staff! :)
+如果有什么问题阻碍了你更新到最新版本，请务必告诉我们开发人员，我们可以为你解决。如果你的问题是无效的或者自己很容易解决的，请别联系我们开发人员。 :)
 
 </details>
 
-# <u>Incompatible</u> Plugins
+# <u>不兼容</u>的插件
 
-<b><u>This does not mean that all of these plugins are <i>fully</i> incompatible... read their descriptions.</u></b>
+<b><u>这并不意味着所有的插件都是<i>完全</i>不兼容的，请务必仔细阅读它们的描述。</u></b>
 
 <table>
     <tr>
-        <th width="15%">Plugin</th>
-        <th width="15%">Severity</th>
-        <th>Description</th>
+        <th width="15%">插件</th>
+        <th width="15%">严重程度</th>
+        <th>描述</th>
     </tr>
     <tr>
         <td>mcMMO</td>
-        <td>🟢 Low</td>
+        <td>🟢 轻微</td>
         <td>
-            mcMMO has a health bar function you'll need to disable. It causes visual issues with LM's nametags.
+            mcMMO有一个生命值系统，你需要禁用它，因为该系统会导致本插件的视觉错误。
         </td>
     </tr>
     <tr>
-        <td>ModelEngine</td>
-        <td>🟡 Medium</td>
+        <td>模型引擎</td>
+        <td>🟡 中等</td>
         <td>
-            LevelledMobs' nametag packets are overridden by ModelEngine, so those mobs will be levelled but they won't have a nametag. We can't solve this on our end.
+            模型引擎插件会覆盖掉本插件的生物铭牌，所以当生物升级时本插件将无法在生物的顶部渲染等级铭牌，我们无法在本插件中解决该问题。
             </br>
-            Community members have helped to build a <a href="https://github.com/ArcanePlugins/LevelledMobs/wiki/Compatibility-%7C-LevelledMobs,-ModelEngine,-and-MythicMobs">work-around solution to this issue</a>.
+            只不过在我们的社区里设立了一个此类问题的<a href="https://github.com/ArcanePlugins/LevelledMobs/wiki/Compatibility-%7C-LevelledMobs,-ModelEngine,-and-MythicMobs">解决方案</a>。
         </td>
     </tr>
     <tr>
-        <td>HoloMobHealth <i>(and any other nametag health bar plugins)</i></td>
-        <td>🟡 Medium</td>
+        <td>全息生物生命值插件 <i>（和其他拥有生命值铭牌的插件）</i></td>
+        <td>🟡 中等</td>
         <td>
-            Just like mcMMO, the health bars cause visual issues with LM's nametags. You'll need to disable the feature or remove that plugin.
+            与mcMMO类似，全息生命值插件会导致本插件的铭牌出现视觉渲染错误，需要在全息生命值插件中禁用该功能或者删除全息生命值插件。
             <br />
-            You may want to consider using a boss bar or action bar health system instead.
+            你也许可以使用BOSS的状态栏或者其他类型的生命值栏来代替。
         </td>
     </tr>
     <tr>
-        <td>Stacker Plugins</td>
-        <td>🔴 Very High</td>
+        <td>堆叠插件</td>
+        <td>🔴 严重</td>
         <td>
-            Stackers cause issues with LevelledMobs unless configured: you need to <b>disable mob stacking</b>
-            in your stacker plugin as these can break LM's name-tags and custom drop system.
+            堆叠插件会导致本插件的渲染出现严重错误，除非禁用<b>生物堆叠</b>，否则此类堆叠插件会破坏本插件的名称标签和自定义的掉落系统。
         </td>
     </tr>
     <tr>
-        <td>PerWorldPlugins</td>
-        <td>🔴 Very High</td>
+        <td>每个世界插件</td>
+        <td>🔴 严重</td>
         <td>
-            PerWorldPlugins breaks a *ton* of plugins, including LevelledMobs.
+            世界类插件破坏了大量的插件，包括本插件。
             <br />
-            LevelledMobs has per-world functionality via the Rules System, it is entirely pointless to use PerWorldPlugins for LevelledMobs.
+            本插件通过规则获得了与世界插件一样的功能，因此为了本插件而去使用世界插件是没有意义的。
             <br />
-            You can run PWP and LM together on a server, just do not use PWP to manage the LevelledMobs plugin.
+            你可以自己在服务器上运行世界插件和本插件，但请不要使用世界插件来管理本插件。
         </td>
     </tr>
 </table>
 
 ***
 
-# <u>Compatible</u> (and integrated) plugins
+# <u>兼容</u>（和集成）插件
 
-### We provide an integration for these plugins:
+### 我们为以下插件提供了一个集成：
 
 - `MythicMobs`
 - `InfernalMobs`
@@ -196,9 +195,9 @@ If there is anything that is stopping you from updating, please let us know so w
 - `EcoBosses`
 - `SimplePets`
 
-Most of these integrations exist so that LevelledMobs, by default, won't make mobs from those plugins become levelled ones.
+有了这些集成插件的存在，可以在默认情况下使本插件不会让这些集成插件里的生物获得等级属性。
 
-### Plugins which provide an integration for LM:
+### 为本插件提供集成的插件：
 
-- [`MobHunting`](http://www.spigotmc.org/resources/mobhunting.3582/): earn more money from killing higher level mobs
-- [`Money From Mobs`](https://www.spigotmc.org/resources/money-from-mobs-1-12-1-17.79137/): earn more money from killing higher level mobs
+- [`MobHunting`](http://www.spigotmc.org/resources/mobhunting.3582/)：通过击杀更高等级的生物可获得更多的钱。
+- [`Money From Mobs`](https://www.spigotmc.org/resources/money-from-mobs-1-12-1-17.79137/)：通过击杀更高等级的生物可获得更多的钱。

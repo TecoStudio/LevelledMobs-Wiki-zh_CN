@@ -1,20 +1,20 @@
 ```
-This page was last updated for LevelledMobs 3.1.0 b472
+此页面最后更新于3.10.0 b752版本
 ```
 
 ***
 
-# Players & Servers Graph
+# 玩家和服务器
 ![bStats Graph: players & servers on LevelledMobs over time](https://bstats.org/signatures/bukkit/LevelledMobs.svg)
 
-# Notice
-We use bStats to gather very basic information about servers running LM, all of which is publicly visible [here](https://bstats.org/plugin/bukkit/LevelledMobs/6269).
+# 告示
+我们使用bStats收集服务器运行LM的基础信息，所有收集的[信息](https://bstats.org/plugin/bukkit/LevelledMobs/6269)都是公开的。
 
-None of the information is sensitive in the slightest, as we value your privacy. **All** of it is publicly visible, and it is most likely that you would be completely fine at telling a random person the information you contribute to our bStats page. Java version, LM version, server country, Minecraft version, and so on.
+我们非常重视使用者隐私，因此所有收集的信息不会存在敏感内容。所有的信息都是公开可见的，您可以放心地向一个陌生人透露您为我们的bState网页做出的贡献。 Java版本、LM版本、服务器所在国家、我的世界版本等等。
 
-No individual server can be siphoned for information as each server contributes to a single pool of data, among thousands of other servers. We're just interested in very broad, simple statistics, and bStats does exactly that for us.
+片面的数据对我们提供不了任何的帮助，只有成千上万的使用者提供的全面数据才能为我们提供帮助。因此，我们只对于简单、广泛的数据感兴趣，而bState非常好的满足了我们的需求。
 
-We use these metrics to guide our development direction, as these usually help us make decisions without having to manually survey users.
+我们使用这些数据来帮助我们确定开发方向，因为通过这种方式可以让我们在不通过调查问卷的方式来了解用户的情况下做出决策。
 
-# How to opt-out
-If you wish to not send your metrics then you may edit the `/plugins/bStats/config.yml` file appropriately and restart your server.
+# 不提供数据
+如果您不想向我们提供您的服务器数据，您可以正确地编辑`/plugins/bStats/config.yml`文件并重启您的服务器。

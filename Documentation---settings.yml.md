@@ -1,96 +1,100 @@
 ```
-This page was last updated for LevelledMobs 3.9.3 b735
+本页信息最后更新为“生物等级”插件的3.9.3 b735版本。
 ```
 
 ---
 
-# Should LM stop sending packets if an entity has died?
+# 如果实体已死亡，插件应该停止发送数据包吗？
 
 ```yaml
 assert-entity-validity-with-nametag-packets: true
 ```
 
-* `true` - Once an entity has reached zero health, packets for that entity will no longer be sent.
+* `true` - 如果实体的生命值达到了0，那么与该实体有关的数据包将不再会发送。
 
-* `false` - Once an entity has reached zero health, LM may send extra packets to try make sure the entity's nametag data (such as their health) is accurate.
+* `false` - 如果实体的生命值达到了0，那么插件有可能会发送额外的数据包来尝试保持该实体的生命值铭牌等数据是准确的。
 
-This setting attempts to fix a compatibility issue with ViaBackwards where VB detects LM sending name tag packets of entities which are dead.  
+添加该设置是因为会尝试修复与ViaBackwards的兼容，默认情况下，ViaBackwards会检测到“生物等级”插件实体死亡时的名称标签数据。
 
-It is not recommended that you change this setting unless you understand exactly what you are doing.
+我不建议你更改此项设置，除非你知道你在做什么。
+
 
 <br /><br />
 
-# Automatic Asynchronous Nametag and Level Updater
+# 自动同步异步名称标签和等级
 
 ```yaml
 async-task-update-period: 6
 async-task-max-blocks-from-player: 100
 ```
 
-This setting will check the the area within X blocks of a player, where X is the `async-task-max-blocks-from-player:`, for any entities which should have been levelled, LM nametagged, or are missing attributes for whatever reason.  
+该选项可以检查玩家附近X格以内的生物是否应该拥有等级、生物铭牌或者某个缺少的属性，其中X是`async-task-max-blocks-from-player:`。
 
-The `async-task-update-period:` is counted in seconds.
+其中，`async-task-update-period:`选项的单位是秒。
+
 
 <br /><br />
 
-# Customize Summon Command Limit
+# 自定义`command`指令限制
 
 ```yaml
 customize-summon-command-limit: 10
 ```
 
-This setting will forcibly limit the number of entities which can be summoned with LM's `/lm summon` command per use.
+该选项的目的是限制使用`/lm summon`指令时的召唤实体的数量上限。
 
-This is used to help prevent any accidents or overloading your server with countless entity summons.
+防止因为意外地让召唤数量过多而让服务器崩溃或者溢出。
+
 
 <br /><br />
 
-# Head Drop Multiplier
+# 头颅掉落倍率
 
 ```yaml
 mobs-multiply-head-drops: false
 ```
 
-* `true` - Mob head item drops **will not** be multiplied if they otherwise would be.
-* `false` - Mob head item drops **will** be multiplied as if they were any other material drop.
+* `true` - 生物头颅的掉落概率**不会**增加。
+* `false` - 生物头颅的掉落概率**会**因为其他原因而增加，例如：抢夺附魔。
 
-On some servers, heads are considered too valuable of a resource to be multiplied alongside the other drops of an entity. This setting allows you to decide whether you want to allow these drops to multiply alongside everything else that would have dropped.
+在有的服务器里，头颅会被视作为珍惜资源，不能与该实体的其他掉落物相提并论。这个设置是允许你决定这些头颅类的掉落物是否可以跟其他掉落物一样受到不同的可以增加掉落物数量的东西影响。
 
 <br /><br />
 
-# Customize Command Drop Limiters
+# 自定义掉落指令限制
 
 ```yaml
 customcommand-amount-limit: 100
 ```
 
-This helps to prevent any accidental crashes through an entity running more commands than your server can handle upon death. This will set a hard-limit on any custom commands dropped through the Custom Drops system, overriding any set `amount:` which is above this value.
+这有助于防止服务器的意外崩溃，因为有的实体在死亡时可能执行的指令数量可能会超过服务器的上限，从而造成服务器的崩溃。使用该选项可以通过本插件的自定义掉落系统来为掉落物设置一个强制的限制，防止指令的`数量`上限超过该数值。
+
 
 <br /><br />
 
-# Mob Processing Delay
+# 生物处理延迟
 
 ```yaml
 mob-process-delay: 0
 ```
 
-This will add an additional amount of delay, counted in ticks, before LM begins to process the entity. Adding delay is only useful in situations where other plugins need time to process before LM applies any values.
+设置“生物等级”插件在执行为生物给予等级或者其他操作时的处理延迟，单位是tick。增加延迟只是为了给予其他插件更高的优先级，防止可能会造成的冲突。
 
-It is not recommended that you change this setting.
+我不建议你更改此项设置，除非你知道你在做什么。
 
 <br /><br />
 
-# Summon Command Spawn-Distance-from-Player
+# 召唤指令 - 与玩家的距离
 
 ```yaml
 summon-command-spawn-distance-from-player: 5
 ```
 
-This will determine how far away from a player an entity will spawn when you utilize `/lm summon <quantity> <entity> <level> here`.
+当使用`/lm summon <数量> <实体> <等级> here`指令时，设置生物在召唤时会在距离玩家多远的位置上生成。
 
 <br /><br />
 
-# Kill-Skip Conditions
+# kill指令忽略实体
 
 ```yaml
 kill-skip-conditions:
@@ -100,124 +104,126 @@ kill-skip-conditions:
   convertingZombieVillager: true
 ```
 
-For each kill-skip condition above:
+对于kill指令的实体忽略：
 
-* `true` - Entities under that condition **will** be skipped during LM's kill command.
-* `false` - Entities under that condition **will not** be skipped during LM's kill command.
+* `true` - 当实体受到来自“生物等级”插件里的kill指令时**会**被忽略。
+* `false` - 当实体受到来自“生物等级”插件里的kill指令时**不会**被忽略。
 
-These will specify what entities are skipped when you utilize `/lm kill`.
+设置当你使用`/lm kill`指令时可以忽略哪些实体。
 
-This is useful to prevent any pets or other unintended entity deaths.
+防止对宠物或者其他类型的实体造成不必要的麻烦。
 
-It is recommended that you do not adjust these settings without knowing what you are doing.
+我不建议你更改此项设置，除非你知道你在做什么。
+
 
 <br /><br />
 
-# Use Translation Components
+# 使用翻译组件
 
 ```yaml
 use-translation-components: true
 ```
 
-* `true` - Any default entity names will be displayed to the player in the native language used in the players' client.
-* `false` - Some older and customized clients do not support this feature, so you may disable this if your servers' environment requires this circumvention. 
+* `true` - 任何默认名称的实体都会根据玩家客户端上的语言来显示。
+* `false` - 在一些旧版本和定制的客户端上不支持该功能，所以如果你的服务器的环境不需要让玩家使用客户端的语言切换实体名称，那么请禁用该功能。 
 
-This system provides a quality of life mechanism and should be enabled in most situations; this feature does not exist in older Minecraft clients and some customized clients, and can result in broken names being displayed to the player. Should your server necessitate this kind of circumvention, then by disabling this feature you are instead referencing an internal table of English names. You can still modify the name of entities via the `apply-setting: entity-name-override:` feature of the `rules.yml`.
+在这个系统中提供了一种可以更改语言的机制，大多数情况下都应该将这个功能设置为启用。在一些旧版本和定制的客户端上可能会破坏名称的显示方式，如果你不需要这个功能，请禁用它。你可以参考应该英文名称列表，但是你也依旧可以通过`rules.yml`文件的`apply-setting: entity-name-override:`功能来修改实体的名称。
+
 
 <br /><br />
 
-# Verify Entities on Chunk Load
+# 检测已加载区块的实体
 
 ```yaml
 ensure-mobs-are-levelled-on-chunk-load: true
 ```
 
-* `true` - Loaded chunks nearby players will be checked for any entities which are missing a level which should not be.
-* `false` - Entities which were not levelled for whatever reason will not be double-checked.
+* `true` - 靠近玩家的那个区块会检测是否有实体拥有本不该属于该实体的等级。
+* `false` - 任何实体都不会被重复检测。
 
-This system acts like a janitor, checking loaded chunks nearby players for any entities which should be levelled and are not.
+这个功能就类似看门的一样，可以检测附近玩家已加载的区块中是否存在那些应该拥有更高等级的实体而现在却拥有更低等级。
 
-It is recommended that you do not change this setting if you do not understand its effects.
+如果你不了解这个功能，请不要修改它。
 
 <br /><br />
 
-# Attributes Use Preset Base-Values
+# 使用属性预设的基础值
 
 ```yaml
 attributes-use-preset-base-values: false
 ```
 
-* `true` - Use the static, predefined entity attribute values.
-* `false` - Collect the attributes from the spawned entity itself.
+* `true` - 使用预设的属性默认值。
+* `false` - 使用被生成实体中生成的默认属性值。
 
-In LM v2, we used a static file to generate the entity attributes. This helped to eliminate compatibility issues that existed at the time. Since then, we have significantly changed how attributes are gathered and modified. With that in mind, we decided to offer the static file as a backup solution in case future issues arise. It is not recommended that you alter this setting.
+在“生物等级”的v2版本中，我们会使用一个静态文件内的属性来生成实体，可以解决部分存在的兼容性问题。从此版本开始，我们已经修改了属性的生成和修改方式，因为考虑到种种情况，所以我们设置了一个存放属性的文件来备份这种情况，如果你不知道你在做什么，我们不建议你来更改此选项。
 
 <br /><br />
 
-# Use 'CustomName' for Entity Nametags
+# 实体名称使用“CustomName”
 
 ```yaml
 use-customname-for-mob-nametags: false
 ```
 
-* `true` - Use the entity's `CustomName` field for the LM nametag.
-* `false` - Fake LM's nametag using packets through the ProtocolLib plugin.
+* `true` - 实体使用`CustomName`名称标签。
+* `false` - 通过ProtocolLib插件使用数据包来修改“生物等级”插件的生物铭牌。
 
-Prior to LM v2, we used the **real** nametag associated with entities when applying the LM nametag. This caused conflicts with other plugins, and was overriden when players put name tags on mobs.
+在“生物等级”插件的v2版本之前，我们在为实体生成铭牌时使用的是与**真实实体**相关的内容，这导致与其他插件冲突，并且当玩家在给生物使用命名牌的时候会被覆盖。
 
-Since LM v2, we now fake the effect using packets through the ProtocolLib plugin. It factors in players using nametags and such.
+在“生物等级”插件的v2版本之后，我们通过ProtocolLib插件的数据包来为生物生成铭牌，因为该插件考虑到了玩家的不同名称标签等因素。
 
-As a backup solution we have this config which allows you to revert to a very similar process which LM v1 used to process nametags. It is not recommended that you alter this setting.
+作为一个备用方案，我们添加了该设置，以便你随时将它们恢复成之前的那种形式，即使用“生物等级”插件的v1版本的格式，我们不建议更改此选项，因为。
 
-**This setting is irreversible!**
+**此选项一旦更改将不可逆！！！**
 
 <br /><br />
 
-# Level Entities on Spawn
+# 生成生物时获得等级
 
 ```yaml
 level-mobs-upon-spawn: true
 ```
 
-* `true` - Once an entity has been spawned into the world, LM will immediately attempt to apply a level to the entity.
-* `false` - Entities will not receive a level until they either take damage from a player or have targeted a player.
+* `true` - 当生物在生成在世界中时，“生物等级”插件会立即给予该生物一个等级。
+* `false` - 实体在受到玩家伤害和进攻玩家之前不会获得任何等级。
 
 <br /><br />
 
-# Chunk Kill Count System
+# 区块击杀统计
 
 ```yaml
 exceed-kill-in-chunk-message: true
 ```
 
-* `true` - When the chunk kill count system is enabled and reaches the threshold for max deaths a chunk, a message will be sent to the player that killed the mob.
-* `false` - No messages will be sent to any players for the chunk kill count system.
+* `true` - 当目前的区块生物的死亡数量达到区块上限时，将会向击杀生物的玩家发送一条信息。
+* `false` - 不会向任何玩家发送当前区块生物的死亡数量达到上限的任何信息。
 
 <br /><br />
 
-# Player Levelling Strategy Settings
+# 玩家等级策略
 
 ```yaml
 player-levelling-relevel-min-time: 5000
 ```
 
-`player-levelling-relevel-min-time:` represents the time, in milliseconds, before an entity is updated against the nearest player. Setting this to `0` will prevent any relevelling. 
+`player-levelling-relevel-min-time:`的意思是在实体被更新为距离其最近玩家的时间，单位是毫秒，将该值设置为`0`可阻止任何的等级分配。
 
-These settings revolve around the levelling strategy known as **Player Levelling**.
+该设置是围绕**玩家等级**策略系统而制作的。
 
 <br /><br />
 
-# Nametag Placeholder Distance
+# 名称标签占位符距离
 
 ```yaml
 nametag-placeholder-maxblocks: 30
 ```
 
-`nametag-placeholder-maxblocks:` represents the the maximum distance from the player an entity can be to be registered under `%levelledmobs_mob-target%`.
+`nametag-placeholder-maxblocks:`的意思是设置实体在`%levelledmobs_mob-target%`下与玩家的渲染距离。
 
 <br /><br />
 
-# Updates and Debug Settings
+# 更新和调试模式
 
 ```yaml
 use-update-checker: true
@@ -226,10 +232,10 @@ debug-misc: [ '' ]
 file-version: 30
 ```
 
-`use-update-checker:` When set to `true`, this will notify you once at server startup whether you have an up-to-date version of LM.
+`use-update-checker:`如果设置为`true`，那么在服务器启动时会对拥有管理器权限的玩家通知“生物等级”插件是否有最新版本。
 
-`debug-entity-damage:` When set to `true`, this will display detailed attribute information in-game when you hit an entity.
+`debug-entity-damage:`如果设置为`true`，那么当你攻击实体时会在游戏中显示该实体的详细属性信息。
 
-`debug-misc:` Refer to [settings.yml/Debug-Misc](https://github.com/lokka30/LevelledMobs/wiki/Documentation---Debug-Misc) for further details.
+`debug-misc:`更多内容请在[settings.yml/Debug-Misc](https://github.com/lokka30/LevelledMobs/wiki/Documentation---Debug-Misc)中查看。
 
-`file-version:` This value represents the config processing version. Do not alter this value, or you may break your plugin and configs.
+`file-version:`代表的是配置文件的版本，如果你不知道你在做什么请不要更改该数值，否则有可能会损坏你的插件和配置文件。

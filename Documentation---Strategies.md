@@ -1,14 +1,14 @@
 ```
-This page was last updated for LevelledMobs 3.10.1 b759
+本页最后更新于 LevelledMobs 3.10.1 b759
 ```
 
 ***
 
-# Strategies:
+# 策略：
 
-> ## Distance from Spawn Levelling & Blended Levelling
-> This strategy describes 'Distance from Spawn' and 'Blended' Levelling.
-> 
+> ## 生成点距离等级化和混合等级化
+> 该策略描述了'生成点距离'和'混合'等级化。
+>
 > ```yml
 > strategies:
 >   distance-from-spawn:
@@ -24,27 +24,27 @@ This page was last updated for LevelledMobs 3.10.1 b759
 >       multiplier-period: 10
 >       scale-downward: true
 > ```
-> ### Here are the formulae used when calculating the Blended Levelling value.<br />The 'postResult' is the final result applied to the entity.<br />
+> ### 下面是计算混合等级化值时使用的公式。<br /> 'postResult' 是应用于实体的最终结果。<br />
 > preResult = (((( transition-y-height: - entityYCoordinate ) / multiplier-period: ) x lvl-multipler: ) x distanceFromSpawnLevel )<br />
 > postResult = ( round( preResult ) + distanceFromSpawnLevel )
 
-|Config Line Option|Description
+|配置行选项|描述
 |:-:|:---
-|`distance-from-spawn:`|This enables the levelling system.
-|`increase-level-distance:`|This represents the number of blocks before the next level increase occurs.
-|`start-distance:`|This represents the number of blocks from spawn before the `increase-level-distance:` begins counting.
-|`spawn-location:`  `x:`  `z:`|This allows you to adjust the 'spawn' location which LM utilizes for this feature.<br />By leaving it as `default`, it will use your world's set spawn coordinates. You can change this by adjusting the X and Z coordinates.
-|`blended-levelling:`  `enabled:`|This system represents the start of the **Blended Levelling** addon to **Distance from Spawn** levelling. This is not it's own levelling system, but rather an attachment to the Distance from Spawn system. When this is enabled, it will continue to use your Distance from Spawn levelling for any entities spawned at `transition-y-height:`.<br />Based on the default settings, any entities which spawn at a higher Y-Coordinate will have their level decrease, while those spawned further underground will increase in level, in relation to the current Spawn Distance level.
-|`transition-y-height:`|This represents the Y-coordinate where Spawn Distance Levelling would apply exactly, and where the transition line between a level increase or decrease trend would occur.
-|`lvl-multiplier:`|This represents the multiplier applied to the expected Spawn Distance level, applied exponentially every `multiplier-period:` in both directions from the `transition-y-height:`. If the `multiplier-period:` is low, or the `lvl-multiplier:` is high, then entities will increase or decrease in levels at faster rates as you go further from spawn and the multiplier continues to multiply.
-|`multiplier-period:`|This represents the number of blocks from the `transition-y-height:` before a `lvl-multiplier:` is applied.
-|`scale-downward:`|This setting will determine in what direction the levels would increase from the `transition-y-height:`. When set to `true`, any entity spawned below this transition line will have a positive level multiplier applied, while those above the transition will have a negative multiplier. If this is set to false, then the reverse is true.
+|`distance-from-spawn:`|启用等级化系统。
+|`increase-level-distance:`|代表下一级增加发生之前的方块数。
+|`start-distance:`|这表示在`increase-level-distance：`开始计数之前从生成的方块数。
+|`spawn-location:`  `x:`  `z:`|这允许您调整 LM 用于此功能的“生成”位置。<br />通过将其保留为'default'，它将使用您的世界设置的生成坐标。 您可以通过调整 X 和 Z 坐标来更改此设置。
+|`blended-levelling:`  `enabled:`|这个系统表示了**混合等级化**插件与**生成点距离**等级化之间的关联。这不是独立的等级化系统，而是附加到生成点距离系统的功能。启用此功能时，它将继续使用您的生成点距离等级化系统，适用于在`transition-y-height:`产生的任何实体。<br />根据默认设置，任何在较高的Y坐标处生成的实体会将其等级减少，而那些在地下更远的地方生成的等级会根据当前的生成距离等级而增加。
+|`transition-y-height:`|表示生成点距离等级化会准确应用的Y坐标，也是级别增加或减少趋势的过渡线。
+|`lvl-multiplier:`|表示应用于预期生成点距离级别的乘数，每隔`multiplier-period:`以指数方式在`transition-y-height:`两侧应用。如果`multiplier-period:`很低，或者`lvl-multiplier:`很高，那么随着远离生成点，乘数将继续进行乘法运算，实体的等级将以更快的速度增加或减少。
+|`multiplier-period:`|表示距离`transition-y-height:`多少方块才应用一个`lvl-multiplier:`。
+|`scale-downward:`|此设置将确定从`transition-y-height:`方向上增加等级。当设置为`true`时，任何在此过渡线以下生成的实体都将应用正等级乘数，而在过渡线以上生成的实体将应用负乘数。如果设置为false，则情况相反。
 
 ***
 
-> ## Y-Coordinate Levelling
-> This strategy enables 'Y-Coordinate' Levelling.
-> 
+> ## Y坐标等级化
+> 此策略启用了'Y坐标'等级化。
+
 > ```yml
 > strategies:
 >   y-coordinate:
@@ -53,17 +53,17 @@ This page was last updated for LevelledMobs 3.10.1 b759
 >     period: 0
 > ```
 
-|Config Line Option|Description
+|配置行选项|描述
 |:-:|:---
-|`y-coordinate:`|This enables the levelling system.
-|`start:`|This represents the starting Y-Coordinate; where entities are the lowest level.
-|`end:`|This represents the ending Y-Coordinate; where entities are the highest level.
-|`period:`|Any value in this position other than `0` will override the 'end:' config option. It will instead count the number of blocks in increments of this value beginning from the 'start:' Y-Coordinate, increasing the mobs' level every 'period:' of blocks in the direction of the void.
+|`y-coordinate:`|这将启用等级化系统。
+|`start:`|这表示起始Y坐标，实体的最低等级在此处。
+|`end:`|这表示结束的Y坐标，实体的最高等级在此处。
+|`period:`|除了`0`之外的任何值都将覆盖 'end:' 配置选项。相反，它将从 'start:' Y坐标开始，每次增加 'period:' 个方块的数量，朝着虚空方向的每个 'period:' 方块逐渐增加实体的等级。
 
 ***
 
-> ## Weighted-Random Levelling
-> This strategy enables 'Weighted Random' Levelling.
+> ## 加权随机等级化
+> 此策略启用了'加权随机'等级化。
 > 
 > ```yml
 > strategies:
@@ -77,20 +77,18 @@ This page was last updated for LevelledMobs 3.10.1 b759
 >     9-10: 1
 >     lvl-lvl: chance
 > ```
-> **Example:** You may simply set `weighted-random: true` and it will use the `minLevel:` and `maxLevel:` to generate a weighted random, where the lowest levels are the most likely to appear, while the highest are least likely.
-> 
-> **Example:** The above weighted random will generate a list of numbers, using the 'weight' value listed on the right to increase or decrease the chance of the level being randomly selected.<br />1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 6, 6, 6, 7, 7, 8, 8, 9, 10
+> **示例：** 您可以简单地设置 `weighted-random: true`，它将使用 `minLevel:` 和 `maxLevel:` 生成加权随机，其中最低级别最有可能出现，而最高级别最不可能出现。
+>
+> **示例：** 上面的加权随机将生成一个数字列表，使用右侧列出的'weight'值来增加或减少随机选择级别的机会。<br />1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 6, 6, 6, 7, 7, 8, 8, 9, 10
 
-|Config Line Option|Description
+|配置行选项|描述
 |:-:|:---
-|`weighted-random:`|This enables the levelling system. If `weighted-random: true` is used, do not set any custom tiers.
-|`lvl-lvl`|These represent the level ranges which will have their own weights applied.
-|`chance`|These represent the chance of the preceding level range being used to apply a level. The lower the number, the least likely, when compared to the others.
+|`weighted-random:`|这将启用等级化系统。 如果使用 `weighted-random: true`，请不要设置任何自定义等级。
+|`lvl-lvl`|这些代表将应用其自身权重的级别范围。
+|`chance`|这些代表使用前面级别范围应用级别的机会。 数字越小，与其他级别相比，越不可能出现。
 
-***
-
-> ## True Random Levelling / Lower Level Bias Factor
-> This strategy enables 'True Random' Levelling.
+> ## 真随机等级化 / 低级别偏差因子
+> 此策略启用了'真随机'等级化。
 > 
 > ```yml
 > strategies:
@@ -98,20 +96,20 @@ This page was last updated for LevelledMobs 3.10.1 b759
 >   lower-mob-level-bias-factor: 5
 > ```
 
-|Config Line Option|Description
+|配置行选项|描述
 |:-:|:---
-|`random:`|This enables the levelling system.
-|`lower-mob-level-bias-factor:`|These will apply a similar effect to the weighted random levelling strategy, but with far less control. The only applicable values here are `0-9`.
+|`random:`|这将启用等级化系统。
+|`lower-mob-level-bias-factor:`|这些将应用类似于加权随机等级化策略的效果，但控制较少。 这里唯一适用的值是`0-9`。
 
 ***
 
-# Strategy Modifications:
+# 策略修改：
 
-> ## Player Variable Modifier
-> This level modifier has special settings located within the `settings.yml` file.
-[Check here for details](https://github.com/lokka30/LevelledMobs/wiki/Documentation---settings.yml#player-levelling-strategy-settings)!<br />By default, entities will update every five seconds based on the nearest player within 250 RAYTRACED distance.
+> ## 玩家变量修改器
+> 此等级修改器具有位于 `settings.yml` 文件中的特殊设置。
+[在此处查看详细信息](https://github.com/lokka30/LevelledMobs/wiki/Documentation---settings.yml#player-levelling-strategy-settings)!<br />默认情况下，实体将根据250光线追踪距离内的最近玩家每五秒更新一次。
 > 
-> This strategy enables 'Player Variable Level Modification'.
+> 此策略启用了'玩家变量等级修改'。
 > 
 > ```yml
 > strategies:
@@ -133,30 +131,28 @@ This page was last updated for LevelledMobs 3.10.1 b759
 >     variable: '%level%'
 > ```
 
-|Config Line Option|Description
+|配置行选项|描述
 |:-:|:---
-|`player-levelling:`|This enables the c. When enabled, this will change the entity levels based on a specified variable from the nearest player.
-|`match-level:`|This will cause the entity to use a randomly selected value between 1 and the current `variable:` value of that player.<br />**Example:** While using `%level%`, if I am LVL 30, all entities that adjust their level based on my own will be a randomly selected value between `1-30`.<br>NOTE: When set to true, tiers are not utilized
-|`use-player-max-level:`|This will cause the entity to match the current `variable:` value of that player.<br />**Example:** While using `%level%`, if I am LVL 30, all entities that adjust their level based on my own will be `30`.<br>NOTE: When set to true, tiers are not utilized
-|`player-level-scale:`|This will adjust the value produced by the `variable:`, multiplying the variable by this value. This is useful for exceptionally large numbers which can be scaled down with a smaller value, or very small numbers which can be scaled upwards.
-|`level-cap:`|This sets a hard limit on how high an entity can achieve using this `Player Variable Level Modifier`. This is useful to prevent entities outside of an approved range.
-|`decrease-level:`|This setting, when set to `false`, will prevent entities from receiving a level lower than any previously applied by Player Levelling. The entity will continue to potentially be relevelled, however if the newly generated level is lower than the current level, then the change is dropped.
-|`recheck-players:`|When set to `true`, this setting will recheck the last player to update an entity, rather than skip that player as it would do normally.
-|`preserve-entity:`|This setting will prevent an entity from updating via Player Levelling if it has received damage in the last X time, defaulted to `10s`.
-|`enabled:`|You can enable or disable player levelling with this option. Defaults to true.
-|`merge:`|If you define multiple rules using player levelling then only the last one will be used. If you set merge to true then the tiers will be added together and some options can be merged together.
-|`tiers:`|This represents the logic behind how this system applies levels to entities. The values on the left, marked as `v1` and `v2` in the config above, represent the min and max range of whatever value is listed in the `variable:` config.<br />**Example:** While using `%level%`, if the player was LVL 10, then it would fit within the first variable range of `1-15`, which means it will then apply a random level between the values on the right, marked as `lvl-lvl`.
-|`variable:`|This can be one of LevelledMob's built-in variables or represents any dynamic [**PAPI (PlaceholderAPI)**](https://www.spigotmc.org/resources/placeholderapi.6245/) tag, plus a few built in, which will be the variable used when constructing the levels of entities. There should be no limits to this system, so long as the final result of the `variable:` is numeric.<br />Through **PAPI**, you can use a specialized **MATH** feature to even further expand on this system. Simply perform `/papi ecloud download Math` from the console or in-game and it will download the necessary add-on for **PAPI**. To learn how to use this unique system, [click here for the developer's github regarding the add-on and how to use it](https://github.com/Andre601/Math-Expansion).<br>Built-in variables provided by LevelledMobs: %level%, %exp%, %exp-to-level%, %total-exp%, %world_time_ticks%, %bed_distance%, %home_distance%, %home_distance_with_bed%
+|`player-levelling:`|启用了玩家变量等级修改功能。启用后，将根据最近玩家的指定变量更改实体等级。
+|`match-level:`|这会导致实体使用在 1 到当前玩家`variable:`值之间随机选择的值。<br />**示例：** 使用 `%level%`，如果我是 LVL 30，那么所有根据我的等级调整其等级的实体将在`1-30`之间随机选择一个值。<br>注意：当设置为 true 时，不使用层级。
+|`use-player-max-level:`|这会导致实体与当前玩家的`variable:`值匹配。<br />**示例：** 使用 `%level%`，如果我是 LVL 30，那么所有根据我的等级调整其等级的实体将为`30`。<br>注意：当设置为 true 时，不使用层级。
+|`player-level-scale:`|这将调整`variable:`产生的值，将该值乘以此值。这对于产生异常大的数字（可以使用较小的值缩小）或非常小的数字（可以缩小）非常有用。
+|`level-cap:`|这会对使用此`Player Variable Level Modifier`的实体的最高级别设置硬限制。这对于防止超出批准范围的实体很有用。
+|`decrease-level:`|当设置为 `false` 时，此设置将阻止实体获得低于之前由玩家等级设定的任何等级。实体将继续有可能重新设置等级，但是如果新生成的等级低于当前等级，则更改将被取消。
+|`recheck-players:`|当设置为 `true` 时，此设置将重新检查最后一个更新实体的玩家，而不像通常那样跳过该玩家。
+|`preserve-entity:`|此设置将阻止实体在过去的 X 时间内受到伤害后通过玩家等级设定进行更新，默认为 `10s`。
+|`enabled:`|您可以使用此选项启用或禁用玩家等级设定。默认为 true。
+|`merge:`|如果您使用玩家等级设定定义了多个规则，则仅使用最后一个规则。如果将 merge 设置为 true，则将合并层级，并且某些选项可以合并在一起。
+|`tiers:`|这代表了系统如何将等级应用于实体的逻辑。在配置中，左侧的值，如 `v1` 和 `v2`，表示在`variable:`配置中列出的任何值的最小和最大范围。<br />**示例：** 使用 `%level%`，如果玩家是 LVL 10，那么它将适合于第一个变量范围`1-15`，这意味着它将在右侧的值之间应用一个随机等级，标记为 `lvl-lvl`。
+|`variable:`|这可以是 LevelledMob 的内置变量之一，也可以是任何动态的 [**PAPI (PlaceholderAPI)**](https://www.spigotmc.org/resources/placeholderapi.6245/) 标签，再加上一些内置的标签，这将是在构建实体等级时使用的变量。这个系统没有限制，只要`variable:`的最终结果是数字即可。<br />通过 **PAPI**，您甚至可以使用专门的 **MATH** 功能进一步扩展这个系统。只需在控制台或游戏内执行 `/papi ecloud download Math`，它将下载 **PAPI** 的必要插件。要了解如何使用此独特的系统，[请点击这里查看开发者关于此插件以及如何使用它的 Github 页面](https://github.com/Andre601/Math-Expansion)。<br>LevelledMobs 提供的内置变量： %level%，%exp%，%exp-to-level%，%total-exp%，%world_time_ticks%，%bed_distance%，%home_distance%，%home_distance_with_bed%
 
 ***
 
-> ## Level Variance Modifier
+> ## 等级方差修改器
 > 
 > ```yml
 > strategies:
 >   max-random-variance: 2
 > ```
 
-Once an entity has received a final level value from other `strategies:`, this `Level Variance Modifier` will apply a random plus or minus value to the level based on the value of the config option listed above.
-
-***
+一旦实体从其他 `strategies:` 中获得最终等级值，此 `等级方差修改器` 将根据上面列出的配置选项的值对等级应用随机加减值。

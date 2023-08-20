@@ -1,36 +1,34 @@
 ```
-This page was last updated for LevelledMobs 3.9.2 b734
+本页信息最后更新为“生物等级”插件的3.9.2 b734版本。
 
-Note that any approximated line numbers may become outdated as we update the configuration files.
+注意：随着我们对配置文件的更新，任何类似的问题都有可能会过时，请仔细分辨。
 ```
 
 ***
 
-## I have no idea how to get started!?
+## 我应该如何开始？
 
 <details>
-<summary>See answer</summary>
+<summary>点击查看解决方案</summary>
 
-Do not worry! We know that LevelledMobs can at first glance be daunting to take on. The wiki is highly detailed, and the files are populated with many presets and examples in order to help demonstrate how to use the system. But if even that is too much, start here:
-
-
-***
-
-**Have you successfully installed LevelledMobs, and is it running on your server without error?**
-
-Oftentimes a first and regularly overlooked step is to ensure that when you started your server that LevelledMobs encountered no issues during that process. Some plugins and server environments, while rare, will simply not work with LevelledMobs and you would be shown large walls of text in your console screaming about a particular issue. Sometimes that only happens once at the first attempted start, sometimes it's obvious and it spams your console with repeated instance after instance. If this is the case, it is best to test this plugin in a testing environment where you can isolate which plugin or issue is causing the breakdown. 
-If you have already begun editing your configuration files, and you have made a mistake in the formatting of the file, then LevelledMobs will report the issue when it attempts to load those files during startup or any subsequent reload of the plugin. If LevelledMobs cannot read a file in it's entirety, then it cannot function properly, and will likely result in a broken experience. YAML is the language used for most plugins, and it is very unforgiving of mistakes; even those as simple as a missing or extra space. We recommend running your file through a free online YAML-Checker which will help identify any issues in your file.
+请不要担心！虽然我们知道新人会在看见“生物属性”插件时可能会感到害怕，但是也请相信对于这些问题，wiki是会很详细的提出解决方案的。在许多文件里会出现预设和示例，这些内容可以帮助你更快的了解该插件，因为详细所以字数较多也请认真看完，从此处开始：
 
 
 ***
 
-**No errors? Great! Now: Understanding the Rules file.**
+**你已经成功安装“生物等级”插件，没有报错但是插件没有生效？**
 
-If you have just installed the plugin and have no errors in the console during startup or while running, then LevelledMobs should be ready to go out-of-the-box.
-There is a general description of each system provided [here](https://github.com/ArcanePlugins/LevelledMobs/wiki/Understanding-the-Default-Config), but a more detailed description can be found below.
-To understand how the Rules file works, I will explain how the default settings are set and selected. Firstly, the Rules file is broken into three distinct sections: `presets:`, `default-rule:`, and `custom-rules:`. The `presets:` section includes a wide variety of different systems separated into presets given their own names. For example, the presets that are used in a default configuration are named `allowed_worlds`, `weighted_random_Levelling`, `average_challenge`, and `nametag_using_numbers`. You'll notice many others which are preconfigured and ready to use should you want to switch between them. 
+通常情况下，也是首先容易被忽略的步骤是：当你在启动服务器时，“生物等级”插件并没有报错。虽然这些插件可以同时和“生物等级”插件一起使用但实际上其他插件会导致“生物等级”插件无法使用，这种情况十分罕见，它们会在控制台中以大量文本的报错形式出现，这种报错只会出现在第一次启动服务器时出现。如果发生了这种情况，建议搭建一个测试环境然后一个一个插件进行测试来寻找那个会导致本插件失效的其他插件。
 
-Below the `presets:` section sits the `default-rule:`. Here is where you tell LevelledMobs the core set of levelled entities and the conditions under which they will level. As I said a moment before, in the default configuration we use the `presets:` called `allowed_worlds`, `weighted_random_Levelling`, `average_challenge`, and `nametag_using_numbers`. You can see that those are enabled alongside a list of other disabled presets:
+如果你已经开始编辑你的配置文件的话，你也许会在文件的格式上犯错，如果格式错误，那么本插件在启动服务器时会尝试在控制台中报告该情况。如果发生了格式错误的情况，那么本插件也无法正确的读取，从而导致插件的加载失败。YAML是很多插件使用的通用语言，它对错误的检查能力较高，甚至是那些不小心打出来的多余空格。我们建议你去打开或者下载一个免费的在线YAML文件检查器来查看你的文件，来帮助你检查并发现你文件内的那些错误格式。
+
+***
+
+**没有遇到错误？那太好了，现在来了解文件里的规则吧。**
+
+如果你刚刚安装了该插件并且没有在启动时控制台没有报错，那么本插件应该可以正常运行。在此提供了一个简易描述，更详细的讲解在[此处](https://github.com/ArcanePlugins/LevelledMobs/wiki/Understanding-the-Default-Config)找到。为了了解到规则是如何运行的，我将描述分成设置和选项两个项目。首先，规则分为：`预设（presets）`、`默认规则（default-rule）`、`自定义规则（custom-rules）`三种。预设：包括部分不同的系统，这些系统被分隔且拥有独立的名称，例如：在默认配置文件中使用的预设的名称是`allowed_worlds`、`weighted_random_Levelling`、`average_challenge`。你会注意到很多其他类型的预设，如果你想切换预设，只需要将名字更改即可，且可以随时使用预设。
+
+在预设的下面是`默认规则`。`默认规则是`“生物等级”插件的核心，跟我们刚刚说的一样，我们使用的预设名称是`allowed_worlds`、`weighted_random_Levelling`、`average_challenge`。你可以看见这些预设都是默认开启的，同时也有一些预设是默认关闭的，如下：
 
 ```yaml
 default-rule:
@@ -51,41 +49,41 @@ default-rule:
     #- lvl-mod_apply-variance
 ```
 
-The first preset, `allowed_worlds`, sets the conditions for what worlds that LevelledMobs will apply. If you refer to the preset of the same name, you can see that we allow LevelledMobs in 'all worlds except for `world_the_end`'. 
+首个预设，`allowed_worlds`，设置插件生效的维度黑名单，只有在该黑名单以外的维度的生物才能拥有生物等级。在该预设下，除了末地（`world_the_end`）以外的维度的生物都拥有对应的生物等级，可以理解为黑名单。
 
 ```yaml
   allowed_worlds:
-    # This controls the allowed worlds to apply levels too.
-    name: 'Excluded Worldlist'
+    # 设置插件的生效维度。
+    name: '维度黑名单'
     conditions:
       worlds:
-        # allowed-list: ['*']
+        # 生效维度列表：['*']
         excluded-list: [ 'world_the_end' ]
 ```
 
-The second preset, `nametag_using_numbers`, controls a majority of the nametag related settings. This system has a similar preset called `nametag_using_indicators` which functions essentially the same, but uses a secondary system to add distinction to the ability. Either way, you can choose to edit it to your liking.
+第二个预设，`nametag_using_numbers`，是与生物铭牌有关的预设设置。在目前是所有预设中有一个类似的预设叫`nametag_using_indicators`，功能基本一样但只是辅助系统来做出区分的能力。不管是什么预设，你都可以根据自己的爱好来选择和编辑它们。
 
 ```yaml
   nametag_using_numbers:
-    #   This controls the nametag, where the health is displayed using %entity-health-rounded%
-    name: 'Nametag - Health Numerical'
+    #   设置生物铭牌，其中与生命值有关的是使用%entity-health-rounded%显示。
+    name: '名称标签'
     apply-settings:
       nametag: '&8&l༺ %tiered%Lvl %mob-lvl%&8 | &f%displayname%&8 | &f%entity-health-rounded%&8/&f%entity-max-health-rounded% %tiered%%heart_symbol% &8&l༻'
 ```
 
-The third preset, `average_challenge`, refers to one of four playtested `_challenge` options which you can easily switch between, or choose to edit the default, or create one that is entirely your own (we recommend copy/pasting another `_challenge` preset and changing the name of the preset to something unique like `epic_challenge`). The `average_challenge` was tested on a vanilla Minecraft server under Normal difficulty, and meant to produce entities that feel like the vanilla Hard difficulty; the `basic_challenge` is an easier version, while `advanced_challenge` and `extreme_challenge` are meant to test even the toughest of players in full enchanted vanilla armors.
+第三个预设，`average_challenge`，是其他四个经过测试的`_challenge`选项之一，你可以自由地在它们之间切换或者编辑它们，也可以添加属于你自己的预设（推荐复制或者粘贴其他的`_challenge`预设然后将名称更改为自己的即可，例如：`epic_challenge`）。其中`average_challenge`是在原版服务器的普通难度里测试的，但是在感觉上像困难模式；`basic_challenge`是难度更简单；而`advanced_challenge`和`extreme_challenge`是为了测试即使拥有了全套附魔的顶级玩家而准备的。
 
-None of these take into account any customization added to your own server with regards to player abilities (things like McMMO, AureliumSkills, etc. which boost a players damage output or health, or provides non-vanilla enchantments or abilities), so you will want to take that into account when adjusting the difficulty.
+因为预设没有考虑到每个服务器的不同玩家的自定义能力，例如：mcMMO、AureliumSkills等可以增加玩家攻击力的插件，或者提供非原版的附魔等等，所以当你在修改难度时请务必考虑这些情况。
 
-Each of the `_challenge` presets are arranged the same: establishing the `maxLevel:`, establishing the `multipliers:`, and then giving details for other systems like `tiered-coloring:` which adjusts the `%tiered%` placeholder within the `nametag_using_numbers` or `nametag_using_indicators`, or the `health-indicator:` settings regarding the number of 'indicators' and their value in health points. There are two means of adjusting the difficulty: if you want to keep the actual challenge the same, but want to change the difference between the levels to be easier or harder, you would simply adjust the `maxLevel:` without adjusting the `multipliers:`; this would spread or shrink the multiplier over a different level range, from one to the current `maxLevel:`. If you want to adjust the actual difficulty of the entities, you need only adjust the `multipliers:` first to determine how difficult your entities will be; once you are satisfied, then you can adjust the `maxLevel:` to spread or shrink that difference over the level range. 
+每个不同的`_challenge`难度预设总体都是差不多的：设置`最高等级`(`maxLevel:`)、设置`倍率`(`multipliers:`)，然后设置其他细节，例如：不同`等级`（`%tiered%`）的生物拥有`不同颜色`(`tiered-coloring:`)。最后是修改生物铭牌的显示方式，修改不同的占位符位置（`名称数值铭牌：nametag_using_numbers`、`名称铭牌：nametag_using_indicators`、`生命值铭牌：health-indicator:`）等等。目前拥有两种修改难度的办法：如果你想让实际难度不变但是只是想更改等级之间的差距来让该生物更容易打或者更难打，你只需要修改该预设的`最高等级`（`maxLevel:`）而不是修改`倍率`（`multipliers:`），这将允许在不同的等级之内降低等级上限，默认是从1到`最高等级`（`maxLevel:`）。如果你想直接修改生物的实际难度，你只需要修改`倍率`（`multipliers:`），一旦你觉得生物的难度合适，你可以慢慢的调整`最高等级`（`maxLevel:`）来分散或者缩小差异。
 
-As of `LM 3.9`, you can use the original arrangement for multipliers, which sets the 'percent increase at max level' for the multiplier (for example, `max-health: 5.0` would be a 500% increase when at max level); or you can choose to use the `STACKED` option, which simply adds a value to each multiplier at each level increase (for example, `max-health: ['5.0', 'STACKED']` would mean at each level starting with Level 1 to the `maxLevel:`, `5.0` will be added to the health of the entity). 
+从“生物等级”插件的`3.9版本`开始，你可以使用乘法来设置最高等级提升难度百分比等相关参数。例如：如果设置为“`max-health: 5.0`”，那么该生物每升一级都会增加500%的生命值；或者你也可以选择使用堆叠（`STACKED`）选项来设置每升一级时会增加指定的值，例如：如果设置为“`max-health: ['5.0', 'STACKED']`”，那么每当生物从1级升到最高等级时，每升一级都会直接增加5点生命值而不是使用乘法来增加生命值。
 
-With `tiered-coloring:`, you can set the color of the `%tiered%` placeholder used in the nametag systems. Refer to the [wiki](https://github.com/ArcanePlugins/LevelledMobs/wiki/Documentation---Apply-Settings) for how to use this system.
+也可以设置不同等级的`生物铭牌颜色`（`tiered-coloring:`），例如：1-5级的生物铭牌是绿色，而6-10级的生物铭牌为蓝色等等，关于如何使用，请查看[Wiki](https://github.com/ArcanePlugins/LevelledMobs/wiki/Documentation---Apply-Settings)。
 
 ```yaml
   average_challenge:
-    name: 'Average-Challenge Multipliers'
+    name: '平均值 - 难度倍率'
     apply-settings:
       minLevel: 1
       maxLevel: 25
@@ -97,74 +95,74 @@ With `tiered-coloring:`, you can set the color of the `%tiered%` placeholder use
         creeper-blast-damage: 0.75
         item-drop: 3.0
         xp-drop: 5.0
-        #       Special Multipliers (0.0 Min - 1.0 Max)
+        #       特殊倍率（最低0.0 - 最高1.0）
         armor-bonus: 0.2
         armor-toughness: 0.15
-        ##   optional: use the stacked multiplier instead
+        ##   可选的值，可以使用堆叠也就是加法来代替，如下：
         # max-health: [ '4.25', 'STACKED' ]
 
       tiered-coloring:
-        1-5: '&#22E76B' #Green
-        6-10: '&#528CFF' #Blue
-        11-15: '&#FFCD56' #Yellow
-        16-20: '&#F2003D' #Red
-        21-25: '&#B447FF' #Purple
-        default: '&#FFFFFF' #White
+        1-5: '&#22E76B' #绿色
+        6-10: '&#528CFF' #蓝色
+        11-15: '&#FFCD56' #黄色
+        16-20: '&#F2003D' #红色
+        21-25: '&#B447FF' #紫色
+        default: '&#FFFFFF' #白色
       health-indicator:
         scale: 4
         max: 5
         merge: true
 ```
 
-At this point we have told LevelledMobs where it can level entities, and the we told it what the level range was and how difficult the entities will be. Now we need to tell it how to assign these levels to the entities. With the fourth preset called `weighted_random_Levelling`, we tell LevelledMobs that it should select a level to apply to entities by making the highest level the least likely, and the lowest level the most likely. The other options and how to use them are detailed further in the [wiki](https://github.com/ArcanePlugins/LevelledMobs/wiki/Documentation---Strategies). 
+在此基础上，我已经告诉了你如何为“生物等级”插件设置生物的等级和难度等等，接下来我会告诉你如何将等级给予实体。通过第四个选项`weighted_random_Levelling`来告诉插件应该给予更高概率给最低等级，给予更高概率给最高等级而不是生物在生成时就拥有最高等级，有关其他的选项和说明请在[Wiki](https://github.com/ArcanePlugins/LevelledMobs/wiki/Documentation---Strategies)中查看。 
 
 ```yaml
   weighted_random_Levelling:
-    # This Strategy Preset controls Weighted Random Bias.
-    name: 'LVLling Strategy - Weighted Random'
+    # 设置预设的随机偏置。
+    name: '等级权重 - 随机'
     strategies:
       weighted-random: true
 ```
 
-You can choose to edit the presets of the same name above to make changes to the default rule of your worlds (for example, instead of changing to `advanced_challenge` to get a world with entities from 1-50 levels, you can simply edit the `maxLevel:` value under the `average_challenge` preset from the default of 25 to 50).
+你可以自由地编辑上述文件中的预设值来符合你想要的规则，例如：你可以将`advanced_challenge`预设下的`maxLevel:`值从默认的25更改为50而不是更改`advanced_challenge`文件来让当前维度获得一个1-50级的随机值。
 
-You can create your own presets with unique names to be used elsewhere (for example, you could craft a similar preset to `average_challenge` called `epic_challenge` and give it unique values).
+你也可以将预设的名称更改成你自己想要的那个名称来在其他的地方使用该预设，例如：你可以将`average_challenge`更改为`epic_challenge`，然后修改`epic_challenge`预设其他数值。
 
-You can disable one preset and exchange it for another preset of the same type (for example, you could disable `weighted_random_Levelling` and replace it with `spawn_Levelling` to use the spawn distance to determine levels).
+你也可以禁用预设，使用其他相同类型的预设来覆盖掉，例如：如果你想禁用`weighted_random_Levelling`，那么你可以使用`spawn_Levelling`来覆盖掉它，同时是以生物在生成时的生成距离来决定该生物的等级。
 
-There are also special presets which start with `lvl-mod_` which represent various addon systems that adjust the level of an entity AFTER it has been assigned by a Levelling strategy. For example, `lvl-mod_player-variable` refers to a system which adjusts the level of an entity based on a variable produced by the nearest player; `lvl-mod_apply-variance` adds a random plus or minus to a level; `lvl-mod_spawn-blended` adds a height metric to the `spawn_Levelling` preset should it also be enabled.
-
-
-***
-
-**Wow that's a huge text wall!**
-
-And that was just describing much of the Presets section! But don't worry, if you've made it this far, you're more than 85% of the way to the finish line! All that remains are the various conditions and settings which did not necessarily fit within a preset under the `default-rule:`, all of which are described in detail in their respective wiki sections for Conditions, Strategies, and Apply-Settings. While you do not have to use the `presets:`; you could simply include all of the pertinent conditions and levelling strategies line by line in the `default-rule:`; we find that using the presets make things significantly easier to manage; especially if you intend to further customize the plugin within the Custom Rules.
+还有一个是以`lvl-mod_`为开头的特殊预设，该预设代表的是各种额外系统，可以在实体被`Levelling`分配后再次修改其属性。例如：`lvl-mod_player-variable`是一个可以根据附近玩家的数量来调整实体等级的系统，`lvl-mod_apply-variance`可以为等级添加一个随机的正负值，`lvl-mod_spawn-blended`可以为`spawn_Levelling`预设添加一个生成高度的参数，但前提是需要开启该参数。
 
 
 ***
 
-**Custom Rules - There's a rule for that!**
+**哇！这些字好多哇！**
 
-This section consists of exceptions or adjustments to the `default-rule:`. If you took our original default config and removed all of the custom rules, the plugin would still function but would have no exceptions to levelling for passive entities (or a handful of other individual ones like villagers, wandering traders, or all 'baby' entities), would not provide a custom levelling strategy for the Nether world which uses the height of the world rather than the `default-rule:` of a weighted random, would not provide entity-specific adjustments like removing the `movement-speed:` and `max-health:` `multiplier:` from endermen to protect player farms and from a swarm of endermen moving too fast (amongst other edits), and finally zombie pigmen would not be nerfed in order to protect players from an unfair swarm. Each of these custom rules are playtested and believed to be in the best interest of your server; but we obviously do not know every situation and leave the choices up to you!
-
-From here you can continue adding Custom Rules by establishing a set of conditions which you want to check for, and then establishing any settings or strategies it would have under those conditions. The wiki is full of possible [conditions](https://github.com/ArcanePlugins/LevelledMobs/wiki/Documentation---Conditions) to choose from.
+别担心，这些只是`预设`的大部分`描述`！请不要担心，你既然走到了这里，那么接下来只需要走一小部分了，除此之外剩余的这些也就是`默认规则`和各种设置！如果你担心不会使用，也可以不使用预设，因为预设只是为了方便自定义，你可以简单的修改生物铭牌的排列方式、等级颜色等内容，这样就可以避免去编辑这些很长但是没什么用的预设，如果你不打算自定义插件的话也可以不去编辑这些预设来避免麻烦。
 
 
 ***
 
-**The End is Near: Custom Drops**
+**自定义规则 - 这有个规则！**
 
-You've finally made it to the end: our Custom Drops system allows you to set a wide variety of vanilla items alongside many 3rd party plugin items which are synced to our optional `LM_ITEMS` [plugin](https://www.spigotmc.org/resources/lm-items.102081/). You can also use the `NBT-API` [plugin](https://www.spigotmc.org/resources/nbt-api.7939/) to craft custom items internally by directly setting NBT data on the item. 
+规则部分包括了对`默认规则`的额外修改或者增加。如果你使用的是我们最初设置的默认标准并且删除了所有的自定义规则，该插件依旧可以正常运行，但是对于被动生物（例如：少数特殊实体、村民、流浪商人和其他幼体实体）的等级没有特殊加成，同时不会为下界维度设置自定义等级策略，该策略使用的是世界高度而不是默认规则，也不会为实体作出修改，例如：取消末影人的`移动速度`、`最大生命值`、`倍率`等等加成，以便保护玩家不会在与末影人战斗时因为移动速度而难以攻击的情况发生，最后僵尸主人也不会被削弱，以便让玩家在战斗时可以更好的聚集生物，这些自定义规则都在制作时进行了测试，你可以自由地选择这些规则，最终的选择权在你的手上！
 
-There is far too much to explain in detail here, especially when there is an entire section of the wiki dedicated to it. But for those wanting a solid library of examples, look no further than the [Sample Custom Drops page](https://github.com/ArcanePlugins/LevelledMobs/wiki/Sample-CustomDrops), which includes over three thousand lines of custom drops which are free to copy and modify to suite your needs. This helps to demonstrate the power and ability of these systems (the sample files use the Drop Table system within Custom Drops; it is recommended to implement these tables [via the following method](https://github.com/ArcanePlugins/LevelledMobs/wiki/Sample-Custom-Rules#using-drop-tables-with-custom-rules), as it gives you the combined strength of the Custom Drops modifiers/conditions, and the Custom Rules conditions).
+从这里开始你可以继续去添加自定义规则来达到符合你自己的目的，建立一套属于自己的检查规则，然后在该规则上设置或者更改策略，在Wiki上有许多[条件](https://github.com/ArcanePlugins/LevelledMobs/wiki/Documentation---Conditions)可供你自由选择。
 
 
 ***
 
-**Did you say 'Speak to a Human'?**
+**末日尽头：自定义掉落**
 
-After everything you're still confused or have a question? Don't hesitate to come to the [Arcane Plugins discord](https://www.discord.io/arcaneplugins). Follow the rules/readme there and you will find quick and efficient support who will, when they're available, respond to each and every question or concern! 
+恭喜你走到了这里，在我们这个插件的自定义掉落的系统中允许你在设置原版物品的同时，还可以设置许多来自第三方插件里的物品，这些来自其他插件里的物品也可以同步到游戏中，你可以选择[LM_ITEMS](https://www.spigotmc.org/resources/lm-items.102081/)插件或者[NBT-API](https://www.spigotmc.org/resources/nbt-api.7939/)插件来制作这些内容，通过设置物品上的NBT数据来制作属于你自己的物品。
+
+关于掉落有许多东西需要更详细的解释，特别是对于Wiki里的一些内容，但是对于那些想自定义物品的人来说，可以不需要查看示例库，因为在许多其他地方都拥有一个十分庞大的信息库，例如：[自定义掉落示例库](https://github.com/ArcanePlugins/LevelledMobs/wiki/Sample-CustomDrops)，[可以通过以下方法](https://github.com/ArcanePlugins/LevelledMobs/wiki/Sample-Custom-Rules#using-drop-tables-with-custom-rules)来实现表格的制作，因为它们为你提供了自定义掉落的各种修改和条件。
+
+
+***
+
+**你说的这些是人话吗？**
+
+在做完这些内容后，你是不是还在感觉到疑惑或者有其他的疑问？不要由于，请加入Arcane的[Discord](https://www.discord.io/arcaneplugins)频道来提出你的问题，哦对了，记得在发言之眼仔细查看频道的规则来避免发生一些不愉快的事。当我们有空的时候，我们很乐意去为你进行解答！
 
 
 ***
@@ -172,83 +170,85 @@ After everything you're still confused or have a question? Don't hesitate to com
 </details>
 
 
-## How do I enable/disable LevelledMobs in certain worlds?
+## 我应该如何让本插件在指定维度生效或者禁用？
 
 <details>
-<summary>See answer</summary>
+<summary>点击查看解决方案</summary>
 
-Around line 180 in `rules.yml`, you should see the `allowed_worlds` preset:
+在`rules.yml`文件的第180行只有，你应该可以看到一个与`allowed_worlds`有关的内容，如下：
 ```yaml
  allowed_worlds:
-    # This controls the allowed worlds to apply levels too.
-    name: 'Excluded Worldlist'
+    # 设置插件的生效维度。
+    name: '维度黑名单'
     conditions:
       worlds:
-        # allowed-list: ['*']
+        # 生效维度列表：['*']
         excluded-list: [ 'world_the_end' ]
 ```
 
-### Whitelist
+### 白名单
 
-If you want to use a *allowed-list*/*whitelist*, i.e., only worlds X, Y and Z are allowed to have levelled mobs, then use the following:
+如果你想设置生效维度的白名单，例如：只允许“A”、“B”、“C”三个维度的生物拥有等级，那么可以使用以下方法：
 
 ```yaml 
-allowed-list: [ 'X', 'Y', 'Z' ]
+allowed-list: [ 'A', 'B', 'C' ]
 # excluded-list: [ 'world_the_end' ]
 ```
 
-Make sure `excluded-list` line has the comment symbol (`#`) so it is disabled.
+当`excluded-list`前面有注释符号`#`时，说明该选项目前是禁用的。
 
-### Blacklist
+### 黑名单
 
-If you want to use a *excluded-list*/*blacklist*, i.e., all worlds except X, Y and Z are allowed to have levelled mobs, then use the following:
+如果你想让指定维度以外的所有维度的生物都可以获得等级，例如：除了“A”、“B”、“C”三个维度之外的其他维度，那么可以使用以下方法：
 
 ```yaml
 # allowed-list: ['my_world']
-excluded-list: [ 'X', 'Y', 'Z' ]
+excluded-list: [ 'A', 'B', 'C' ]
 ```
 
-Make sure `allowed-list` line starts with the YAML comment symbol (`#`) so it is disabled.
- 
-</details>
-
-## Why are LM's custom mob labels/nametags not being displayed?
-
-<details>
-<summary>See answer</summary>
-
-> **Note:** This information does not pertain to LevelledMobs v3.5 or older, which requires ProtocolLib for 1.16-1.18 (and does not run on 1.19+). Keep your plugins and server software up-to-date!
-
-* Running a MC 1.16, 1.17, or non-Paper-based 1.18 server? Make sure you install [ProtocolLib](https://www.spigotmc.org/resources/protocollib.1997/) in addition to LevelledMobs.
-* Make sure there are no errors in your console, perhaps you have configured `rules.yml` incorrectly.
-* Otherwise, labels should be displaying - if this is not the case, please contact support.
+当`allowed-list`前面有注释符号`#`时，说明该选项目前是禁用的。
 
 </details>
 
-## How do I make Mob X a levelled mob?
-
-### Also: Why are baby zombies, wardens, etc. not levelled?
+## 为什么本插件的自定义生物名称标签不会显示？
 
 <details>
-<summary>See answer</summary>
+<summary>点击查看解决方案</summary>
 
-By default, the following mobs are not levelled:
+> **注意**：本条信息不包含“生物等级”插件的3.5版本和更低版本，因为插件的更低版本需要安装ProtocolLib前置，所以不可能可以在1.19版本上运行。请确保你的插件和服务器类型始终都是最新版！
 
-- Passive Mobs
-- Baby Mobs (baby zombies, etc)
-- Ravagers, Ender Dragons, Withers, Wardens
-- Villagers, Zombie Villagers, Wandering Traders
-- Phantoms and Bats
+* 你是不是运行1.16、1.17或者除了Paper端的1.18服务器？如果是的话那么请确保你在除了安装“生物等级”插件之外是否还安装了前置插件[ProtocolLib](https://www.spigotmc.org/resources/protocollib.1997/)。
 
-> **Note**: Mobs from spawners are also not levelled by default, we
-have answered how to change this in another answer on the FAQ Wiki page.
+* 请检查你服务器的控制台内是否有报错，也检查一下`rules.yml`文件内的格式是否正确。
 
-Around line `399` in `rules.yml`, you should see something like this:
+* 如果上述都没问题，那么理论来讲都应该会显示生物名称的对应标签，如果还是没有的话，请务必及时联系作者寻求帮助。
+
+
+</details>
+
+## 如何给予名为X的生物获得等级？
+
+### 以及：为什么小僵尸、监守者等生物没有等级？
+
+<details>
+<summary>点击查看解决方案</summary>
+
+默认情况下，以下生物没有等级：
+
+- 被动生物，例如：牛、猪；
+- 幼体生物，例如：小僵尸、小村民等；
+- 劫掠兽、末影龙、凋灵、监守者；
+- 村民、僵尸村民、流浪商人；
+- 幻翼、蝙蝠。
+
+> **注意**：默认情况下通过刷怪笼生成的生物也是不会拥有等级的，我们已经在疑难解答Wiki中的另外一个问题的答案里说了如何让刷怪笼生成的生物也拥有等级。
+
+在`rules.yml`文件的第`399`行你可以看见以下类似的代码：
 
 ```yaml
 custom-rules:
   - enabled: true
-    name: 'CR - NoLevel All Passive + EntityTypes'
+    name: 'CR - 被动生物无等级 + 实体类型'
     use-preset: allowed_worlds
     conditions:
       entities:
@@ -258,70 +258,68 @@ custom-rules:
       maxLevel: 0
 ```
 
-To make passive mobs levelled, change:
+如果要给予被动生物等级，那么只需要将：
 
 ```yaml
 allowed-groups: [ 'all_passive_mobs' ]
 ```
 
-to:
+更改为：
 
 ```yaml
 allowed-groups: []
 ```
 
-To make one of the non-levelled mob types levelled, simply remove
-it from the `allowed-list` line. For example, to make baby mobs
-levelled, change:
+如果想让在`allowed-list`列表中的生物获得等级，那么只需要在列表中删除该生物即可。例如：如果想让小僵尸这种幼体生物获得等级，那么只需要将：
 
 ```yaml
 allowed-list: [ 'BABY_', 'ENDER_DRAGON', 'WITHER', 'VILLAGER', 'ZOMBIE_VILLAGER', 'WANDERING_TRADER', 'PHANTOM', 'BAT', 'RAVAGER', 'WARDEN' ]
 ```
 
-to:
+更改为：
 
 ```yaml
 allowed-list: [ 'ENDER_DRAGON', 'WITHER', 'VILLAGER', 'ZOMBIE_VILLAGER', 'WANDERING_TRADER', 'PHANTOM', 'BAT', 'RAVAGER', 'WARDEN' ]
 ```
 
-How this area of rules.yml works by default, is that any mobs that pass the condition check (which checks their Entity Type e.g. `WITHER_SKELETON`),
-are set to 'Level 0', i.e., they have no level.
+在`rules.yml`文件里的工作方式是：任何通过实体的检查条件的生物（例如：凋灵骷髅‘`WITHER_SKELETON`’）都不会拥有等级，它们的生物等级都是0级也就是无等级。
+
 
 </details>
 
-## What levelling systems are available?
+## 目前可以选择哪些系统？
 
 <details>
-<summary>See answer</summary>
- 
-- **Weighted Random Levelling** (**default**)
-    - Levels are a random number, but you can make certain level ranges more common than others.
-    - By default, lower levels are more common than higher levels.
-    - Comes with easy, normal, and hard mode presets.
-- **Random Levelling**
-    - Levels are a random number, each level has an equal chance of occurring.
-- **Spawn-Distance Levelling**
-    - Levels are based upon mobs' distance from their world's spawnpoint.
-- **Y-Coord Levelling**
-    - When mobs spawn, their level is based upon their current Y coordinate.
-- **Blended Levelling**
-    - Combines Spawn-Distance Levelling and Y-Coord Levelling together.
-- **Player Levelling**
-    - A special levelling system which allows you to use any player statistic from thousands of plugins (any PlaceholderAPI placeholder!) and make mobs levelled based upon that.
-    - For example, you can make mobs have higher levels for players that have more EXP or money. All up to you!
-    - We have an answer a few questions below this one where we explain in detail how you can use Player Levelling on your server.
-- ... and more to come!
+<summary>点击查看解决方案</summary>
+
+- **随机等级权重** (**默认**)
+    - 等级属于随机值，但是你可以设置让某些等级的出现概率更高。
+    - 默认情况下，较低等级的值出现的概率会比高等级的概率更多。
+    - 目前有简单（easy）/普通（normal）/困难（hard）三种模式的预设可供选择。
+- **随机等级**
+    - 随机选择等级，每个等级的随机概率都是一样的。
+- **生成距离**
+    - 根据生物距离出生点时的距离增加，距离出生点越远等级越高。
+- **Y轴高度**
+    - 根据生物在生成时的Y轴高度而修改，生物的等级等于目前所在高度，Y轴高度越高生物的等级越高。
+- **混合类型**
+    - 将“生成距离”和“Y轴高度”这两个预设结合起来。
+- **玩家等级**
+    - 一个特殊的等级系统，允许你使用来自其他插件中的玩家数据来修改生物的等级（任何与PlaceholderAPI有关的占位符），生物的等级会基于该数值而增加。
+    - 例如：你可以设置让拥有更高等级或者金钱的玩家附近可以生成更高等级的生物，这一切都可以根据你的需要而设置！
+    - 我们在下面的这个问题里有一个答案，我们详细地解答了如何在你的服务器上使用“玩家等级”预设。
+- ... 以及更多内容！
 
 </details>
 
-## How do I switch to another levelling system?
+## 我应该如何切换到其他的等级系统？
 
 <details>
-<summary>See answer</summary>
+<summary>点击查看解决方案</summary>
 
-> **Note:** We have documented enabling the Player Levelling system for a separate question below, in case you were looking to enable that instead.
+> **注意**：如果你想单独启用“玩家等级”系统的话，在本章的下面有一个解决办法可以帮助到你。
 
-Find this area at the start of the default-rules section (your file may look slightly different):
+在default-rules的开头区域找到下面文件的这种内容，你的文件内容可能会略有不同：
 
 ```yaml
 default-rule:
@@ -342,104 +340,106 @@ default-rule:
     #- lvl-mod_apply-variance
 ```
 
-*Comment* out the levelling system you *don't* want to use, and *uncomment* the one you *want* to use.
+*注释*是为了*关闭*那些你不想用的系统，如果你你想开启这些系统的话请*取消*该系统前面的注释符号即可。
 
-> In YAML (`.yml`) files - the ones used in just about every plugin configuration - *commenting* refers to making a particular line begin with the `#` (hashtag) character. When the plugin reads the file, it ignores these comment lines.
+> YAML是几乎每个“`.yml`”文件的通用编辑语言，可以在此类文件中使用注释`#`来让游戏在启动时忽略该一行的内容。
 >
-> *'Why comment the line?'*: This allows you to keep the line without removing it, so you can easily re-enable the levelling strategy later.
+> “为什么要忽略这一行？”，使用注释符号`#`可以让游戏在启动时忽略，让你更方便地更换本插件选择的对应系统。
 
-Make sure you have one (1) nametag preset enabled, and one (1) challenge preset enabled, and one (1) levelling strategy enabled for this default rule.
+使用前请确保你为目前的默认规则里启用了至少1个生物铭牌、挑战预设、等级策略。
 
-Afterwards, run `/lm reload` or restart your server, so that your changes apply.
+> **注意**：已存在的生物不会被赋予等级，如果你想强制对所有维度的生物赋予等级，请使用`/lm rules force_all`指令，如果你担心可能会对实体造成影响，那么也可以使用`/lm kill all * /nodrops`来强制杀死所有维度中已存在等级的实体，同时通过该指令杀死的生物不会有任何的掉落物。
 
-> **Note:** Existing mobs will not have their levels changed. You can run `/lm rules force_all` to force a rules evaluation for all entities in all worlds, taking any changes that have been made into account. You may alternatively choose to run `/lm kill all * /nodrops` in order to kill all levelled entities in all worlds without causing them to make any drops as well, allowing new ones to spawn into the world naturally.
+> **注意**：如果使用的是混合类型系统，那么也需要将“生成距离”系统开启。
 
-> **Note:** Blended levelling requires Spawn-Distance Levelling to be enabled alongside it.
-
-</details>
-
-## Does LM change mob spawning mechanics / spawn rates?
-
-<details>
-<summary>See answer</summary>
-
-**No, LevelledMobs does not change any spawn mechanics.** LevelledMobs only 'levels up' mobs that spawn. It doesn't spawn more mobs in, and it doesn't stop mobs from spawning. Zero spawning mechanics are altered. We are highly reluctant to change this behavior with LevelledMobs, as we don't like to introduce any obscure behaviours. :)
-
-If you are having issues regarding mob spawning, configure your server software and/or anti-lag plugin.
 
 </details>
 
-## How do I make mobs from plugin X levelled / not levelled?
-
-### Also: What is the `level-plugins` section?
+## “生物等级”插件是否会更改生物的生成机制和生成概率？
 
 <details>
-<summary>See answer</summary>
+<summary>点击查看解决方案</summary>
 
-From approximately [lines 327 to 399](https://github.com/ArcanePlugins/LevelledMobs/blob/master/src/main/resources/rules.yml#L327-L339) in `rules.yml`, you should see a section called `level-plugins`. This section has a list of supported plugins which are set to `false` by default. When you change any of these to `true`, newly spawned mobs from the respective plugin(s) are now considered for levelling by LevelledMobs.
+**不，“生物等级”插件不会更改任何的生成机制。**“生物等级”插件插件只是赋予了生物在生成时的等级，同时也不会增加生物的生成概率，也不会禁止生物的生成，因此，不会对任何的生物生成机制作出更改。我们非常不喜欢在插件内添加这种模糊的操作来暗中修改游戏内容。:)
 
-For compatibility reasons, we recommend leaving all of these disabled. 
+如果你服务器的生物生成出现了问题，请检查你的服务器已安装的插件和那种防止延迟的插件是否对服务器做出了更改。
+
 
 </details>
 
-## What server software is supported?
+## 如何为其他插件的生物增加等级或者删除等级？
+
+### 除此之外：`level-plugins`是什么？
 
 <details>
-<summary>See answer</summary>
+<summary>点击查看解决方案</summary>
 
-See the [Compatibilities Wiki page](https://github.com/lokka30/LevelledMobs/wiki/Compatibilities).
+在`rules.yml`文件的大概[327到399](https://github.com/ArcanePlugins/LevelledMobs/blob/master/src/main/resources/rules.yml#L327-L339)行，你应该可以看见一个叫`level-plugins`的文件内容。在该内容里有一个支持插件的列表，默认是关闭（`false`）状态，当你把对应插件的“`false`”更改为“`true`”时，对应插件内的生物都会被“生物等级”插件赋予等级属性。
+
+但是对于兼容性的考虑，我们建议你将这些插件全部禁用。
+
 
 </details>
 
-## What plugins is LM compatible/incompatible with?
+## 支持哪些服务端类型？
 
 <details>
-<summary>See answer</summary>
+<summary>点击查看解决方案</summary>
 
-See the [Compatibilities Wiki page](https://github.com/lokka30/LevelledMobs/wiki/Compatibilities).
+请查看[兼容Wiki](https://github.com/lokka30/LevelledMobs/wiki/Compatibilities)页面。
 
 </details>
 
-## How are attribute values calculated? (Formula)
+## “生物等级”插件和其他哪些插件是兼容或者不兼容？
 
 <details>
-<summary>See answer</summary>
+<summary>点击查看解决方案</summary>
 
-The formula for each attribute value is:
+请查看[兼容Wiki](https://github.com/lokka30/LevelledMobs/wiki/Compatibilities)页面。
+
+</details>
+
+## 属性公式是如何计算的？
+
+<details>
+<summary>点击查看解决方案</summary>
+
+每个属性的公式如下：
 
 ```
-newValue = defaultValue + ((defaultValue x configValue) x ((entityLevel - 1) / (maxLevel - 1)))
+默认值 + ((默认值 x 配置值) x ((实体等级 - 1) / (最高等级 - 1))) = 新的数值
 ```
 
-This formula will be simplified in the upcoming LevelledMobs 4.
+这些公式会在将来的本插件的4版本中进行简化。
 
 </details>
 
-## Will LM make my server lag?
+## 这个插件会增加我的服务器延迟吗？
 
 <details>
-<summary>See answer</summary>
+<summary>点击查看解决方案</summary>
 
-Nope! We take performance seriously – for the few performance issues that have ever been reported and validated, all were promptly solved. We've worked with contributors to improve memory management, and run code asynchronously wherever useful.
+不会！请放心，我们对性能进行了优化，在曾经的一些出现过延迟的服务器我们对他们进行了优化，后续已经解决了性能问题。同时我们也和其他贡献者进行了合作，更改了内存的消耗，并且以最大的努力删除不必要的代码。
 
 </details>
 
-## How do I use the Player Level Modifier?
+## 如何使用“玩家等级”系统？
 
 <details>
-<summary>See answer</summary>
+<summary>点击查看解决方案</summary>
 
-> LM v3.8 renamed "Player Levelling" to "Player Level Modifier". 
+> 在“生物等级”插件的v3.8版本开始，将“玩家等级”更改为“玩家等级修改器”。
 
-### [If you wish to watch a video alternative to this section, click here!](https://www.youtube.com/watch?v=qTZ_GlQjGD8)
+### [如果你想查看本章节的视频，请点击此处！](https://www.youtube.com/watch?v=qTZ_GlQjGD8)
 
-PLM is an add-on levelling system, which modifies the level of an entity based on a variable provided by the nearest player. It requires an actual levelling strategy to be enabled alongside this to function properly (for example, Weighted Random or Spawn-Distance Levelling), so that mobs have a baseline level until they are associated with a certain player. The default variable used for PLM is the exp level of the player, though any placeholder from PlaceholderAPI (PAPI) can be used, such as AureliumSkills, mcMMO, EcoSkills, and so on.
+玩家等级系统属于额外的一种系统，它可以根据最近玩家的一些变量来修改玩家附近的生物等级。它需要等级策划和其他的策略一起运行，例如：**随机等级权重**和**生成距离**系统。这样生物就有一个基础的等级，直到拥有对用变量的玩家在其附近出现，那么就会根据变量来修改该生物的实际等级，可以使用任何PlaceholderAPI的占位符，例如：AureliumSkills、mcMMO、EcoSkills等等...
 
-Below is the default preset used for Player Levelling, located in `rules.yml`.
+以下是用于玩家等级的默认预设，在`rules.yml`文件中：
+
 
 ```yaml
 lvl-mod_player-variable:
-# This Strategy Preset controls the player-variable based level modification system.
+# 该策略会根据玩家的等级变量来修改附近的生物等级。
 name: 'LVLling Modifier - Player Variable AVERAGE CHALLENGE'
 strategies:
     player-levelling:
@@ -457,13 +457,12 @@ strategies:
     variable: '%level%'
 ```
 
-If you are going to use any other `variable`, you will want to set `match-level` and `use-player-max-level` to `false`, as they will override the `variable` settings. Refer to the
-[wiki for Player Levelling](https://github.com/lokka30/LevelledMobs/wiki/Documentation---Strategies#player-variable-modifier)
-regarding the various settings and their descriptions.
+如果你要使用其他的`变量`，你需要将`match-level`和`use-player-max-level`设置为`false`，因为它们会覆盖掉变量的值，关于它们的描述和设置，请在[Wiki](https://github.com/lokka30/LevelledMobs/wiki/Documentation---Strategies#player-variable-modifier)中查看。
 
-When you change the variable, you will need to understand what range of possible values that variable can produce. Your variable might only provide numbers as high as 50-100, or as high as 100,000 or more. If you're unsure of the value, you can use `/papi parse me <placeholder>`, replacing `<placeholder>` with the variable of your choosing. Once you understand the range of your `variable`, then you can adjust the possible `tiers`, which determine the potential levels that an entity will be adjusted to when near a player, based on the possible values of the `variable`. The values on the left side of `tiers` represent the potential values of the `variable`, while the values on the right side of `tiers` represent the potential level that LevelledMobs will adjust the entity to.
+当你需要更改变量时，你需要了解变量的数值范围，正常情况只能设置50-100的数字，或者100000等等更多的数字。如果你不确定范围，你可以输入`/papi parse me <placeholder>`指令查询，使用你的变量将`<placeholder>`替换为指定变量即可。当你了解到范围之后，那么你就可以根据变量的数值来设置生物的`等级`，决定了当该生物靠近玩家时将会设置的生物等级。等级左侧的数值代表的是`变量`，而右侧的值代表的是生物会被修改为的`最终等级`。
 
-By default, LevelledMobs includes this preset within your `rules.yml` file in a disabled state. To enable this feature, you can locate the below section and enable the `- lvl-mod_player-variable` preset by removing the `#` before the line (uncommenting it). 
+默认情况下，生物等级都可以在`rules.yml`中找到预设，但是默认是关闭状态，如果你需要开启该预设，只需要将该预设前面的注释符号`#`删除即可，例如：如果想开启`- lvl-mod_player-variable`预设，只需要将-左边的注释符号`#`删除即可开启。。
+
 
 ```yaml
 default-rule:
@@ -486,57 +485,53 @@ default-rule:
 
 </details>
 
-## How do I translate the names of entities/mobs?
+## 如何翻译实体或生物的名称？
 
 <details>
-<summary>See answer</summary>
+<summary>点击查看解决方案</summary>
 
-> **Note:** There are several pre-made translations available in the
-[Official Translations](https://github.com/lokka30/LevelledMobs/wiki/Official-Translations)
-and
-[Unofficial Translations](https://github.com/lokka30/LevelledMobs/wiki/Unofficial-Translations)
-Wiki pages, which are ready to go!
-There might be a translation for the language you want to translate the mob names to,
-and the translations for your language might have entity names bundled too which you
-can simply copy and paste into the `entity-name-override` section (see below for info on that).
+> **注意**：在[官方](https://github.com/lokka30/LevelledMobs/wiki/Official-Translations)和[非官方](https://github.com/lokka30/LevelledMobs/wiki/Unofficial-Translations)的翻译Wiki中有一些预设的翻译，这些翻译都是制作好的成品！如果你想将生物的名称翻译成其他的语言，你可以自由地为它们制作对应的文件，如果你的语言包含实体名称（`entity-name-override`），那么也需要将该实体的语言文本复制到对应的文件中来覆盖，详细内容请查看下方的信息页面。
 
-See the `entity-name-override` section in `rules.yml`. This is at line `396` of the default `rules.yml` file, as of writing this answer.
+请在`rules.yml`文件中查看与实体名称（`entity-name-override`）有关的那一部分，在制作本教程时有关实体名称的那一部分在`rules.yml`的第`396`行。
 
-> **Note:** The translation process has been significantly simplified in the upcoming LevelledMobs 4. :)
+> **注意**：在即将制作完成的“生物等级”插件的4版本中，翻译的过程会被简化。:)
+
 
 </details>
 
-## Does LevelledMobs make higher level mobs drop more/better items/XP?
+## “生物等级”插件是否可以让更高等级的生物掉落更多的经验或者更好的物品？
 
 <details>
-<summary>See answer</summary>
+<summary>点击查看解决方案</summary>
 
-By default, LevelledMobs will multiply the item and experience orb drops on levelled mobs, where higher level mobs will drop more of them. You can customise the drops using our Custom Drops system.
+默认情况下，当玩家击杀本插件高等级的生物都可以获得更多的战利品和经验值，等级越高经验值越多，你可以使用我们的自定义系统来自定义战利品的掉落。
 
 </details>
 
-## How does LevelledMobs work?
+## “生物等级”插件是如何运行的？
 
 <details>
-<summary>See answer</summary>
+<summary>点击查看解决方案</summary>
 
-Here is a short explanation for laymen:
+此处有一个简单的解释，但是仅供参考：
 
-When mobs spawn on your server, LevelledMobs checks if they should be levelled. If they pass this inspection, then LevelledMobs will generate and assign a number to the mob (their 'level'). This level determines various qualities about the mob, such as the increase in strength and speed for higher level mobs. You can customise LevelledMobs to great extents, such as by adding your own custom drops for levelled mobs, and so much more!
+当生物在你的服务器上生成时，本插件会检测该生物是否可以拥有等级属性，如果可以拥有，那么本插件会根据预设的系统来为该生物添加生物等级，该等级会决定了生物的经验值和战利品数量，等级越高战利品和经验值越多。同时你也可以为本插件进行自定义设置，可以为更高等级的生物设置独特的战利品，或者其他的奖励！
+
 
 </details>
 
-## How do I change the label/nametag format?
+## 如何更改标签或生物铭牌？
 
 <details>
-<summary>See answer</summary>
+<summary>点击查看解决方案</summary>
 
-Firstly, let's check which nametag type preset you are using.
+首先需要检查一下铭牌使用的是什么类型的预设。
 
-Open up `rules.yml` and scroll down to the `use-presets` section for your `default-rule`.
-As of writing, this is approximately line `348`.
+打开`rules.yml`文件，然后找到`use-presets`部分，截止于目前制作时，`default-rule`在`rules.yml`文件的第`348`行。
 
-You should see a section that looks similar to this:
+在下方可以找到一个类似的预设列表：
+
+
 ```yaml
 default-rule:
   use-preset:
@@ -548,16 +543,16 @@ default-rule:
     ...
 ```
 
-Now, the nametag preset you are using is either `nametag_using_numbers` or `nametag_using_indicator`,
-whichever one is ***not*** commented out. By default, this is `nametag_using_numbers`.
+现在你使用的预设名称是`nametag_using_numbers`或者`nametag_using_indicator`，想开启或者关闭只需要在前面添加或者删除注释符号`#`即可，现在使用的预设名称是`nametag_using_numbers`。
 
-Now that you know which nametag preset you're using, scroll up to the area where such preset is configured.
-As of writing, this is either line `310` (for `nametag_using_indicator`), or line `328` (for `nametag_using_numbers`).
+现在你知道了你的预设的名称，现在只需要向上滚动找到该预设的那一部分，如果是`nametag_using_numbers`预设，那么在第328行；如果是`nametag_using_indicator`预设，那么在第310行，不同插件版本的行数可能会略有不同。
 
-You should see a section that looks similar to this:
+找到对应预设的那一部分后，可以找到以下内容：
+
+
 ```yaml
 nametag_using_indicator:
-    name: 'Nametag - Health Indicator'
+    name: '名称标签 - 生命值铭牌'
     apply-settings:
         nametag: '&8&l༺ %tiered%Lvl %mob-lvl%&8 | &f%displayname%&8 | &f%entity-health-rounded% %tiered%%heart_symbol% &r%health-indicator% &8&l༻'
         health-indicator:
@@ -567,39 +562,38 @@ nametag_using_indicator:
             merge: true
 
 nametag_using_numbers:
-    name: 'Nametag - Health Numerical'
+    name: '名称标签 - 生命值数字'
     apply-settings:
         nametag: '&8&l༺ %tiered%Lvl %mob-lvl%&8 | &f%displayname%&8 | &f%entity-health-rounded%&8/&f%entity-max-health-rounded% %tiered%%heart_symbol% &8&l༻'
 ```
 
-Simply edit the value of the relevant `nametag` option to customise the format. Then, run `/lm reload`
-(or restart your server) to apply the changes. 
+只需要在`nametag`选项中编辑对应数值的位置即可自定义格式，设置格式后需要在游戏里输入`/lm reload`指令或者重启服务器来应用更改的格式变化。
+
 
 </details>
 
-## How do I edit mob drops?
+## 如何编辑生物的战利品？
 
 <details>
-<summary>See answer</summary>
+<summary>点击查看解决方案</summary>
 
-Check out `customdrops.yml`. That file is documented [here](https://github.com/lokka30/LevelledMobs/wiki/Documentation---customdrops.yml).
+需要打开`customdrops.yml`文件，点击[此处](https://github.com/lokka30/LevelledMobs/wiki/Documentation---customdrops.yml)可前往寻找教程。
 
 </details>
 
-## How do I change the difficulty of levelled mobs?
+## 如何二次更改已有等级的生物难度？
 
-#### Also: What are Challenges, and how can they be modified?
+#### 还有：什么是挑战？如何更改？
 
 <details>
-<summary>See answer</summary>
+<summary>点击查看解决方案</summary>
 
-We have prepared 4 different "challenges" for our users. Challenges are essentially a difficulty level that only affects levelled mobs, being completely independent from your server's difficulty (e.g. 'hard').
+我们默认为游戏添加了四种可供选择的挑战，挑战的本质也是属于难度的一种，只会对等级较高的生物影响，这取决于你服务器上设置的难度，例如：困难模式。
 
-By default, the 'Average' challenge is used, which is intended to create levelled mobs as if Minecraft had a 'harder' difficulty. You can use the
-'basic' challenge to create mobs that are easier to fight, or any of the two harder challenges ('advanced' and 'extreme'). You can even create your
-own or modify the ones we have created for you.
+默认情况下，使用的难度是平均难度，功能是会生成一个具有等级的生物，和原版的难度模式类似，可以选择更低的难度来让生物更容易打，也可以使用更高的难度让生物更难打，你也可以不使用自带的预设难度去自己制作难度，这些都是完全可以自定义的。
 
-Around line `350` in the `rules.yml` file, you can select which "challenge" preset you would like to use. It looks like this by default:
+在`rules.yml`文件的第350行，你可以自由选择你想要的难度，默认情况下看起来的文件格式如下：
+
 
 ```yaml
 #- basic_challenge
@@ -608,9 +602,8 @@ Around line `350` in the `rules.yml` file, you can select which "challenge" pres
 #- extreme_challenge
 ```
 
-Changing the one you want to use is akin to selecting a different levelling system. Make sure you have one (1) challenge enabled (no more, no less) at
-any given time. Disable the average challenge by adding a comment character (`#`) to the start of its line, and uncomment (remove the `#` character) the
-line of the challenge you want to use instead. For example, if you wanted to use the basic challenge, it should look like this:
+如果你想更改你服务器上的难度，请确保服务器上至少开启了一种难度，如果需要开启预设列表中的某个挑战，只需要将该挑战前面的注释符号`#`删除即可，如果想禁用的话，那就也是一样在指定的挑战前面添加注释符号`#`，例如：如果想禁用平均难度并且开启最低难度的挑战，就可以设置成如下：
+
 
 ```yaml
 - basic_challenge
@@ -619,15 +612,14 @@ line of the challenge you want to use instead. For example, if you wanted to use
 #- extreme_challenge
 ```
 
-If you are not satisfied with the challenges we have prepared, we suggest duplicating an existing challenge preset, modifying it, and then enabling it
-in the default rule area (add a line just like the other challenges). For example, to add an 'Insane Challenge' which is harder than 'extreme':
+如果你觉得对我们设置的默认挑战不太满意的话，你可以自己去自定义一个挑战预设，建议复制一个现有的预设然后自己去修改。例如：可以自己去设置一个比困难模式还更难的挑战预设：
 
-1. From approx. lines `236` to `267` is the `extreme_challenge` preset. Duplicate that entire preset and rename the new, duplicate preset to `insane_challenge`.
+1. 在大约`236`行到`267`行，属于`extreme_challenge`挑战的预设，可以复制整个预设，然后修改后将其重命名为`insane_challenge`。
 
-2. Edit the values to your liking. Multipliers follow a formula which we have documented in another answer on the FAQ Wiki page. Support may be available
-on our Discord for modifying these values. We recommend using a test server to experiment with values until you are fully satisfied with the outcome.
+2. 根据你的喜好去编辑这些预设里的数值，乘法需要遵循一个公式，我们已经在疑难解答的Wiki中添加了该公式的描述。在我们的Discord频道上也有可能会有修改这些数值的支持，我们建议你去使用测试的服务器来不断地测试，直到对结果完全满意。
 
-3. At approx. lines `311` to `314` (in your default rule's `use-presets` section), add make sure all other challenges are commented out, and add the `insane_challenge` line (and make it enabled):
+3. 在大约`311`行到`314`行，你可以将你制作的挑战预设添加到该列表中，然后需要确保将其他挑战的预设前面都禁用，也就是在其他挑战预设的前面添加注释符号`#`，最后在下面添加上`insane_challenge`即可。
+
 
 ```yaml
 #- basic_challenge
@@ -637,25 +629,20 @@ on our Discord for modifying these values. We recommend using a test server to e
 - insane_challenge
 ```
 
-4. Save the file.
+4. 保存文件。
 
-5. Optional: run `/lm rules force_all` to make the new difficulty
-apply to existing levelled mobs on your server. This will re-level every loaded entity.
+5. 可选：使用`/lm rules force_all`指令来将新添加的这个挑战预设应用到服务器上现有的生物上，也会让之后生成的生物都会受到本次添加的挑战预设的影响。
 
 </details>
 
-## How do I make mobs from Monster Spawners levelled?
+## 如何让刷怪笼生成的生物增加等级？
 
 <details>
-<summary>See answer</summary>
+<summary>点击查看解决方案</summary>
 
-> **Note**: We have chosen to not make mobs from spawners levelled by
-default to keep things balanced. We recommend you make spawner mobs
-not have drop bonuses. We also recommend that spawner mobs do not
-have their health changed if you wish to not break mob farms that rely
-on fall damage.
+> **注意**：为了保持游戏的平衡，我们不建议使用刷怪笼来让生物获得等级，因为有可能会造成游戏的货币通胀，如果你不想让那些基于摔落伤害的刷怪塔失效，那么请不要更改刷怪笼在生成生物时的生命值。
 
-Approximately line `325` in `rules.yml`, in the `allowed-spawn-reasons` section, change:
+在`rules.yml`文件的第`325`行，找到`allowed-spawn-reasons`，然后将
 
 ```yaml
 conditions:
@@ -663,7 +650,7 @@ conditions:
         excluded-list: [ 'SPAWNER' ]
 ```
 
-to:
+更改为
 
 ```yaml
 conditions:
@@ -671,37 +658,40 @@ conditions:
         excluded-list: []
 ```
 
-This will make all mobs from Monster Spawners have a level.
+最后如果一切设置完毕，那么刷怪笼在生成生物时将会自动获得等级属性。
 
 </details>
 
-## How do I exclude nametagged mobs from levelling?
+## 如何将拥有名称的生物排除在等级之外？
 
 <details>
 
-<summary>See answer</summary>
+<summary>点击查看解决方案</summary>
 
-Look in your rules.yml for the following:
+在`rules.yml`文件中搜索以下内容：
+
 ```yaml
 mob-customname-status: EITHER
 ```
-The line number will vary depending on your rules version but should be around line 347.
-Update it to:
+
+插件的不同版本可能会更改行数，但是默认是347行，并且将上述的内容更改为以下内容：
+
 ```yaml
 mob-customname-status: NOT_NAMETAGGED
 ```
-Save your file then run command `/lm rules force_all`
+保存文件后输入`/lm rules force_all`指令来应用本次更改。
 
 </details>
 
-## How do I change the max level?
+## 我应该如何更改生物的最高等级？
 
 <details>
-<summary>See answer</summary>
+<summary>点击查看解决方案</summary>
 
-Firstly, let's determine what Challenge preset you are using.
+首先，请确保你使用的挑战预设。
 
-From approximately line `311` to `314` in `rules.yml`, you should see something like this - you might have adjusted it, and that's fine:
+在`rules.yml`文件的第`311`行到`314`行，如果你看到了下面这种情况，那么说明你有可能在之前就已经修改好了：
+
 
 ```yaml
 #- basic_challenge
@@ -710,11 +700,10 @@ From approximately line `311` to `314` in `rules.yml`, you should see something 
 #- extreme_challenge
 ```
 
-Notice how in this example (default file) has the `average_challenge` preset enabled. This preset is defined around line `212` in `rules.yml`. If you
-are not using the average challenge then you will need to modify a different preset instead, e.g. modify the `basic_challenge` preset if you are using
-the basic challenge.
+我们注意到在这个例子中开启了`average_challenge`挑战预设，这个预设在`rules.yml`文件的`212`行左右设置的。如果你不使用该挑战预设，那么你需要修改为其他挑战的预设，例如：基础挑战，也就是`basic_challenge`预设。
 
-For those using the average challenge, you should see something like this around line `175`:
+如果你的是`average_challenge`预设，那么你可以在第`175`行看见以下内容：
+
 
 ```yaml
   average_challenge:
@@ -731,31 +720,30 @@ For those using the average challenge, you should see something like this around
         #... continues ...
 ```
 
-Change `maxLevel` (in this case, currently `25`) to whichever value you like. We recommend using a reasonable value such as `50`, `100`, or `1000`, but
-LM gives you the power to choose whichever value you want.
+要目前挑战预设里的生物最高等级，只需要将`maxLevel`数值从`25`更改为`50`或者`其他更高的数字`，你拥有完全的自定义权限，尽情的随心所欲吧！
 
-Once your edit is done, save the file. We highly recommend running `/lm rules force_all` to relevel all mobs on your server so that they reflect the
-new max level. It would be weird to have level 25s roaming around which seem to have the same strength as a level 100. :)
+一旦你将编辑操作完成后请保存文件，然后我们建议你使用`/lm rules force_all`指令来将更改内容重新应用到你的服务器上，来让这些现有等级的生物的最高等级从`25`更改为`50`或者更高。:)
 
-</details>
-
-## How do I make custom drops from other plugins such as ExecutableItems, ItemsAdder and EcoItems?
-
-<details>
-<summary>See answer</summary>
-
-Use PenalBuffalo's [LM Items](https://www.spigotmc.org/resources/lm-items.102081/) addon plugin.
 
 </details>
 
-## How can I increase attributes (e.g. health) of mobs past 2048?
+## 如何从其他插件（例如：ExecutableItems、ItemsAdder和EcoItems）中制作自定义掉落物？
 
 <details>
-<summary>See answer</summary>
+<summary>点击查看解决方案</summary>
 
-LevelledMobs does not limit this value, it's your server software.
+使用的PenalBuffalo插件的[等级物品](https://www.spigotmc.org/resources/lm-items.102081/)拓展插件。
 
-In `spigot.yml`, increase the attribute max values:
+</details>
+
+## 如何增加生物的属性（例如：生命值）设置超过2048？
+
+<details>
+<summary>点击查看解决方案</summary>
+
+“生物等级”插件并没有限制该数值，这是因为你的服务器类型问题。
+
+在`spigot.yml`文件中，可以增加对应属性的最大值：
 
 ```yaml
   attribute:
@@ -767,33 +755,33 @@ In `spigot.yml`, increase the attribute max values:
       max: 2048.0
 ```
 
-Note that Minecraft's attribute system was not designed for insanely high values, be careful if you are going to raise the limits very high.
+请注意：我的世界原版并不是为了更多数值而设置的，如果你将属性的数值突破限制设置成更高的话，请务必注意游戏平衡。
 
 </details>
 
-## Does LevelledMobs apply levels to Players too?
+## 生物等级是否也适合用于玩家等级？
 
 <details>
-<summary>See answer</summary>
+<summary>点击查看解决方案</summary>
 
-No it does not. This plugin is designed to only level mob-like entities, and we have no intentions of adding a player component. There are many alternatives which are far more refined for Players such as [AureliumSkills (Free)](https://www.spigotmc.org/resources/aurelium-skills-advanced-skills-stats-abilities-and-more.81069/) or [McMMO (Paid)](https://www.spigotmc.org/resources/official-mcmmo-original-author-returns.64348/). 
+不，没有。我们制作这个插件并不是为了增加玩家的等级，只是为了增加生物的等级而已，如果你想增加玩家的其他等级，推荐使用 [AureliumSkills（免费）](https://www.spigotmc.org/resources/aurelium-skills-advanced-skills-stats-abilities-and-more.81069/)或者[McMMO（付费）](https://www.spigotmc.org/resources/official-mcmmo-original-author-returns.64348/)插件。
 
 </details>
 
-## MythicMob entities are not levelling/scaling properly?
+## MythicMob插件的实体不能正常升级或者缩放？
 
 <details>
-<summary>See answer</summary>
+<summary>点击查看解决方案</summary>
 
-Around MythicMobs version 5.2.6 there was a change made in the default configuration of the MythicMobs installation which enables by default the scaling/levelling of entities via their own mechanics that are entirely separate from LevelledMobs. LevelledMobs detects a fully created entity and then applies levels to that entity; if MythicMobs' has their scaling system active that will mean they will start with varied and increasing stats before LevelledMobs even has a chance to adjust them.
+在MythicMobs插件的2.5.6版本中，对于MythicMobs插件的安装配置方式做出了部分的修改。默认情况下，可以通过MythicMobs自带的机制来实现生物等级的升级和缩放，这和“生物等级”插件是完全分离的。“生物等级”插件会检测一个完整的实体，然后再将等级给予该实体，如果MythicMobs插件依旧完全激活了系统，那么在“生物等级”插件给予等级之前它们完全可以随机获得不断增加的属性。
 
-In order to reset entities to their vanilla stat values, you could disable the scaling system within MythicMobs to use LevelledMobs' levelling exclusively, or vice-versa (of course we recommend using ours over theirs but it's your choice!). To disable, locate the `config.yml` file in your MythicMobs' installation, and set the `Enabled:` under each respective worlds/scenarios to `false` to disable the scaling of MythicMobs for those scenarios. You can also adjust the Modifiers themselves to allow for some scaling controlled by MythicMobs.
+为了将实体重置为普通数值，你可以在MythicMobs中完全禁用缩放系统而只是用“生物等级”插件里的属性，或者返左来操作，虽然我们推荐你使用我们的这个系统而不是使用他们的，但是这最后的选择权在你的手上！如果要禁用缩放的话，请在MythicMob插件的`config.yml`文件中将每个维度的`Enabled`设置为`false`，你也可以使用修改器来针对这些内容做出调整。
+
 
 ![MM Config.YML](https://i.ibb.co/KV2jsP9/image.png)
 
 </details>
 
 
-## Your question not listed?
-Please ask our staff on the
-[ArcanePlugins Discord Server](https://www.discord.io/arcaneplugins).
+## 没找到你的问题？
+请假如ArcanePlugins的[Discord](https://www.discord.io/arcaneplugins)频道然后反馈你的问题。

@@ -1,46 +1,46 @@
 ```
-This page was last updated for LevelledMobs 3.2.0 b520
+此页面最后更新于3.10.0 b752版本
 ```
 
 ***
 
 ⚠
 
-**As of LevelledMobs 3.2.0 b511, the WorldGuard flags were removed.**
+**在3.2.0b 511及以后版本的“生物等级”插件中，WorldGuard Flags被移除了!**
 
-**We instead exclusively use the `allowed-worldguard-regions:` [condition](https://github.com/lokka30/LevelledMobs/wiki/Documentation---Conditions,-Strategies,-and-Apply-Settings#conditionshttps://github.com/lokka30/LevelledMobs/wiki/Documentation---Conditions,-Strategies,-and-Apply-Settings#conditions) configuration option.**
+**因此我们在配置文件中添加了`allowed-worldguard-regions`配置选项**
 
-**This section will be removed at a future date.**
+**在未来的插件版本更新中，会删除这个选项**
 
 ***
 
-Here is a list of WorldGuard flags you can use for your WorldGuard regions - you must have WorldGuard installed if you wish to use these features. Note that WorldGuard is not required to be installed alongside LevelledMobs.
+以下所有你可以在你的WorldGuard区域中使用的WorldGuard Flags。以下功能需安装WorldGuard予以实现。注释：WorldGuard 并不是 “生物等级” 使用的必要插件或前置插件。
 
 ## `LM-AllowLevelledMobs`
-Allows you to disable mobs that spawn inside the region from being levelled.
+允许在特定区域内生成的怪物拥有等级。
 
-Use `ALLOW` or `DENY`.
+使用是`ALLOW`或者否`DENY`来确定是否开启此功能。
 
-By default, this is `ALLOW`.
+默认设置是开启`ALLOW`。
 
 ## `LM-UseCustomLevels`
-Tells LM to use the min and max flags you have set (see below).
+是否开启在特定区域生成生物等级的限制。**(往下看)**
 
-Use `ALLOW` or `DENY`.
+使用是`ALLOW`或者否`DENY`来确定是否开启此功能。
 
-By default, this is `DENY`.
+默认设置是关闭`DENY`。
 
 ## `LM-CustomMinLevel`
-Tells LM what minimum level you want mobs to be that spawn in the region.
+设置在特定区域生物生成的最低等级。
 
-Use an integer.
+请使用正整数。
 
-By default, this is `-1` indicating that it is disabled.
+默认设置是`-1`，`-1`表示禁用此项功能。
 
 ## `LM-CustomMaxLevel`
-Tells LM what maximum level you want mobs to be that spawn in the region.
+设置在特定区域生物生成的最高等级。
 
 
-Use an integer.
+请使用正整数。
 
-By default, this is `-1`, indiating that it is disabled.
+默认设置是`-1`，`-1`表示禁用此项功能。

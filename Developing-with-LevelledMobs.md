@@ -1,11 +1,11 @@
 ```
-This page was last updated for LevelledMobs 3.1.0 b475
+此页面最后更新于 3.1.0 b475
 ```
 
 ***
 
-# Maven Dependency
-Add the JitPack repository.
+# Maven 依赖
+添加`jitpack`库
 ```xml
 <repository>
     <id>jitpack.io</id>
@@ -13,7 +13,7 @@ Add the JitPack repository.
 </repository>
 ```
 
-Add the LevelledMobs dependency.
+添加LM依赖
 ```xml
 <dependency>
     <groupId>com.github.lokka30</groupId>
@@ -21,25 +21,25 @@ Add the LevelledMobs dependency.
     <version>REPLACE ME</version>
 </dependency>
 ```
-Replace `REPLACE ME` with the latest version (not including build number!) of LevelledMobs, e.g. `3.1.0`.
+替换`REPLACE ME`至LM版本号，不包含构建版本。例：`3.1.0`
 
-# Accessing LevelledMobs directly
-We offer the [LevelInterface](https://github.com/lokka30/LevelledMobs/blob/master/src/main/java/me/lokka30/levelledmobs/LevelInterface.java) class to interact directly with LevelledMobs.
+# 直接于LM交互
+我们提供了 [LevelInterface](https://github.com/lokka30/LevelledMobs/blob/master/src/main/java/me/lokka30/levelledmobs/LevelInterface.java) 类，使你可以直接于LM交互
 
-# Events
-We also offer a bunch of [events](https://github.com/lokka30/LevelledMobs/tree/master/src/main/java/me/lokka30/levelledmobs/events) which you can listen to and modify.
+# 事件（EVENT）
+我们提供了一些可供监听和编辑的[事件](https://github.com/lokka30/LevelledMobs/tree/master/src/main/java/me/lokka30/levelledmobs/events)
 
-You can prevent mobs from being levelled, run stuff after they have been levelled, and so on.
+你可以阻止实体获取等级或在他们获取等级之后进行某些操作等。
 
 # Javadocs
-You may view the [javadocs](https://lokka30.github.io/LevelledMobs/) we have compiled so far.
+你可以查看我们的[javadocs](https://lokka30.github.io/LevelledMobs/)
 
-These show our code documentation which we are gradually improving.
+这是我们代码的docs，我们还在努力修改
 
-# Integrating Into Custom Drops
+# 自定义掉落
 
-If you want to integrate your plugin directly into LM's custom drop system, we have an API for it.
-Sample code is below.
+如果你希望在你的插件之中调用LM的自定义掉落，可以使用我们的API
+以下是示例：
 
 ```java
     private void testCustomDrops(){
@@ -76,4 +76,4 @@ Sample code is below.
 
 ***
 
-If you need assistance in using LevelledMobs with your plugin, please contact us! :)
+如果你在你的插件之用调用LM出现任何问题，可以联系我们寻求帮助！:)

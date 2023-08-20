@@ -1,129 +1,128 @@
 ```
-This page was last updated for LevelledMobs v3.1.2 b486
+本页信息最后更新为“生物等级”插件的v3.1.2 b486版本。
 ```
 
 ***
 
-Here are the list of permissions you can utilize with an installed permissions plugin.
+你可以使用已安装的权限插件来管理，强烈推荐使用[LuckPerms](https://luckperms.net/)，但是无论使用什么权限管理插件都不会受到影响。 :)
 
-We highly recommend [LuckPerms](https://luckperms.net/), but LevelledMobs doesn't care which permissions plugin you use :)
 
 ***
 
-Columns:
-* `Permission`: the permission label you assign to users &/or groups using a permissions management plugin.
-* `Default Ownership`: shows which players have the permission by default.
-  * `Everyone`: all players have the permission by default.
-  * `Operators`: players with operator status (from `/op`) have the permission by default.
-  * `Nobody`: no players have the permission by default.
-* `Description`: a short description about what the permission gives users access to.
+专栏：
+* `权限名称`：使用该权限插件可以为玩家或者权限组分配权限。
+* `权限组`：显示哪些玩家拥有该权限。
+  * `默认`：所有玩家默认拥有该权限。
+  * `管理员`：如果玩家拥有`OP`，那么默认拥有该权限。
+  * `无`：默认情况没有任何玩家拥有该权限。
+* `描述`：关于该权限允许玩家访问内容的简易描述。
 
 ***
 
 <table>
     <tr>
-        <th>Permission</th>
-        <th>Default Ownership</th>
-        <th>Description</th>
+        <th>权限名称</th>
+        <th>权限组</th>
+        <th>描述</th>
     </tr>
     <tr>
         <td>levelledmobs.*</td>
-        <td>Operators</td>
-        <td>Access to all LevelledMobs permissions.</td>
+        <td>管理员</td>
+        <td>访问所有“生物等级”插件的权限。</td>
     </tr>
     <tr>
         <td>levelledmobs.command.*</td>
-        <td>Operators</td>
-        <td>Access to all LevelledMobs commands permissions.</td>
+        <td>管理员</td>
+        <td>访问所有“生物等级”插件指令的权限。</td>
     </tr>
     <tr>
         <td>levelledmobs.command</td>
-        <td>Everyone</td>
-        <td>Access to the base command, `/levelledmobs`.</td>
+        <td>默认</td>
+        <td>使用`/levelledmobs`指令所需要的权限。</td>
     </tr>
     <tr>
         <td>levelledmobs.command.summon.*</td>
-        <td>Operators</td>
-        <td>Access to all `/levelledmobs summon` permissions.</td>
+        <td>管理员</td>
+        <td>使用所有`/levelledmobs summon`指令所需要的权限。</td>
     </tr>
     <tr>
         <td>levelledmobs.command.summon</td>
-        <td>Operators</td>
-        <td>Access to `/levelledmobs summon`.</td>
+        <td>管理员</td>
+        <td>使用`/levelledmobs summon`指令所需要的权限。</td>
     </tr>
     <tr>
         <td>levelledmobs.command.summon.bypass-level-limit</td>
-        <td>Operators</td>
-        <td>Makes LevelledMobs ignore the levels specified in `/levelledmobs summon` if they are above the level limit in your configuration.</td>
+        <td>管理员</td>
+        <td>拥有该权限的玩家可以可以使用`/levelledmobs summon`指令来绕过在配置文件中设置的最高等级上限。</td>
     </tr>
     <tr>
         <td>levelledmobs.command.kill.*</td>
-        <td>Operators</td>
-        <td>Access to all `/levelledmobs kill` permissions.</td>
+        <td>管理员</td>
+        <td>使用所有`/levelledmobs kill`指令所需要的权限。</td>
     </tr>
     <tr>
         <td>levelledmobs.command.kill</td>
-        <td>Operators</td>
-        <td>Access to `/levelledmobs kill`.</td>
+        <td>管理员</td>
+        <td>使用`/levelledmobs kill`指令所需要的权限。</td>
     </tr>
     <tr>
         <td>levelledmobs.command.kill.all</td>
-        <td>Operators</td>
-        <td>Access to `/levelledmobs kill all`.</td>
+        <td>管理员</td>
+        <td>使用`/levelledmobs kill all`指令所需要的权限。</td>
     </tr>
     <tr>
         <td>levelledmobs.command.kill.near</td>
-        <td>Operators</td>
-        <td>Access to `/levelledmobs kill near`.</td>
+        <td>管理员</td>
+        <td>使用`/levelledmobs kill near`指令所需要的权限。</td>
     </tr>
     <tr>
         <td>levelledmobs.command.reload</td>
-        <td>Operators</td>
-        <td>Access to `/levelledmobs reload`.</td>
+        <td>管理员</td>
+        <td>使用`/levelledmobs reload`指令所需要的权限。</td>
     </tr>
     <tr>
         <td>levelledmobs.command.info</td>
-        <td>Everyone</td>
-        <td>Access to `/levelledmobs info`.</td>
+        <td>默认</td>
+        <td>使用`/levelledmobs info`指令所需要的权限。</td>
     </tr>
     <tr>
         <td>levelledmobs.command.compatibility</td>
-        <td>Operators</td>
-        <td>Access to `/levelledmobs compatibility`.</td>
+        <td>管理员</td>
+        <td>使用`/levelledmobs compatibility`指令所需要的权限。</td>
     </tr>
     <tr>
         <td>levelledmobs.command.spawner.*</td>
-        <td>Operators</td>
-        <td>Access to all `/levelledmobs spawner` commands.</td>
+        <td>管理员</td>
+        <td>使用所有`/levelledmobs spawner`指令所需要的权限。</td>
     </tr>
     <tr>
         <td>levelledmobs.command.spawner</td>
-        <td>Operators</td>
-        <td>Access to `/levelledmobs spawner`.</td>
+        <td>管理员</td>
+        <td>使用`/levelledmobs spawner`指令所需要的权限。</td>
     </tr>
     <tr>
         <td>levelledmobs.command.spawner.copy</td>
-        <td>Operators</td>
-        <td>Access to `/levelledmobs spawner copy`.</td>
+        <td>管理员</td>
+        <td>使用`/levelledmobs spawner copy`指令所需要的权限。</td>
     </tr>
     <tr>
         <td>levelledmobs.command.rules</td>
-        <td>Operators</td>
-        <td>Access to `/levelledmobs rules`.</td>
+        <td>管理员</td>
+        <td>使用`/levelledmobs rules`指令所需要的权限。</td>
     </tr>
     <tr>
         <td>levelledmobs.debug</td>
-        <td>Operators</td>
-        <td>Ability to utilise debug functionality, if enabled in the settings file.</td>
+        <td>管理员</td>
+        <td>设置是否拥有开启或者关闭调试功能的能力。</td>
     </tr>
     <tr>
         <td>levelledmobs.compatibility-notice</td>
-        <td>Operators</td>
-        <td> Ability to view the compatibility notice on join if any possible incompatibilities are found on startup.</td>
+        <td>管理员</td>
+        <td>如果在启动时服务器发现了不兼容的情况，那么拥有该权限的玩家可以查看相关的通知信息。</td>
     </tr>
     <tr>
         <td>levelledmobs.receive-update-notifications</td>
-        <td>Operators</td>
-        <td>Receive update checker notifications in chat on join, if enabled.</td>
+        <td>管理员</td>
+        <td>如果开启，那么拥有该权限的玩家在加入服务器时可以在聊天栏中了解到更新的相关信息。</td>
     </tr>
 </table>

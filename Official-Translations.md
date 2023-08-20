@@ -1,22 +1,22 @@
 ```
-This page was last updated for LevelledMobs 3.4.1 b625
+此页面最后更新于 3.4.1 b625
 ```
 
 ***
 
-**UltimaOath** is working on official translations of various pieces of LevelledMobs for use in a future multi-lingual update.
+**UltimaOath** 是生物等级官方翻译者。
 
-In the meantime, the files will be available here for download!
+所有的文件都是公开且可以下载的！
 
-`.yml` - This represents a fully translated version of the file, as of the listed version.
+`.yml` - 完整的翻译版配置文件
 
-`EntityType` - This represents a list of entities used for the `entity-name-override:` configuration option.
+`EntityType` - `entity-name-override:`所使用的实体列表
 
-`[3.4.1 b625]-[8]` - This represents the build from which the English version of the file was pulled, then the `file-version:` of that file.
+`[3.4.1 b625]-[8]` - 前者是插件版本的配置文件，后者是文件版本
 
-> Note: If your desired translation is not available here, make sure to check the [Unofficial Translations](https://github.com/lokka30/LevelledMobs/wiki/Unofficial-Translations) page. :) 
+> 如果您的语言在此页面没有出现，请访问[非官方翻译](https://github.com/lokka30/LevelledMobs/wiki/Unofficial-Translations)页面 :) 
 
-*** 
+***
 
 > # German Translations | Deutsche Übersetzungen
 * `settings.yml`
@@ -30,7 +30,7 @@ In the meantime, the files will be available here for download!
 * `EntityType` List / Liste Der Entitäten
   * [1.18.2] [Download](https://github.com/UltimaOath/LevelledMobs/blob/master/src/main/resources/exampleconfigs/entitytype-GER.yml) | [Herunterladen](https://github.com/UltimaOath/LevelledMobs/blob/master/src/main/resources/exampleconfigs/entitytype-GER.yml)
 
-*** 
+***
 
 > # French Translations | Traductions En Français
 * `settings.yml`
@@ -44,7 +44,7 @@ In the meantime, the files will be available here for download!
 * `EntityType` List / Liste Des Entités
   * [1.18.2] [Download](https://github.com/UltimaOath/LevelledMobs/blob/master/src/main/resources/exampleconfigs/entitytype-FRE.yml) | [Télécharger](https://github.com/UltimaOath/LevelledMobs/blob/master/src/main/resources/exampleconfigs/entitytype-FRE.yml)
 
-*** 
+***
 
 > # Spanish Translations | Traducciones Al Español
 * `settings.yml`
@@ -58,4 +58,4 @@ In the meantime, the files will be available here for download!
 * `EntityType` List / Lista De Entidades
   * [1.18.2] [Download](https://github.com/UltimaOath/LevelledMobs/blob/master/src/main/resources/exampleconfigs/entitytype-SPA.yml) | [Descargar](https://github.com/UltimaOath/LevelledMobs/blob/master/src/main/resources/exampleconfigs/entitytype-SPA.yml)
 
-*** 
+***
