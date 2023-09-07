@@ -1,76 +1,76 @@
 ```
-This page was last updated for LevelledMobs 3.9.1 b730
+本页信息最后更新为“生物等级”插件的3.9.1 b730版本。
 ```
 
 ***
 
-# Debug-Misc
+# 调试-杂项
 
 ```yml
 debug-misc: [ '' ]
 ```
 
-These are all of the potential debug options to input into the `debug-misc:` config line located within `settings.yml`.
+以下列表中的名称都是可以添加到`settings.yml`文件中的`debug-misc:`选项中来作为调试模式的选择对象。
 
-You can use multiple debug options, separated by commas. 
+你可以同时添加多个调试对象，只需要使用英文的逗号“`,`”隔开即可。 
 
-> ### Denied Levelling<br />
-> Options related to any flags which denied an entity a level.
-* `APPLY_LEVEL_FAIL` - Reports when LM does not apply a level to an entity.
-* `ENTITY_TRANSFORM_FAIL` - Reports when an entity that has 'transformed' was not eligable for a level.
-* `SCOREBOARD_TAGS` - Reports a level being denied due to a scoreboard tags rule not meeting criteria.
-* `SKYLIGHT_LEVEL` - Reports a level being denied due to the skylight level rule not meeting criteria.
-* `DENIED_FORCE_BLOCKED_ENTITY_TYPE` - When LM does not apply a level due to a hardcoded entity type.
-* `DENIED_RULE_ENTITIES_LIST` - Reports a level being denied due to exclusion from entity list.
-* `DENIED_RULE_MINLEVEL` - Reports a level being denied due to the minimum not being reached.
-* `DENIED_RULE_MAXLEVEL` - Reports a level being denied due to the value being over maximum.
-* `DENIED_RULE_WORLD_LIST` - Reports a level being denied due to an entity spawning in an excluded world list.
-* `DENIED_RULE_BIOME_LIST` - Reports a level being denied due to an entity spawning in an excluded biome list.
-* `DENIED_RULE_PLUGIN_COMPAT` - Reports a level being denied due to a specific plugin being excluded.
-* `DENIED_RULE_SPAWN_REASON` - Reports a level being denied due to a specific excluded `allowed-spawn-reason:`.
-* `DENIED_RULE_CUSTOM_NAME` - Reports a level being denied due to the `CustomName` matching a configured value.
-* `DENIED_RULE_CHANCE` - Reports a level being denied due to random chance configuration.
-* `DENIED_RULE_WG_REGION` - Reports a level being denied due to the rules of a `WorldGuard` region.
-* `DENIED_RULE_WG_REGION_OWNER` - Reports a level being denied due to the rules of a `WorldGuard` region's owner.
-* `DENIED_RULE_MYTHIC_MOBS_INTERNAL_NAME` - Reports a level being denied due to a condition check against the MM entity name.
-* `DENIED_RULE_RULE_Y_LEVEL` - Reports a level being denied due to the entity's position being above or below a specific Y-Coordinate configured.
-* `DENIED_LEVEL_0` - Reports a level being denied due to `maxLevel: 0` set for that entity.
-* `DENIED_RULE_MIN_SPAWN_DISTANCE` - Reports a level being denied due to being too close to spawn.
-* `DENIED_RULE_MAX_SPAWN_DISTANCE` - Reports a level being denied due to being too far from spawn.
-* `DENIED_RULE_RULE_STOP_PROCESSING` - Reports a level being denied due to the `stop-processing:` config option.
-* `DENIED_RULE_SPAWNER_NAME` - Reports a level being denied due to the spawner name not meeting criteria.
-* `DENIED_RULE_WORLD_TIME_TICK` - Reports a level being denied due to the world time tick not meeting criteria.
-* `DENIED_RULE_PERMISSION` - Reports a level being denied due to the user permissions not meeting criteria.
-* `DENIED_RULE_WITH_COORDINATES` - Reports a level being denied due to it being outside of a specified `within-coordinates:` location.
+> ### 禁止等级<br />
+> 与实体等级铭牌的有关选项。
+* `APPLY_LEVEL_FAIL` - 当“生物等级”插件未给予实体等级时的报告。
+* `ENTITY_TRANSFORM_FAIL` - 实体已经转化了但是未满足某个等级要求的报告。
+* `SCOREBOARD_TAGS` - 因计分板规则不符合标准而被拒绝的报告。
+* `SKYLIGHT_LEVEL` - 报告由于光照登记不符合标准而被拒绝的登记。
+* `DENIED_FORCE_BLOCKED_ENTITY_TYPE` - 当“生物等级”因生物的硬编码问题而无法给予等级时。
+* `DENIED_RULE_ENTITIES_LIST` - 当实体列表被拒绝给予等级时。
+* `DENIED_RULE_MINLEVEL` - 当实体未达到给予等级的要求被拒绝时。
+* `DENIED_RULE_MAXLEVEL` - 当等级数值超过最大值而被拒绝时。
+* `DENIED_RULE_WORLD_LIST` - 当实体在被禁止生成时维度列表中而被拒绝时。
+* `DENIED_RULE_BIOME_LIST` - 当实体在被禁止生成时生物群系列表中而被拒绝时。
+* `DENIED_RULE_PLUGIN_COMPAT` - 当实体因为被指定插件拒绝给予等级时。
+* `DENIED_RULE_SPAWN_REASON` - 当`allowed-spawn-reason:`被特定因素而被拒绝给予等级时。
+* `DENIED_RULE_CUSTOM_NAME` - 当由于`自定义名称`与配置等级数值不一致而被拒绝时。
+* `DENIED_RULE_CHANCE` - 当随机概率配置被等级拒绝时。
+* `DENIED_RULE_WG_REGION` - 当由于`WorldGuard`插件的区域规则被拒绝生成时。
+* `DENIED_RULE_WG_REGION_OWNER` - 当由于`WorldGuard`插件的区域所有者规则被拒绝生成。
+* `DENIED_RULE_MYTHIC_MOBS_INTERNAL_NAME` - 当因MM插件实体名称被拒绝生成等级时。
+* `DENIED_RULE_RULE_Y_LEVEL` - 当由于实体坐标高或于配置的指定Y轴坐标而被拒绝生成等级时。
+* `DENIED_LEVEL_0` - 当实体的`maxLevel: 0`设置为0而被拒绝时。
+* `DENIED_RULE_MIN_SPAWN_DISTANCE` - 当实体因太靠近出生点而被拒绝生成等级时。
+* `DENIED_RULE_MAX_SPAWN_DISTANCE` - 当实体因距离出生点太远而被拒绝生成等级时。
+* `DENIED_RULE_RULE_STOP_PROCESSING` - 当实体因`stop-processing:`配置选项而被拒绝生成等级时。
+* `DENIED_RULE_SPAWNER_NAME` - 当实体因刷怪笼名称不符合标准而被拒绝生成时。
+* `DENIED_RULE_WORLD_TIME_TICK` - 当实体因时间tick不符合标准而被拒绝生成时。
+* `DENIED_RULE_PERMISSION` - 当实体因玩家权限等级不符合标准而被拒绝生成时。
+* `DENIED_RULE_WITH_COORDINATES` - 当实体因`within-coordinates:`被拒绝在特定位置上生成等级时。
 
-> ### Pre-Processing<br />
-> Options related to processes handled prior to a level being successfully applied to an entity.
-* `ENTITY_SPAWN` - Reports when an entity has spawned and LM has taken over.
+> ### 预处理<br />
+> 当等级给予生物之前的流程事项。
+* `ENTITY_SPAWN` - 报告生物在生成后被给予等级的时间。
 
-> ### Rules Processing<br />
-> Options related to processes handled on a listener or cooldown, connected to the Rules system.
-* `APPLY_LEVEL_SUCCESS` - Reports when LM applied a level to an entity successfully.
-* `MOB_SPAWNER` - Reports entities which have been levelled from a Spawner Cube.
-* `ENTITY_MISC` - Reports when a baby entity ages into an adult, and is eligable to be levelled.
-* `PLAYER_LEVELLING` - Shows debug information relating to the `Player Levelling` strategy, if utilized.
-* `ATTRIBUTE_MULTIPLIERS` - Shows debug information relating to how the attributes are being multiplied.
-* `NBT_APPLY_SUCCESS` - Reports when NBT data was successfully applied to a levelled entity.
-* `RULE_COOLDOWN` - Reports a rule has been disabled due to it meeting the cooldown criteria.
-* `MULTIPLIER_REMOVED` - Reports when a `vanilla-bonus:` is removed from an entity.
+> ### 规则流程<br />
+> 连接到规则系统中的监听器有关的流程配置选项。
+* `APPLY_LEVEL_SUCCESS` - 报告生物等级成功给予生物时的时间。
+* `MOB_SPAWNER` - 报告从刷怪笼方块中升级的实体。
+* `ENTITY_MISC` - 报告幼体完全长成并允许升级时间。
+* `PLAYER_LEVELLING` - 显示与`玩家等级`（如果启用）策略有关的调试信息。
+* `ATTRIBUTE_MULTIPLIERS` - 显示与属性乘法倍率有关的调试信息。
+* `NBT_APPLY_SUCCESS` - 在NBT数据成功应用到已分级实体时报告。
+* `RULE_COOLDOWN` - 报告规则由于满足冷却所需条件而被禁用。
+* `MULTIPLIER_REMOVED` - 显示在多久之后从实体身上移除`vanilla-bonus:`。
 
-> ### Post-Processing<br />
-> Options related to processes handled once an entity has been levelled.
-* `ENTITY_TAME` - Reports when a levelled entity has been tamed.
-* `RANGED_DAMAGE_MODIFICATION` - Reports the adjusted ranged damage output from projectiles which have caused damage.
+> ### 后处理<br />
+> 当实体被设置等级时进程相关的选项。
+* `ENTITY_TAME` - 显示已驯服实体的等级。
+* `RANGED_DAMAGE_MODIFICATION` - 报告已产生伤害的炮弹调整之后的远程伤害输出。
 
-> ### On-Death Processing<br />
-> Options related to processes handled once a levelled entity has died.
-* `CUSTOM_DROPS` - Reports when a `CustomDrop` from LM has been processed.
-* `CUSTOM_COMMANDS` - Reports when a `CustomCommand` from the `CustomDrop` system has been processed.
-* `SET_LEVELLED_ITEM_DROPS` - Reports when LM adjusts an entity's item drops.
-* `SET_LEVELLED_XP_DROPS` - Reports when LM adjusts an entity's experience drops.
-* `CHUNK_KILL_COUNT` - Reports when a chunk has met the max criteria to disable drops.
+> ### 关于死亡流程<br />
+> 当设置等级的生物实体死亡时进程相关的选项。
+* `CUSTOM_DROPS` - 当生物等级`自定义掉落`被处理的时间。
+* `CUSTOM_COMMANDS` - 当来自 `CustomDrop` 系统的 `CustomCommand`被处理时候的报告。
+* `SET_LEVELLED_ITEM_DROPS` - 显示生物等级调整实体物品掉落的信息。
+* `SET_LEVELLED_XP_DROPS` - 显示生物等级调整实体经验值掉落的信息。
+* `CHUNK_KILL_COUNT` - 当一个区块满足禁用掉落物的最大条件时报告。
 
-> ### Developer Options<br />
-> Options meant for developers only. 
-* `THREAD_LOCKS` - Shows debug information relating internal thread locks.
+> ### 开发者选项<br />
+> 仅限开发者使用。
+* `THREAD_LOCKS` - 显示与内部线程锁有关的调试信息。
