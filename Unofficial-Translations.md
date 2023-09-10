@@ -1,21 +1,21 @@
 ```
-This page was last updated for LevelledMobs 3.10.0 b752
+此页面最后更新于 3.10.0 b752
 ```
 
 ***
 
-The following translations have been kindly provided by members of the community.
+以下翻译是由社区成员提供的。
 
-If you have translated any LevelledMobs files, feel free to contact an ArcanePlugins administrator via our <a href="https://www.discord.io/arcaneplugins">Discord Server</a> and it can be listed here! :smiley:
+如果你翻译了任何LevelledMobs文件，请通过我们的 <a href="https://www.discord.io/arcaneplugins">Discord Server</a> 联系ArcanePlugins管理员，我们会把它列在这里! :smiley:
 
-> Note: If any translation links expire (e.g. 'pastebin'-type links), they should be removed from the list.
+> 注意：过期的链接将被删除。
 
 ***
 
-# Up-to-date translations:
-Note: check the 'this page was last updated for' comment at the top of this page. If it is outdated then please let us know and we can validate that these translations are still 'up-to-date'.
+# 最新的翻译:
+注意：检查本页面顶部的”此页面最后更新于“部分，如果过期了请告诉我们，我们将确保翻译是”最新的“。
 
-## Spanish (Español)
+## 西班牙语
 
 <table>
     <tr>
@@ -50,7 +50,7 @@ Note: check the 'this page was last updated for' comment at the top of this page
     </tr>
 </table>
 
-## Japanese (日本語)
+## 日语
 
 <table>
     <tr>
@@ -70,9 +70,9 @@ Note: check the 'this page was last updated for' comment at the top of this page
 
 ***
 
-# Outdated translations:
+# 过期的翻译:
 
-## Chinese (汉语)
+## 汉语
 <table>
     <tr>
         <th>Author</th>
@@ -106,7 +106,7 @@ Note: check the 'this page was last updated for' comment at the top of this page
     </tr>
 </table>
 
-## Russian (Русский)
+## 俄语
 
 <table>
     <tr>

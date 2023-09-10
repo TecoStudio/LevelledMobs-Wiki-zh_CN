@@ -18,7 +18,7 @@
 
 ***
 
-> # German Translations | Deutsche Übersetzungen
+> # 德语翻译
 * `settings.yml`
   * [3.4.1 b625]-[33] [Download](https://github.com/UltimaOath/LevelledMobs/blob/master/src/main/resources/exampleconfigs/settings-GER.yml) | [Herunterladen](https://github.com/UltimaOath/LevelledMobs/blob/master/src/main/resources/exampleconfigs/settings-GER.yml)
 * `customdrops.yml`
@@ -32,7 +32,7 @@
 
 ***
 
-> # French Translations | Traductions En Français
+> # 法语翻译
 * `settings.yml`
   * [3.4.1 b625]-[33] [Download](https://github.com/UltimaOath/LevelledMobs/blob/master/src/main/resources/exampleconfigs/settings-FRE.yml) | [Télécharger](https://github.com/UltimaOath/LevelledMobs/blob/master/src/main/resources/exampleconfigs/settings-FRE.yml)
 * `customdrops.yml`
@@ -46,7 +46,7 @@
 
 ***
 
-> # Spanish Translations | Traducciones Al Español
+> # 西班牙语翻译
 * `settings.yml`
   * [3.4.1 b625]-[33] [Download](https://github.com/UltimaOath/LevelledMobs/blob/master/src/main/resources/exampleconfigs/settings-SPA.yml) | [Descargar](https://github.com/UltimaOath/LevelledMobs/blob/master/src/main/resources/exampleconfigs/settings-SPA.yml)
 * `customdrops.yml`
