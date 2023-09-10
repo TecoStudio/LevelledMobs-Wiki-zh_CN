@@ -21,7 +21,7 @@
     *   [了解默认规则](https://github.com/TecoStudio/LevelledMobs-Wiki-zh_CN/wiki/Understanding-the-Default-Config)
     *   [示例自定义规则](https://github.com/TecoStudio/LevelledMobs-Wiki-zh_CN/wiki/Sample-Custom-Rules)
 *   [⚔ 自定义掉落 (customdrops.yml)](https://github.com/TecoStudio/LevelledMobs-Wiki-zh_CN/wiki/Documentation---customdrops.yml)
-    *   [示例自定义掉落](https://github.com/ArcanePlugins/LevelledMobs/wiki/Sample-Custom-Drops)
+    *   [示例自定义掉落](https://github.com/TecoStudio/LevelledMobs-Wiki-zh_CN/wiki/Sample-Custom-Drops)
 *   [💬 信息 (messages.yml)](https://github.com/TecoStudio/LevelledMobs-Wiki-zh_CN/wiki/Documentation---messages.yml)
 *   [🎌 官方配置翻译](https://github.com/TecoStudio/LevelledMobs-Wiki-zh_CN/wiki/Official-Translations)
 *   [🎌 非官方配置翻译](https://github.com/TecoStudio/LevelledMobs-Wiki-zh_CN/wiki/Unofficial-Translations)
@@ -42,6 +42,6 @@
 # 📃 其他信息
 
 *   [💙 来源](https://github.com/TecoStudio/LevelledMobs-Wiki-zh_CN/wiki/Credits)
-*   [💸 捐助](https://github.com/ArcanePlugins/LevelledMobs/wiki/Donations)
+*   [💸 捐助](https://github.com/TecoStudio/LevelledMobs-Wiki-zh_CN/wiki/Donations)
 *   [🔗 链接到默认配置文件](https://github.com/TecoStudio/LevelledMobs-Wiki-zh_CN/wiki/Links-to-default-config-files)
 *   [📊 bStats 指标](https://github.com/TecoStudio/LevelledMobs-Wiki-zh_CN/wiki/bStats-Metrics-Notice)
