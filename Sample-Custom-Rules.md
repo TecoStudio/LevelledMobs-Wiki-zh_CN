@@ -1,16 +1,17 @@
 ```
-This page was last updated for LevelledMobs 3.9.0 b726
+此页面最后更新于 LevelledMobs 3.9.0 b726
 ```
 
 ***
 
-# Sample Custom Rules
+# 示例自定义规则
 
-Below are examples of different custom rules which you can apply to your own file for different unique effects! These are just the skeletons, so feel free to modify them to your liking. Almost anything is possible if you can imagine it!
+以下是不同自定义规则的示例，你可以将其应用于自己的文件以实现不同的独特效果！这些只是框架，因此请随意根据你的喜好进行修改。只要你想，几乎任何事情都有可能！
+
 
 ***
 
-> ### Custom Ender Dragon Levelling
+> ### 自定义末影龙升级
 > ```yaml
 >   - enabled: false
 >     name: 'CR - Ender Dragon Fight'
@@ -28,11 +29,11 @@ Below are examples of different custom rules which you can apply to your own fil
 >             max-health: 3.0
 >             attack-damage: 1.0
 > ```
-> Once enabled, utilizing the preset `average_challenge`, limiting the rule to both the `world_the_end` and the `ENDER_DRAGON` itself. This tells the Ender Dragon to use a `minLevel: 25`, which when using the `average_challenge`, is considered the `maxLevel:` as well. Then we apply custom multipliers specifically for the `ENDER_DRAGON`, adjusting it's `max-health:` and `attack-damage:`, while still utilizing the default multipliers set in the `average_challenge` preset, along with any potential tiered coloring required.
+> 启用后，利用预设的`average_challenge`，将规则限制为`world_the_end`和`ENDER_DRAGON`本身。 这告诉末影龙使用 `minLevel: 25`，当使用 `average_challenge` 时，它也被认为是 `maxLevel:`。 然后，我们专门为`ENDER_DRAGON`应用自定义乘数，调整其`max-health:`和`attack-damage:`，同时仍然利用`average_challenge`预设中设置的默认乘数，以及所需的任何潜在的分层着色。
 
 ***
 
-> ### Boss-Bar Style Nametag using Health Indicators
+> ###  使用生命值显示的Boss-Bar名牌
 > ```yml
 >   - enabled: false
 >     name: 'CR - Boss Bar'
@@ -43,11 +44,11 @@ Below are examples of different custom rules which you can apply to your own fil
 >         max: 10
 >       nametag: '%health-indicator%'
 > ```
-> Once enabled, this will alter the `nametag:` of an entity to display only the `health-indicator:` style. This custom rule uses the presets to specify both the `allowed_worlds` and collect the coloring and indicator details from `nametag_using_indicator`. This rule will work with any difficulty setting, however it does assume that you are using the `average_challenge` when setting the `scale:`. Using LM's default difficulty settings, it would be recommended to use a `scale: 1` for `basic_challenge` and `scale: 4` for `advanced_challenge`.
+> 启用后，这将修改实体的 `nametag:` 以仅显示 `health-indicator:` 样式。此自定义规则使用预设来指定 `allowed_worlds` 并从 `nametag_using_indicator` 中收集颜色和指示器的详细信息。此规则将与任何难度设置一并工作，但如果你在设置 `scale:` 时使用了 `average_challenge`。使用LM的默认难度设置时，建议将 `scale:` 设置为 `1` 以适应 `basic_challenge`，将 `scale:` 设置为 `4` 以适应 `advanced_challenge`。
 
 ***
 
-> ### Night Time Difficulty Increase
+> ### 夜晚难度增加
 > ```yml
 >   - enabled: false
 >     name: 'CR - Difficulty Increase at Night'
@@ -58,11 +59,11 @@ Below are examples of different custom rules which you can apply to your own fil
 >     apply-settings:
 >       minLevel: 25
 > ```
-> Once enabled, this will increase the difficulty of the entities spawned at night, from the onset of night to the cusp of dawn. This also only applies to the entities above `y=62` so that those entities might die when the sun comes up. This also restricts those entities to a level between `25-50`, based on the default settings for the `advanced_challenge` preset.
+> > 启用后，这将增加夜间生成的实体的难度，从夜晚开始到黎明的时刻。这仅适用于 `y=62` 以上的实体，以便这些实体在日出时可能会死亡。这也将这些实体限制在 `25-50` 的水平之间，这基于 `advanced_challenge` 预设的默认设置。
 
 ***
 
-> ### Deny Levelling in Specific Biomes
+> ### 在特定的生物群系中禁止升级
 > ```yml
 >   - enabled: false
 >     name: 'CR - NoLevel Biomes'
@@ -74,11 +75,11 @@ Below are examples of different custom rules which you can apply to your own fil
 >     apply-settings:
 >       maxLevel: 0
 > ```
-> Once enabled, this custom rule will prevent entities from levelling when located within the `world:` `world_nether`, and the `biome:` `NETHER_WASTES`. A simple and easy to implement rule!
+> 启用后，此自定义规则将阻止位于 `world:` `world_nether` 和 `biome:` `NETHER_WASTES` 中的实体升级。这是一个简单且易于实施的规则！
 
-*** 
+***
 
-> ### Customized Entity Name Based On Level
+> ### 基于等级的自定义实体名称
 > ```yml
 >   - enabled: false
 >     name: 'CR - Level Dependent Zombie Custom Names'
@@ -95,11 +96,11 @@ Below are examples of different custom rules which you can apply to your own fil
 >           ZOMBIE: ['Hunting %displayname%']
 >         BABY_ZOMBIE: ['Baby Undead']
 > ```
-> Once enabled, this custom rules uses a special feature of the `entity-name-override:` which allows you to specify the level range which a custom name would apply. This scale presumes you are using the `average_challenge` preset, but all can be adjusted! You can also add conditions, such as biome limitations, which would allow you to further customize!
+> 启用后，此自定义规则将使用`entity-name-override:`的特殊功能，该功能允许你指定自定义名称将应用的级别范围。 此比例会假设你使用`average_challenge`预设，但所有内容都可以调整！ 你还可以添加条件，例如生物群系限制，这将允许你进一步自定义！
 
-*** 
+***
 
-> ### Nerfed Spawner Cube Entities
+> ### 减弱刷怪笼实体
 > ```yml
 >   - enabled: false
 >     name: 'CR - Nerfed Spawner Cubes'
@@ -117,15 +118,14 @@ Below are examples of different custom rules which you can apply to your own fil
 >         armor-toughness: 0.0
 >         xp-drop: 0.0
 > ```
-> Once enabled, this custom rules will level entities that are generated from Spawner Cubes the same as any other on the server, except for their health not changing (their damage will still increase!). This also adds the `Spawned ` prefix to their names, making them easier to locate. 
+> 启用后，此自定义规则将与服务器上的任何其他实体一样升级由刷怪箱生成的实体，只是它们的生命值不会改变（它们的伤害仍然会增加！）。这还会在它们的名称中添加`Spawned`前缀，使它们更容易找到。
+***
 
-*** 
-
-> ### NBT-API | Startled Creepers!
+> ### NBT-API | 进入爆炸倒计时的苦力怕！
 > ```yml
 >   - enabled: false
-> #   This rule requires the soft-dependency NBT-API to function!
-> #   Make sure you have it installed prior to enabling this rule!
+> #   此规则需要软依赖的 NBT-API 才能运行！
+> #   确保在启用此规则之前已安装它！
 >     name: 'CR - NBT - 20% Startled Creepers, Short Fuse'
 >     use-preset: allowed_worlds
 >     conditions:
@@ -137,13 +137,14 @@ Below are examples of different custom rules which you can apply to your own fil
 >       entity-name-override:
 >         CREEPER: ['Startled %displayname%']
 > ```
-> This custom rule requires the soft-dependency NBT-API to function!
-> Once enabled, this rule will apply `nbt-data:` to the `CREEPER` entity. This applies at a `chance: 0.2`, or 20%. It will also change the Creeper's name to `Startled Creeper`, distinguishing them from normal `CREEPER`'S.
-> The `nbt-data:` listed will adjust the `CREEPER`'S fuse duration to half a second, and make it so that they can not see the player until they are within about two blocks from them. This is where the concept of a 'startled' creeper came about!
+> 此自定义规则需要软依赖 NBT-API 才能运行！
+> 此自定义规则需要软依赖的 NBT-API 才能运行！
+> 启用后，此规则将应用 `nbt-data:` 到 `CREEPER` 实体。这以 `chance: 0.2` 或 20% 运行。它还将苦力怕的名称更改为 `进入爆炸倒计时的苦力怕`，将它们与普通的 `CREEPER` 区分开来。
+> 列出的 `nbt-data:` 将调整 `CREEPER` 的引线持续时间为半秒，并使它们在玩家距离它们约两个方块之外看不到玩家。这就是`进入爆炸倒计时的`苦力怕的概念！
 
 ***
 
-> ### Using Drop-Tables with Custom Rules
+> ### 使用自定义规则的掉落表
 > ```yaml
 >  - enabled: true
 >    name: 'Drop Tables for LVL1-12'
@@ -174,16 +175,16 @@ Below are examples of different custom rules which you can apply to your own fil
 >    apply-settings:
 >      use-droptable-id: extreme_weapons_table, extreme_armor_table
 > ```
-> You can use the `use-droptable-id:` system as an `apply-settings:` config option which will allow you to build a loot table within the `customdrops.yml` file, and then set any number of `conditions:` within the Rules system to apply these tables in a more unique way than what the Custom Drops system can provide alone.
+> 你可以使用 `use-droptable-id:` 系统作为 `apply-settings:` 配置选项，该选项允许你在 `customdrops.yml` 文件中构建战利品表，然后在规则系统中设置任意数量的 `conditions： ` ,以便于使用比自定义 Drops 系统单独提供的更独特的方式应用这些表。
 
 ***
 
-> ### Using Custom Variables with Placeholder API (PAPI) and Player Level Modifier
+> ### 使用占位符API（PAPI）和玩家等级修改器的自定义变量
 > ```yaml
 >  - enabled: true
 >    name: 'Player Level Modifier using Statistic and Math Modules'
-> #  This rule requires the soft-dependency PlaceholderAPI to function!
-> #  Make sure you have it installed prior to enabling this rule!
+> #  此规则需要软依赖的 PlaceholderAPI 才能运行！
+> #  确保在启用此规则之前已安装它！
 >    strategies:
 >      player-levelling:
 >        match-level: true
@@ -197,13 +198,13 @@ Below are examples of different custom rules which you can apply to your own fil
 >          31-45: 21-25
 >        variable: '%math_({statistic_damage_dealt}-({statistic_damage_taken}*5))/1000%'
 > ```
-> This system allows you to modify an entities' level based on some variable produced by the nearest player to the entity. By default this is the vanilla Minecraft level of the player, however in this example we combine two PlaceholderAPI modules to produce higher entity levels when the player deals more damage, and will reduce the level if the player begins to take damage. To use the `variable:` above, after downloading and installing PlaceholderAPI, you need to perform `/papi ecloud download Math`, `/papi ecloud download Statistic`, and then `/papi reload` to access those modules.
+> 这个系统允许你根据距离实体最近的玩家产生的某个变量来修改实体的等级。默认情况下，这是玩家的原始Minecraft等级，但在这个示例中，我们结合了两个PlaceholderAPI模块，以在玩家造成更多伤害时提高实体等级，并在玩家开始受到伤害时降低等级。要使用上面的 `variable:`，在下载并安装PlaceholderAPI后，你需要执行 `/papi ecloud download Math`、`/papi ecloud download Statistic`，然后 `/papi reload` 来访问这些模块。
 > 
-> This version of this variable states that it will take the damage the player deals to mobs, subtract five times the amount of damage that the player has received from any source, and then divide that total by 1000. This produces a small number which will grow gradually over time if the player deals out the damage, but will reduce itself more if the player begins to take damage.
+> 此版本的此变量说明它将取玩家对生物造成的伤害，减去玩家从任何来源接收的五倍伤害量，然后将总数除以1000。这会产生一个小数字，如果玩家造成伤害，它将逐渐增长，但如果玩家开始受到伤害，它将逐步减少。
 
 ***
 
-> ### The Average Challenge; Using Stacked Multipliers
+> ### 平均挑战; 使用堆叠的增益
 > ```yaml
 >   - enabled: true
 >     name: 'Average-Challenge Stacked Multipliers'
@@ -220,11 +221,11 @@ Below are examples of different custom rules which you can apply to your own fil
 >         item-drop: ['0.25', 'STACKED']
 >         xp-drop: ['17.5', 'STACKED']
 > ```
-> This is a modification of the multiplier system which would instead stack the multipliers per level rather than use the default percentage formula. Using `['X', 'STACKED']`, you can set the stacked value for that specific multiplier while letting the others use the default system; or you can enable `use-stacked:` and it will activate for all entries beneath it.
+>  这是一个修改的增益系统，它会堆叠每个级别的增益，而不是使用默认的百分比公式。使用 `['X', 'STACKED']`，你可以为该特定增益设置堆叠值，同时让其他增益使用默认系统；或者你可以启用 `use-stacked:`，它将对其下的所有条目激活。
 
 ***
 
-> ### Using %world_time_ticks% with Player Level Modifier
+> ### 使用 %world_time_ticks% 的玩家等级修改器
 > ```yaml
 >  - enabled: true
 >    name: 'Player Level Modifier with World Time Tick'
@@ -238,25 +239,25 @@ Below are examples of different custom rules which you can apply to your own fil
 >        recheck-players: true
 >        preserve-entity: 10s
 >        tiers:
->          0-1000: 13-19  # Sunrise
+>          0-1000: 13-19  # 日出
 >          1000-2000: 11-17
 >          2000-3000: 9-15
 >          3000-4000: 7-12
 >          4000-5000: 5-9
 >          5000-6000: 2-7
->          6000-7000: 1-5  # Noon
+>          6000-7000: 1-5  # 中午
 >          7000-8000: 2-7
 >          8000-9000: 5-9
 >          9000-10000: 7-12
 >          10000-11000: 9-15
 >          11000-12000: 11-17
->          12000-13000: 13-19  # Sunset
+>          12000-13000: 13-19  # 日落
 >          13000-14000: 15-21
 >          14000-15000: 17-23
 >          15000-16000: 19-25
 >          16000-17000: 21-25
 >          17000-18000: 23-25
->          18000-19000: 25-25  # Midnight
+>          18000-19000: 25-25  # 午夜
 >          19000-20000: 23-25
 >          20000-21000: 21-25
 >          21000-22000: 19-25
@@ -264,11 +265,11 @@ Below are examples of different custom rules which you can apply to your own fil
 >          23000-24000: 15-21
 >        variable: '%world_time_ticks%'
 > ```
-> This Player Level Modifier will use an internal placeholder called `%world_time_ticks%` as the `variable:`, and the `tiers:` are arranged so that the level becomes easier during the day centered on noon, and more difficult during at night centered on midnight. The levels are based on the `average_challenge`.
+> 此玩家等级修改器将使用内部占位符 `%world_time_ticks%` 作为 `variable:`，并将 `tiers:` 变为在以中午为中心的白天变得更容易，以午夜为中心的夜晚变得更加困难。这些级别基于 `average_challenge`。
 
 ***
 
-> ### Creating 'rings' of levels centered from spawn
+> ### 创建以生成点为中心的等级'环'
 > ```yaml
 >  - enabled: true
 >    name: 'Level 1-5 Ring'
@@ -291,4 +292,4 @@ Below are examples of different custom rules which you can apply to your own fil
 >      minLevel: 5
 >      maxLevel: 10
 > ```
-> This pair of custom rules demonstrate the principal of creating 'rings' of levels centered around the spawn. While this is similar to Spawn Levelling, this method creates rings of influence with distinct regions rather than a gradual progression.
+> 这对自定义规则演示了创建以生成点为中心的级别'环'的原理。 虽然这与 Spawn Levelling 类似，但此方法会创建具有不同区域的影响环，而不是逐渐进展。

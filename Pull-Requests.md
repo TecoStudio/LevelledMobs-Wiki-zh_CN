@@ -1,30 +1,39 @@
 ```
-This page was last updated for LevelledMobs 3.1.1 b481
+此页面最终更新于 LevelledMobs 3.1.1 b481
 ```
 
 ***
 
-We would *highly* appreciate if contributors followed this guide, as it will save the lead developers a lot of time having to clean up PRs.
+如果贡献者遵循本指南，我们将*高度*感激，因为这将为主要开发人员节省大量清理 PR 的时间。
 
 ***
 
-# Musts:
-* **Before** working on a PR, please contact the development team to make sure it is worthy of your time. If an issue on the issue tracker has the label `contributions welcome` then it is likely we will give you the 👍🏻.
-* Please use curly brackets, *especially* if it is an 'if abc else xyz' statement. The only exception is for small 'if' statements, such as `if(enabled) runMethod();`.
-* Include javadocs and comments to your code wherever possible, unless it is obviously self-explanatory (e.g. 'changeWoolColor(Block)`)
-* Please do not commit any personal IDE settings change unless you feel they are a significant improvement. If you find your IDE is adding its own files then consider adding them to `.gitignore`.
-* Do not use automatic code re-arranging from your IDE. We've purposely laid out methods and variables in certain areas, and functions such as IntelliJ's 'relocate code' mess with it.
+# 必须事项：
 
-# Language:
-* Wherever possible, use American English (`en-us`) spelling
-* The only exception is with the plugin's name, `LevelledMobs`, which was spelt
-originally with Australian English (`en-au`) and shall continue to be, to prevent breaking any resources which depend on
-this spelling.
-  * American English uses `leveled` (two total `l` characters), compared to Australian English's `levelled` (
-three total `l` characters).
-  * Sorry for this confusion!
+* **在**开始处理拉取请求（PR）之前，请与开发团队联系，确保这值得你的时间。如果问题跟踪器上的问题带有“contributions welcome”标签，那么很可能我们会给你👍🏻。
 
-# Ownership of Code
-* Any contributions must fall under the same license described in `LICENSE.md`.
-* You are expected to own or clearly credit the code you have contributed.
-  * Check the license of copied code beforehand.
+* 请使用花括号，**特别是**在使用“if abc else xyz”语句时。唯一的例外是对于小的“if”语句，例如 `if(enabled) runMethod();`。
+
+* 在代码中尽可能包含Javadocs和注释，除非它显然是不言自明的（例如 `changeWoolColor(Block)`）。
+
+* 除非你认为它们是重大改进，请不要提交任何个人IDE设置更改。如果发现你的IDE正在添加自己的文件，请考虑将它们添加到`.gitignore`中。
+
+* 请不要使用IDE的自动代码重排功能。我们特意将方法和变量排列在特定的位置，比如IntelliJ IDEA中的“重定位代码”这类功能会干扰它。
+
+# 语言：
+
+* 请你尽可能使用美式英语（`en-us`）拼写。
+
+* 唯一的例外是插件的名称，`LevelledMobs`，它最初是用澳大利亚英语（`en-au`）拼写的，应继续使用以防止破坏依赖于这种拼写的任何资源。
+
+  * 美式英语使用 `leveled`（总共两个 `l` 字符），而澳大利亚英语使用 `levelled`（总共三个 `l` 字符）。
+
+  * 对此混淆表示抱歉！
+
+# 代码的所有权
+
+* 任何贡献必须遵循`LICENSE.md`中描述的相同许可证。
+
+* 你应该拥有或明确标明你贡献的代码。
+
+  * 事先检查复制代码的许可证。
