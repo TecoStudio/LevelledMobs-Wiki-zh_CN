@@ -80,7 +80,7 @@
 
 | Author                                                    | File Name                                                    | File Version  | Link                                                         |
 | --------------------------------------------------------- | ------------------------------------------------------------ | ------------- | ------------------------------------------------------------ |
-| [Valor aka. JianyueHugo](https://github.com/JianyueLab)   | settings.yml                                                 | 34            | [Download File](https://share.jianyuelab.cc/d/Minecraft/Plugins/LevelledMob/settings.yml) |
+| [Valor aka. JianyueHugo](https://github.com/JianyueLab)   | settings.yml                                                 | 34            | [Download File](https://share.jianyuelab.cc/d/Game/Minecraft/Plugins/LevelledMob/settings.yml) |
 | [ChromaPIE](https://github.com/ChromaPIE)                 | messages.yml                                                 | 6             | [See Attachment](https://github.com/lokka30/LevelledMobs/files/7379356/lm-zh_cn-locale.zip) |
 | [ChromaPIE](https://github.com/ChromaPIE)                 | entitytype.yml (put these into the entity-name-override in rules.yml) | For MC 1.17.1 | [See Attachment](https://github.com/lokka30/LevelledMobs/files/7379356/lm-zh_cn-locale.zip) |
 | [hope_no_no_no](https://www.spigotmc.org/members/466850/) | settings.yml                                                 | 30            | [See Attachment](https://www.spigotmc.org/threads/levelledmobs-for-1-14-x-1-17-x.412953/page-13#post-4210797) |
