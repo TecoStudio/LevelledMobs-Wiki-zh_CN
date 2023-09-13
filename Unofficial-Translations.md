@@ -15,6 +15,12 @@
 # 最新的翻译:
 注意：检查本页面顶部的”此页面最后更新于“部分，如果过期了请告诉我们，我们将确保翻译是”最新的“。
 
+## 中文(官话)
+
+| Author                | File Name   | File Version      | Link                                                         |
+| --------------------- | ----------- | ----------------- | ------------------------------------------------------------ |
+| LYOfficial and others | Entire Wiki | 11 September 2023 | [View Translated Wiki](https://github.com/TecoStudio/LevelledMobs-Wiki-zh_CN/wiki) |
+
 ## 西班牙语
 
 <table>
@@ -70,43 +76,17 @@
 
 ***
 
-# 过期的翻译:
-
 ## 汉语
-<table>
-    <tr>
-        <th>Author</th>
-        <th>File Name</th>
-        <th>File Version</th>
-        <th>Link</th>
-    </tr>
-    <tr>
-        <td><a href="https://github.com/ChromaPIE">ChromaPIE</a></td>
-        <td>messages.yml</td>
-        <td>6</td>
-        <td><a href="https://github.com/lokka30/LevelledMobs/files/7379356/lm-zh_cn-locale.zip">Attachment</a></td>
-    </tr>
-    <tr>
-        <td><a href="https://github.com/ChromaPIE">ChromaPIE</a></td>
-        <td>entitytype.yml (put these into the entity-name-override in rules.yml)</td>
-        <td>For MC 1.17.1</td>
-        <td><a href="https://github.com/lokka30/LevelledMobs/files/7379356/lm-zh_cn-locale.zip">Attachment</a></td>
-    </tr>
-    <tr>
-        <td><a href="https://www.spigotmc.org/members/466850/">hope_no_no_no</a></td>
-        <td>settings.yml</td>
-        <td>30</td>
-        <td><a href="https://www.spigotmc.org/threads/levelledmobs-for-1-14-x-1-17-x.412953/page-13#post-4210797">Attachment</a></td>
-    </tr>
-    <tr>
-        <td><a href="https://www.spigotmc.org/members/466850/">hope_no_no_no</a></td>
-        <td>messages.yml</td>
-        <td>4</td>
-        <td><a href="https://www.spigotmc.org/threads/levelledmobs-for-1-14-x-1-17-x.412953/page-13#post-4210797">Attachment</a></td>
-    </tr>
-</table>
 
-## 俄语
+| Author                                                    | File Name                                                    | File Version  | Link                                                         |
+| --------------------------------------------------------- | ------------------------------------------------------------ | ------------- | ------------------------------------------------------------ |
+| [Valor aka. JianyueHugo](https://github.com/JianyueLab)   | settings.yml                                                 | 34            | [Download File](https://share.jianyuelab.cc/d/Minecraft/Plugins/LevelledMob/settings.yml) |
+| [ChromaPIE](https://github.com/ChromaPIE)                 | messages.yml                                                 | 6             | [See Attachment](https://github.com/lokka30/LevelledMobs/files/7379356/lm-zh_cn-locale.zip) |
+| [ChromaPIE](https://github.com/ChromaPIE)                 | entitytype.yml (put these into the entity-name-override in rules.yml) | For MC 1.17.1 | [See Attachment](https://github.com/lokka30/LevelledMobs/files/7379356/lm-zh_cn-locale.zip) |
+| [hope_no_no_no](https://www.spigotmc.org/members/466850/) | settings.yml                                                 | 30            | [See Attachment](https://www.spigotmc.org/threads/levelledmobs-for-1-14-x-1-17-x.412953/page-13#post-4210797) |
+| [hope_no_no_no](https://www.spigotmc.org/members/466850/) | messages.yml                                                 | 4             | [See Attachment](https://www.spigotmc.org/threads/levelledmobs-for-1-14-x-1-17-x.412953/page-13#post-4210797) |
+
+## Russian (Русский)俄语
 
 <table>
     <tr>
