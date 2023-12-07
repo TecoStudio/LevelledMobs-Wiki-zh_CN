@@ -1,5 +1,5 @@
 ```
-本页信息最后更新为“生物等级”插件的3.9.1 b730版本。
+本页信息最后更新为“生物等级”插件的3.13.0 b793版本。
 ```
 
 ***
@@ -62,10 +62,14 @@ debug-misc: [ '' ]
 > 当实体被设置等级时进程相关的选项。
 * `ENTITY_TAME` - 显示已驯服实体的等级。
 * `RANGED_DAMAGE_MODIFICATION` - 报告已产生伤害的炮弹调整之后的远程伤害输出。
+* `MOB_HASH` - 当实体具有无效的或者已丢失的 hash key 并重新评估后报告。
 
 > ### 关于死亡流程<br />
 > 当设置等级的生物实体死亡时进程相关的选项。
 * `CUSTOM_DROPS` - 当生物等级`自定义掉落`被处理的时间。
+* `CUSTOM_EQUIPS` - 当一个 `CustomDrop` 可以在生成时完成装备的时候报告。
+* `MOB_GROUPS` - 报告死亡实体所述的怪物团体。
+* `GROUP_LIMITS` - 报告与 `CustomDrops` `group-limits:` 设置相关的变量。
 * `CUSTOM_COMMANDS` - 当来自 `CustomDrop` 系统的 `CustomCommand`被处理时候的报告。
 * `SET_LEVELLED_ITEM_DROPS` - 显示生物等级调整实体物品掉落的信息。
 * `SET_LEVELLED_XP_DROPS` - 显示生物等级调整实体经验值掉落的信息。

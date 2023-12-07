@@ -1,5 +1,5 @@
 ```
-本页最后更新于 LevelledMobs 3.8.1 b718
+本页最后更新于 LevelledMobs 3.13.0 b793
 ```
 
 ***
@@ -71,7 +71,7 @@ conditions:
 |`min-distance-from-spawn:`<br />`max-distance-from-spawn:`|这检查实体是否距离生成坐标的最小或最大距离之内。|
 |`allowed-worldguard-regions:`|一个 `MODALLIST` 配置选项；这代表对实体生成的 WorldGuard 区域进行检查。|
 |`allowed-worldguard-region-owners:`|一个 `MODALLIST` 配置选项；这代表对实体生成的 WorldGuard 区域的所有者列表进行检查。|
-|`allowed-spawn-reasons:`|一个 `MODALLIST` 配置选项；这代表对可能的生成原因标志进行检查。<br />你可以参考 [SpigotMC javadocs](https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/event/entity/CreatureSpawnEvent.SpawnReason.html) 中关于 `CreatureSpawnEvent.SpawnReason` 的不同选项。|
+|`allowed-spawn-reasons:`|一个 `MODALLIST` 配置选项；这代表对可能的生成原因标志进行检查。<br />你可以参考 [SpigotMC javadocs](https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/event/entity/CreatureSpawnEvent.SpawnReason.html) 中关于 `CreatureSpawnEvent.SpawnReason` 的不同选项。你也可以使用 `LM_SUMMON` 或`LM_SPAWNER`，即通过 `/lm summon` 或`/lm 命令创建的实体。|
 |`custom-names:`|一个 `MODALLIST` 配置选项；这代表当应用等级时，检查实体的 CustomName，假设它有一个。|
 |`entities:`|一个 `MODALLIST` 配置选项；这代表应用自定义规则的实体。|
 |`biomes:`|一个 `MODALLIST` 配置选项；这代表对实体生成的生物群系进行检查。|

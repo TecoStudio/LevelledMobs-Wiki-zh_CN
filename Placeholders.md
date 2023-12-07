@@ -1,5 +1,5 @@
 ```
-此页面最后更新于 3.9.5 b743
+此页面最后更新于 3.13.0 b789
 ```
 
 ---
@@ -19,17 +19,19 @@
 | :-------------------------: | :----------------------------- |
 |        %displayname%        | 实体自定义名                   |
 |     %health-indicator%      | 血条指示器                     |
+|                             |                                |
 |          %mob-lvl%          | 被击杀实体的等级               |
 |        %entity-name%        | 被击杀实体的种类               |
 |       %entity-health%       | 实际被击杀实体的血量           |
 |   %entity-health-rounded%   | 被击杀实体的血量（整数）       |
 |     %entity-max-health%     | 被击杀实体的最大血量           |
 | %entity-max-health-rounded% | 被击杀实体的最大血量（整数）   |
-|       %heart\_symbol%       | `♥`.                           |
+|       %heart\_symbol%       | 表示`♥`.                       |
 |          %tiered%           | 分层着色器的颜色               |
 |        %wg\_region%         | 实体死亡时所在的WorldGuard区域 |
 |           %world%           | 实体死亡时所在的世界           |
-|          %player%           | 谁击杀的实体（最后一击）       |
+|          %player%           | 杀死实体玩家的名字             |
+|        %player-uuid%        | 杀死实体玩家的UUID             |
 |         %location%          | 实体死亡时所在的坐标（x y z）  |
 
 # 内置玩家占位符

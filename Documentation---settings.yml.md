@@ -1,5 +1,5 @@
 ```
-本页信息最后更新为“生物等级”插件的3.9.3 b735版本。
+本页信息最后更新为“生物等级”插件的3.13.3 b801版本。
 ```
 
 ---
@@ -87,10 +87,18 @@ mob-process-delay: 0
 # 召唤指令 - 与玩家的距离
 
 ```yaml
-summon-command-spawn-distance-from-player: 5
+summon-command-spawn-max-distance-from-player: 5
 ```
 
-当使用`/lm summon <数量> <实体> <等级> here`指令时，设置生物在召唤时会在距离玩家多远的位置上生成。
+This will determine the maximum distance from a player an entity will spawn when you utilize `/lm summon <quantity> <entity> <level> here`.
+
+<br />
+
+```yaml
+summon-command-spawn-min-distance-from-player: 3
+```
+
+This will determine the minimum distance from a player an entity will spawn when you utilize `/lm summon <quantity> <entity> <level> here`.
 
 <br /><br />
 
@@ -179,6 +187,19 @@ use-customname-for-mob-nametags: false
 
 <br /><br />
 
+# Print LM Summon Command Results to Console/Player
+
+```yaml
+print-lm-summon-results: true
+```
+
+* `true` - When enabled, use of the LM Summon Command will be output into console.
+* `false` - When disabled, use of the LM Summon Command will not be output into console.
+
+This setting manages whether the LM Summon Command output text will be displayed in the console or not. Disabling this setting might be useful if you utilize the command regularly or repeatedly which might fill the console with notices.
+
+<br /><br />
+
 # 生成生物时获得等级
 
 ```yaml
@@ -198,6 +219,19 @@ exceed-kill-in-chunk-message: true
 
 * `true` - 当目前的区块生物的死亡数量达到区块上限时，将会向击杀生物的玩家发送一条信息。
 * `false` - 不会向任何玩家发送当前区块生物的死亡数量达到上限的任何信息。
+
+<br /><br />
+
+# Check Mob Rule Hash
+
+```yaml
+check-mob-hash: true
+```
+
+A new feature as of `LM 3.12.0 b770`, mobs which have been levelled by LevelledMobs will receive a uniquely generated hash key. This key is unique to the settings and layout of your `rules.yml` and is generated during server startup and any `/lm reload` thereafter. This setting handles what the listener will do when it detects a hash key that does not match to the current rules hash key. This task is performed during the automatic asynchronous tasks ping (default of six seconds) as well as when chunks are loaded and the level verification listener is performing. It is recommended that you do not change this setting as this resolves a long-standing issue of out-dated levelled mobs existing in long-forgotten unloaded chunks. 
+
+* `true` - When an entity is determined to have a missing or invalid hash key, the entity will immediately be re-evaluated using the current rules arrangement and receive an updated hash key.
+* `false` - Entities will not be re-evaluated if there is a missing or invalid hash key. This means that entities which had become unloaded during a previous hash of the rules will not be re-evaluated once they become reloaded. 
 
 <br /><br />
 

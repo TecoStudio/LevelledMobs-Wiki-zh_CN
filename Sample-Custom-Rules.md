@@ -293,3 +293,84 @@
 >      maxLevel: 10
 > ```
 > 这对自定义规则演示了创建以生成点为中心的级别'环'的原理。 虽然这与 Spawn Levelling 类似，但此方法会创建具有不同区域的影响环，而不是逐渐进展。
+
+> ### Custom Rules for a WorldGuard Region
+>
+> ```yaml
+>  - enabled: true
+>    name: 'WorldGuard Region Rule'
+>    conditions:
+>      allowed-worldguard-regions: ['name-of-region', 'other_region']
+>    apply-settings:
+>      minLevel: 1
+>      maxLevel: 5
+> ```
+>
+> This is an example of how to refer to a WorldGuard region if that region needs custom levelling rules. We can only check for a region name which WorldGuard understands the entity to be spawned in; meaning it respects the priority flags for regions set in WorldGuard.
+
+***
+
+> ### Custom Rules for Specified Coordinates
+>
+> ```yaml
+>  - enabled: true
+>    name: 'Within Coordinates (Sample of Single Point Coordinate [1D-Point])'
+>    conditions:
+>      within-coordinates:
+>        start-x: 50
+>        start-y: 64
+>        start-z: 50
+>    apply-settings:
+>      minLevel: 1
+>      maxLevel: 5
+> 
+>  - enabled: true
+>    name: 'Within Coordinates (Sample of Straight Line Coordinate [2D-Line])'
+>    conditions:
+>      within-coordinates:
+>        start-x: 50
+>        end-x: 75
+>        start-y: 64
+>    apply-settings:
+>      minLevel: 1
+>      maxLevel: 5
+> 
+>  - enabled: true
+>    name: 'Within Coordinates (Sample of Plane Coordinate [2D-Plane])'
+>    conditions:
+>      within-coordinates:
+>        start-x: 50
+>        end-x: 75
+>        start-y: 64
+>        start-z: 50
+>        end-z: 75
+>    apply-settings:
+>      minLevel: 1
+>      maxLevel: 5
+> 
+>  - enabled: true
+>    name: 'Within Coordinates (Sample of Cuboid Coordinate [3D-Cube])'
+>    conditions:
+>      within-coordinates:
+>        start-x: 50
+>        end-x: 75
+>        start-y: 64
+>        end-y: 90
+>        start-z: 50
+>        end-z: 75
+>    apply-settings:
+>      minLevel: 1
+>      maxLevel: 5
+> ```
+>
+> These are several examples of how to use the `within-coordinates` conditions when isolating a specific set of coordinates or a region of coordinates for which a custom rule would be applied.
+
+> In the first sample you can see an example of how to specify a specific point or coordinate by specifying the `start-` coordinate for each of the `start-x`, `start-y`, and `start-z` conditions. By not specifying the `end-` coordinate, that condition is automatically populated with the same value as it's corresponding `start-`. This means, in the example, the rule would only apply to the coordinate location (50, 64, 50). This might be useful for specifying a special command block or spawner cube that generates entities in an always specific location.
+
+> In the second sample you can see an example of how to specify a straight line of coordinates. We specify the `start-x` and `end-x`, with the `start-y` specified. Using the same logic as mentioned above, we have the `start-y` set but not the `end-y`, so those values will be equal. Since we've specified a `start-x` and `end-x`, then that means any `X` coordinate value between those two set numbers would be valid. This means, in the example, the rule would only apply to entities spawned `y=64` and any `X` coordinate between `x=50` and `x=75`. This would create a line between `x=50` and `x=75` at the `y=64` height; removing the `start-y` would create the same effect at any height, thereby creating a 2D plane of coordinates at any height rather than a line.
+
+> In the third sample you can see an example of how to specify a 2D plane of coordinates. We specify a `start-x`/`end-x` and `start-z`/`end-z`, with the `start-y` specified. With both the `X` and `Z` coordinate ranges specified, that means any coordinate between those `start-` and `end-` of each coordinate type will be valid. Since we specified a `Y` coordinate, that generates the 2D plane; removing the `start-y` would create the same effect at any height, thereby creating a 3D cuboid of coordinates at any height rather than a 2D plane.
+
+> In the final sample you can see an example of how to specify a 3D cuboid of coordinates. We specify all three of the `start-` and `end-` coordinate types, meaning that any value between those `start-` and `end-` values would be valid. In the example that would generate a cube with one corner of (50, 64, 50) and the opposite corner being (75, 90, 75).
+
+> For all of the `end-` options, you can specify the value of `+` or `-`. These values simply represent 'all numbers above' or 'all numbers below' the corresponding `start-` value. As well, you can specify negative numbers for all `start-` and `end-` values. Finally, a reminder that any value that has a `start-` specified but not the corresponding `end-` will have the `end-` populated with the same value as `start-`, creating a single-point coordinate. If neither corresponding `start-` or `end-` is specified (example being `start-y` and `end-y` together), then that coordinate type will not be checked against when considering the entities' location.
