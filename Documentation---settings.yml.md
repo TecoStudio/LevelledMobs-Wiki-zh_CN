@@ -18,9 +18,6 @@ assert-entity-validity-with-nametag-packets: true
 
 我不建议你更改此项设置，除非你知道你在做什么。
 
-
-<br /><br />
-
 # 自动同步异步名称标签和等级
 
 ```yaml
@@ -33,8 +30,6 @@ async-task-max-blocks-from-player: 100
 其中，`async-task-update-period:`选项的单位是秒。
 
 
-<br /><br />
-
 # 自定义`command`指令限制
 
 ```yaml
@@ -45,8 +40,6 @@ customize-summon-command-limit: 10
 
 防止因为意外地让召唤数量过多而让服务器崩溃或者溢出。
 
-
-<br /><br />
 
 # 头颅掉落倍率
 
@@ -59,7 +52,6 @@ mobs-multiply-head-drops: false
 
 在有的服务器里，头颅会被视作为珍惜资源，不能与该实体的其他掉落物相提并论。这个设置是允许你决定这些头颅类的掉落物是否可以跟其他掉落物一样受到不同的可以增加掉落物数量的东西影响。
 
-<br /><br />
 
 # 自定义掉落指令限制
 
@@ -69,8 +61,6 @@ customcommand-amount-limit: 100
 
 这有助于防止服务器的意外崩溃，因为有的实体在死亡时可能执行的指令数量可能会超过服务器的上限，从而造成服务器的崩溃。使用该选项可以通过本插件的自定义掉落系统来为掉落物设置一个强制的限制，防止指令的`数量`上限超过该数值。
 
-
-<br /><br />
 
 # 生物处理延迟
 
@@ -82,7 +72,6 @@ mob-process-delay: 0
 
 我不建议你更改此项设置，除非你知道你在做什么。
 
-<br /><br />
 
 # 召唤指令 - 与玩家的距离
 
@@ -90,17 +79,15 @@ mob-process-delay: 0
 summon-command-spawn-max-distance-from-player: 5
 ```
 
-This will determine the maximum distance from a player an entity will spawn when you utilize `/lm summon <quantity> <entity> <level> here`.
+在使用`/lm summon <数量> <实体> <登记>`指令时，生物生成与使用指令玩家之间的最大距离。
 
-<br />
+
 
 ```yaml
 summon-command-spawn-min-distance-from-player: 3
 ```
 
-This will determine the minimum distance from a player an entity will spawn when you utilize `/lm summon <quantity> <entity> <level> here`.
-
-<br /><br />
+在使用`/lm summon <数量> <实体> <登记>`指令时，生物生成与使用指令玩家之间的最小距离。
 
 # kill指令忽略实体
 
@@ -123,9 +110,6 @@ kill-skip-conditions:
 
 我不建议你更改此项设置，除非你知道你在做什么。
 
-
-<br /><br />
-
 # 使用翻译组件
 
 ```yaml
@@ -136,9 +120,6 @@ use-translation-components: true
 * `false` - 在一些旧版本和定制的客户端上不支持该功能，所以如果你的服务器的环境不需要让玩家使用客户端的语言切换实体名称，那么请禁用该功能。 
 
 在这个系统中提供了一种可以更改语言的机制，大多数情况下都应该将这个功能设置为启用。在一些旧版本和定制的客户端上可能会破坏名称的显示方式，如果你不需要这个功能，请禁用它。你可以参考应该英文名称列表，但是你也依旧可以通过`rules.yml`文件的`apply-setting: entity-name-override:`功能来修改实体的名称。
-
-
-<br /><br />
 
 # 检测已加载区块的实体
 
@@ -153,8 +134,6 @@ ensure-mobs-are-levelled-on-chunk-load: true
 
 如果你不了解这个功能，请不要修改它。
 
-<br /><br />
-
 # 使用属性预设的基础值
 
 ```yaml
@@ -165,8 +144,6 @@ attributes-use-preset-base-values: false
 * `false` - 使用被生成实体中生成的默认属性值。
 
 在“生物等级”的v2版本中，我们会使用一个静态文件内的属性来生成实体，可以解决部分存在的兼容性问题。从此版本开始，我们已经修改了属性的生成和修改方式，因为考虑到种种情况，所以我们设置了一个存放属性的文件来备份这种情况，如果你不知道你在做什么，我们不建议你来更改此选项。
-
-<br /><br />
 
 # 实体名称使用“CustomName”
 
@@ -185,20 +162,16 @@ use-customname-for-mob-nametags: false
 
 **此选项一旦更改将不可逆！！！**
 
-<br /><br />
-
-# Print LM Summon Command Results to Console/Player
+# 反馈生成（summon）指令至玩家/控制台（服务器端后台）
 
 ```yaml
 print-lm-summon-results: true
 ```
 
-* `true` - When enabled, use of the LM Summon Command will be output into console.
-* `false` - When disabled, use of the LM Summon Command will not be output into console.
+* `true` - 输出反馈至控制台（服务器端后台)
+* `false` - 不输出反馈
 
-This setting manages whether the LM Summon Command output text will be displayed in the console or not. Disabling this setting might be useful if you utilize the command regularly or repeatedly which might fill the console with notices.
-
-<br /><br />
+这个设置配置了，使用生成指令（summon）的时候是否输出到控制台（服务器端后台）。当你频繁使用生成指令（Summon）时，可以禁用`false`来减少控制台输出。
 
 # 生成生物时获得等级
 
@@ -209,8 +182,6 @@ level-mobs-upon-spawn: true
 * `true` - 当生物在生成在世界中时，“生物等级”插件会立即给予该生物一个等级。
 * `false` - 实体在受到玩家伤害和进攻玩家之前不会获得任何等级。
 
-<br /><br />
-
 # 区块击杀统计
 
 ```yaml
@@ -220,20 +191,17 @@ exceed-kill-in-chunk-message: true
 * `true` - 当目前的区块生物的死亡数量达到区块上限时，将会向击杀生物的玩家发送一条信息。
 * `false` - 不会向任何玩家发送当前区块生物的死亡数量达到上限的任何信息。
 
-<br /><br />
-
-# Check Mob Rule Hash
+# 检查实体哈希值
 
 ```yaml
 check-mob-hash: true
 ```
 
-A new feature as of `LM 3.12.0 b770`, mobs which have been levelled by LevelledMobs will receive a uniquely generated hash key. This key is unique to the settings and layout of your `rules.yml` and is generated during server startup and any `/lm reload` thereafter. This setting handles what the listener will do when it detects a hash key that does not match to the current rules hash key. This task is performed during the automatic asynchronous tasks ping (default of six seconds) as well as when chunks are loaded and the level verification listener is performing. It is recommended that you do not change this setting as this resolves a long-standing issue of out-dated levelled mobs existing in long-forgotten unloaded chunks. 
+这是`LM 3.12.0 b770`版本的一个新功能，由生物等级插件生成的实体会生成哈希值。哈希值会在服务器启动或者使用`/lm reload`刷新时生成哈希值，且哈希值在`rules.yml`文件中设置和`layout` 配置中是唯一的。此设置监听生物与目前配置文件的哈希值是否匹配。同时，会在区块加载和等级确认监听器使用时进行检查（ps. 默认是等待六秒后开始检查）。建议启用此设置，用于检查那些实体生成在那些非加载区块之中。
 
-* `true` - When an entity is determined to have a missing or invalid hash key, the entity will immediately be re-evaluated using the current rules arrangement and receive an updated hash key.
-* `false` - Entities will not be re-evaluated if there is a missing or invalid hash key. This means that entities which had become unloaded during a previous hash of the rules will not be re-evaluated once they become reloaded. 
+* `true` - 开启时，若实体判定为缺失或者拥有失效的哈希值，则根据现有配置文件重新更新实体和哈希值。
+* `false` - 禁用时，则不会在区块加载时检查实体的哈希值，并更新实体。
 
-<br /><br />
 
 # 玩家等级策略
 
@@ -245,7 +213,6 @@ player-levelling-relevel-min-time: 5000
 
 该设置是围绕**玩家等级**策略系统而制作的。
 
-<br /><br />
 
 # 名称标签占位符距离
 
@@ -255,7 +222,6 @@ nametag-placeholder-maxblocks: 30
 
 `nametag-placeholder-maxblocks:`的意思是设置实体在`%levelledmobs_mob-target%`下与玩家的渲染距离。
 
-<br /><br />
 
 # 更新和调试模式
 
