@@ -1,5 +1,5 @@
 ```
-此页面最后更新于 LevelledMobs 3.9.0 b726
+此页面最后更新于 LevelledMobs 3.14.0 b808
 ```
 
 ***
@@ -10,10 +10,25 @@
 
 
 ***
+### Original Do-Not-Level Passive and Specific Entitytypes
+ ```yaml
+   - enabled: true
+     name: 'NoLevel All Passive + EntityTypes'
+     use-preset: allowed_worlds
+     conditions:
+       entities:
+         allowed-groups: [ 'all_passive_mobs' ]
+         allowed-list: [ 'BABY_', 'BAT', 'ENDER_DRAGON', 'PHANTOM', 'RAVAGER', 'WANDERING_TRADER', 'VEX', 'VILLAGER', 'WARDEN', 'WITHER', 'ZOMBIE_VILLAGER' ]
+     apply-settings:
+       maxLevel: 0
+ ```
+LevelledMobs 3.14.0 altered how we apply levels to entities and removed this long-standing custom rule which removed levels from all passive mobs and a select handful of individual entities. With 3.14.0, we now level these mobs but do not modify their stats.
+
+***
 
 > ### 自定义末影龙升级
 > ```yaml
->   - enabled: false
+>   - enabled: true
 >     name: 'CR - Ender Dragon Fight'
 >     use-preset: average_challenge
 >     conditions:
@@ -35,7 +50,7 @@
 
 > ###  使用生命值显示的Boss-Bar名牌
 > ```yml
->   - enabled: false
+>   - enabled: true
 >     name: 'CR - Boss Bar'
 >     use-preset: allowed_worlds, nametag_using_indicator
 >     apply-settings:
@@ -50,7 +65,7 @@
 
 > ### 夜晚难度增加
 > ```yml
->   - enabled: false
+>   - enabled: true
 >     name: 'CR - Difficulty Increase at Night'
 >     use-preset: allowed_worlds, advanced_challenge
 >     conditions:
@@ -65,7 +80,7 @@
 
 > ### 在特定的生物群系中禁止升级
 > ```yml
->   - enabled: false
+>   - enabled: true
 >     name: 'CR - NoLevel Biomes'
 >     conditions:
 >       worlds:
@@ -81,7 +96,7 @@
 
 > ### 基于等级的自定义实体名称
 > ```yml
->   - enabled: false
+>   - enabled: true
 >     name: 'CR - Level Dependent Zombie Custom Names'
 >     use-presets: allowed_worlds
 >     apply-settings:
@@ -102,7 +117,7 @@
 
 > ### 减弱刷怪笼实体
 > ```yml
->   - enabled: false
+>   - enabled: true
 >     name: 'CR - Nerfed Spawner Cubes'
 >     priority: 1
 >     use-preset: allowed_worlds
@@ -123,7 +138,7 @@
 
 > ### NBT-API | 进入爆炸倒计时的苦力怕！
 > ```yml
->   - enabled: false
+>   - enabled: true
 > #   此规则需要软依赖的 NBT-API 才能运行！
 > #   确保在启用此规则之前已安装它！
 >     name: 'CR - NBT - 20% Startled Creepers, Short Fuse'
